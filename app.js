@@ -70,10 +70,10 @@
     list.forEach((c, i) => {
       const el = document.createElement("article");
       el.className = "card";
-      const img =
-        c.images && c.images[0]
-          ? `<img class="card-img" src="${c.images[0]}" alt="${c.title || ""}" loading="lazy">`
-          : `<div class="card-media" style="background:${mediaStyle(i)}"><span class="ph">🖼️</span></div>`;
+      const hasImg = c.images && c.images[0];
+      const img = hasImg
+        ? `<div class="card-media-wrap"><img class="card-img" src="${c.images[0]}" alt="${c.title || ""}" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="card-media img-fallback" style="display:none"><span class="ph">🖼️</span></div></div>`
+        : `<div class="card-media" style="background:${mediaStyle(i)}"><span class="ph">🖼️</span></div>`;
       const link = c.url
         ? `<a class="card-link" href="${c.url}" target="_blank" rel="noopener">看原文 ↗</a>`
         : "";
