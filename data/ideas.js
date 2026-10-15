@@ -25,4 +25,15 @@ window.IDEAS = [
     tags: ["电梯", "互动", "场景"],
     createdAt: "2026-10-09",
   },
+  {
+    id: "seed-004",
+    category: "洞察",
+    content:
+      "【示例】随手记的灵感：线下空间也能当「内容场」——门店门头、陈列、甚至一张海报，都是可以被截图传播的广告。这条用来演示 idea 配图功能，可随手删掉。",
+    tags: ["线下", "空间", "示例"],
+    images: [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/38450-1782314311.jpg",
+    ],
+    createdAt: "2026-10-15",
+  },
 ];
