@@ -1,4 +1,4 @@
-// 不供参考idea · 初始示例（阶段1 mock；用户新建的存 localStorage，阶段3 并入云端）
+// 不供参考idea · 内置兜底数据（云端真数据见 data/ideas.json，离线/file:// 双击打开时回退用）
 // 字段：category 分类(文案/洞察/胡思乱想) / content 内容 / tags 标签 / createdAt 日期
 window.IDEAS = [
   {
