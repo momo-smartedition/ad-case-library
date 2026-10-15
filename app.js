@@ -1,6 +1,7 @@
 (function () {
   "use strict";
   const IDEAS = window.IDEAS || [];
+  let CLOUD_IDEAS = [];
   const LS_KEY = "lehe_ideas_v1";
   let CASES = window.CASES || [];
 
@@ -145,7 +146,7 @@
   function renderIdeas() {
     const cat = ideaCats.querySelector(".chip.active").dataset.cat;
     const local = loadIdeas();
-    const all = [...IDEAS, ...local].sort((a, b) =>
+    const all = [...CLOUD_IDEAS, ...local].sort((a, b) =>
       b.createdAt.localeCompare(a.createdAt)
     );
     const list = cat === "all" ? all : all.filter((x) => x.category === cat);
@@ -176,6 +177,23 @@
       renderIdeas();
     })
   );
+
+  /* ---------- idea 数据：优先读云端，回退内置 ---------- */
+  async function loadIdeasCloud() {
+    try {
+      const r = await fetch(
+        "https://cdn.jsdelivr.net/gh/momo-smartedition/ad-case-library@main/data/ideas.json",
+        { cache: "no-store" }
+      );
+      if (r.ok) {
+        const j = await r.json();
+        if (Array.isArray(j) && j.length) CLOUD_IDEAS = j;
+      }
+    } catch (e) {
+      /* 离线 / 双击本地打开时，使用内置兜底数据 */
+    }
+    renderIdeas();
+  }
 
   /* ---------- 新建弹窗 ---------- */
   const modal = document.getElementById("modal");
@@ -216,5 +234,5 @@
 
   /* ---------- 初始渲染 ---------- */
   loadCases();
-  renderIdeas();
+  loadIdeasCloud();
 })();
