@@ -1,0 +1,9 @@
+# 环境变量 / 密钥（含 PushPlus token），绝不进仓库
+.env
+.env.*
+!.env.example
+
+# 系统 / 依赖 / 日志
+.DS_Store
+node_modules/
+*.log
