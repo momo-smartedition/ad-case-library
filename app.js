@@ -1,8 +1,8 @@
 (function () {
   "use strict";
-  const CASES = window.CASES || [];
   const IDEAS = window.IDEAS || [];
   const LS_KEY = "lehe_ideas_v1";
+  let CASES = window.CASES || [];
 
   /* ---------- 视图切换 ---------- */
   const tabs = document.querySelectorAll(".tab");
@@ -21,14 +21,17 @@
 
   /* ---------- 小报：动态类型下拉 ---------- */
   const typeSel = document.getElementById("filter-type");
-  [...new Set(CASES.map((c) => c.campaignType).filter(Boolean))]
-    .sort()
-    .forEach((t) => {
-      const o = document.createElement("option");
-      o.value = t;
-      o.textContent = t;
-      typeSel.appendChild(o);
-    });
+  function fillTypeOptions() {
+    typeSel.innerHTML = '<option value="">全部类型</option>';
+    [...new Set(CASES.map((c) => c.campaignType).filter(Boolean))]
+      .sort()
+      .forEach((t) => {
+        const o = document.createElement("option");
+        o.value = t;
+        o.textContent = t;
+        typeSel.appendChild(o);
+      });
+  }
 
   const grid = document.getElementById("case-grid");
   const emptyP = document.getElementById("case-empty");
@@ -36,11 +39,11 @@
   const sortSel = document.getElementById("filter-sort");
 
   const gradients = [
-    "linear-gradient(135deg,#FF6B5B,#FFD23F)",
-    "linear-gradient(135deg,#4D8AF0,#3EC6A0)",
-    "linear-gradient(135deg,#C8102E,#FF6B5B)",
-    "linear-gradient(135deg,#8a6df0,#4D8AF0)",
-    "linear-gradient(135deg,#3EC6A0,#FFD23F)",
+    "linear-gradient(135deg,#FF2442,#FF8A3D)",
+    "linear-gradient(135deg,#36C5F0,#2BD9A8)",
+    "linear-gradient(135deg,#FFE03D,#FF2442)",
+    "linear-gradient(135deg,#B66DFF,#36C5F0)",
+    "linear-gradient(135deg,#2BD9A8,#FFE03D)",
   ];
   const mediaStyle = (i) => gradients[i % gradients.length];
 
@@ -69,8 +72,11 @@
       el.className = "card";
       const img =
         c.images && c.images[0]
-          ? `<img src="${c.images[0]}" alt="" style="width:100%;height:160px;object-fit:cover">`
+          ? `<img class="card-img" src="${c.images[0]}" alt="${c.title || ""}" loading="lazy">`
           : `<div class="card-media" style="background:${mediaStyle(i)}"><span class="ph">🖼️</span></div>`;
+      const link = c.url
+        ? `<a class="card-link" href="${c.url}" target="_blank" rel="noopener">看原文 ↗</a>`
+        : "";
       el.innerHTML = `
         ${img}
         <div class="card-body">
@@ -82,7 +88,10 @@
           <div class="card-line"><b>广告主</b> ${c.advertiser || "—"}</div>
           <div class="card-line"><b>代理商</b> ${c.agency || "—"}</div>
           <div class="card-sum">${c.summary || ""}</div>
-          <div class="card-date">${c.date || ""}</div>
+          <div class="card-foot">
+            <span class="card-date">${c.date || ""}</span>
+            ${link}
+          </div>
         </div>`;
       grid.appendChild(el);
     });
@@ -90,6 +99,24 @@
   searchEl.addEventListener("input", renderCases);
   typeSel.addEventListener("change", renderCases);
   sortSel.addEventListener("change", renderCases);
+
+  /* ---------- 案例数据：优先读云端，回退内置 ---------- */
+  async function loadCases() {
+    try {
+      const r = await fetch(
+        "https://cdn.jsdelivr.net/gh/momo-smartedition/ad-case-library@main/data/cases.json",
+        { cache: "no-store" }
+      );
+      if (r.ok) {
+        const j = await r.json();
+        if (Array.isArray(j) && j.length) CASES = j;
+      }
+    } catch (e) {
+      /* 离线 / 双击本地打开时，使用内置兜底数据 */
+    }
+    fillTypeOptions();
+    renderCases();
+  }
 
   /* ---------- idea ---------- */
   function loadIdeas() {
@@ -106,7 +133,7 @@
   const ideaGrid = document.getElementById("idea-grid");
   const ideaEmpty = document.getElementById("idea-empty");
   const ideaCats = document.getElementById("idea-cats");
-  const catColors = { 文案: "#FF6B5B", 洞察: "#4D8AF0", 胡思乱想: "#8a6df0" };
+  const catColors = { 文案: "#FF2442", 洞察: "#36C5F0", 胡思乱想: "#B66DFF" };
 
   function escapeHtml(s) {
     return (s || "").replace(
@@ -127,19 +154,15 @@
     list.forEach((x) => {
       const el = document.createElement("article");
       el.className = "idea-card";
-      el.style.borderLeftColor = catColors[x.category] || "#FF6B5B";
+      el.style.borderLeftColor = catColors[x.category] || "#FF2442";
       const tags = (x.tags || [])
         .map((t) => `<span class="idea-tag">#${t}</span>`)
         .join("");
       el.innerHTML = `
-        <span class="idea-cat" style="background:${
-          catColors[x.category] || "#FF6B5B"
-        }">${x.category}</span>
+        <span class="idea-cat" style="background:${catColors[x.category] || "#FF2442"}">${x.category}</span>
         <div class="idea-content">${escapeHtml(x.content)}</div>
         ${tags ? `<div class="idea-tags">${tags}</div>` : ""}
-        <div class="idea-date">${x.createdAt || ""}${
-          x.local ? " · 本地新增" : ""
-        }</div>`;
+        <div class="idea-date">${x.createdAt || ""}${x.local ? " · 本地新增" : ""}</div>`;
       ideaGrid.appendChild(el);
     });
   }
@@ -192,6 +215,6 @@
   });
 
   /* ---------- 初始渲染 ---------- */
-  renderCases();
+  loadCases();
   renderIdeas();
 })();
