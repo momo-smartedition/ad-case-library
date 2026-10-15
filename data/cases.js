@@ -1,70 +1,67 @@
-// 仅供乐呵案例库 · 案例数据（内置兜底 + 离线可用；云端真数据见 cases.json）
-// 字段：date 日期 / source 资料来源 / sourceUrl 来源站 / url 案例原文链接
-//       advertiser 广告主 / agency 代理商 / campaignType 类型 / title 标题
-//       summary 阐释 / images 2-3 张精选图（稳定图源占位，自动化会替换为真实案例图）
+// 兜底数据：与 cases.json 保持一致（云端优先，离线回退）
 window.CASES = [
   {
-    id: "demo-001",
-    date: "2026-10-14",
-    source: "数英网",
-    sourceUrl: "https://www.digitaling.com/",
-    url: "https://www.digitaling.com/",
-    advertiser: "三顿半",
-    agency: "（示例）某创意热店",
-    campaignType: "品牌Campaign",
-    title: "返航计划：把咖啡空罐变成下一次出发",
-    summary: "以「返航」为隐喻，把回收空罐做成线下快闪与社群仪式，把环保动作包装成品牌浪漫，强社交传播。",
-    images: [
-      "https://picsum.photos/seed/lehe-sanduoban-1/640/420",
-      "https://picsum.photos/seed/lehe-sanduoban-2/640/420"
+    "id": "demo-001",
+    "date": "2026-10-14",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/",
+    "url": "https://www.digitaling.com/articles/399658.html",
+    "advertiser": "三顿半",
+    "agency": "品牌自运营",
+    "campaignType": "品牌Campaign",
+    "title": "返航计划：把咖啡空罐变成下一次出发",
+    "summary": "以「返航」为隐喻，把回收空罐做成线下快闪与社群仪式，小罐子成了品牌超级符号，环保动作包装成品牌浪漫，强社交传播。",
+    "images": [
+      "https://file.digitaling.com/eImg/cover/20210119/20210119174038_48999.jpg",
+      "https://file.digitaling.com/eImg/uimages/20210119/remote_161104866841948.jpg"
     ]
   },
   {
-    id: "demo-002",
-    date: "2026-10-11",
-    source: "广告门",
-    sourceUrl: "https://www.adquan.com/",
-    url: "https://www.adquan.com/",
-    advertiser: "美团",
-    agency: "（示例）内部团队",
-    campaignType: "节点营销",
-    title: "中秋「团圆」反向叙事：一个人也要好好吃饭",
-    summary: "避开阖家团圆套路，对准独居青年，用「一个人」的细腻场景做情绪共鸣，切口小而准。",
-    images: [
-      "https://picsum.photos/seed/lehe-meituan-1/640/420",
-      "https://picsum.photos/seed/lehe-meituan-2/640/420"
+    "id": "demo-002",
+    "date": "2026-10-11",
+    "source": "广告门",
+    "sourceUrl": "https://www.adquan.com/",
+    "url": "https://www.adquan.com/detail/2-364697",
+    "advertiser": "美团",
+    "agency": "品牌内部团队",
+    "campaignType": "节点营销",
+    "title": "中秋「最美的团圆」：把品牌色变成社交符号",
+    "summary": "2026 中秋礼盒送的是一对明黄色饭碗而不是月饼，「饭碗」直指打工人情绪，网友自发玩梗「端稳饭碗」，把品牌色变成社交符号——给用户留一句他能替你喊出来的台词。",
+    "images": [
+      "https://oss.adquan.com/uploads_img/17916205344e2d2064c78fc0bd.jpg",
+      "https://oss.adquan.com/uploads_img/17916205342b65702b361e4479.jpg"
     ]
   },
   {
-    id: "demo-003",
-    date: "2026-10-08",
-    source: "SocialBeta",
-    sourceUrl: "https://socialbeta.com/",
-    url: "https://socialbeta.com/",
-    advertiser: "观夏",
-    agency: "（示例）品牌自运营",
-    campaignType: "新品上市",
-    title: "把「东方香」做成可收藏的器物叙事",
-    summary: "用东方植物与城市记忆做内容资产，产品即内容，强调材质与气味的故事感，适合种草型打法参考。",
-    images: [
-      "https://picsum.photos/seed/lehe-guanxia-1/640/420",
-      "https://picsum.photos/seed/lehe-guanxia-2/640/420"
+    "id": "demo-003",
+    "date": "2026-10-08",
+    "source": "SocialBeta",
+    "sourceUrl": "https://socialbeta.com/",
+    "url": "https://socialbeta.com/campaign/27777",
+    "advertiser": "观夏",
+    "agency": "品牌自运营",
+    "campaignType": "线下空间",
+    "title": "在国子监开一家可以「抓药」的香铺",
+    "summary": "观夏在北京国子监开出全国首家「观夏香铺」，把中医「望闻问切→抓药」的动线搬进选香体验：香引单定制、百草匣抽屉按需取香，让线香从产品体系独立成空间叙事。",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/38450-1782314311.jpg",
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/38450-1782314309.jpg"
     ]
   },
   {
-    id: "demo-004",
-    date: "2026-10-05",
-    source: "梅花网",
-    sourceUrl: "https://www.meihua.info/",
-    url: "https://www.meihua.info/",
-    advertiser: "大窑汽水",
-    agency: "（示例）省广集团",
-    campaignType: "渠道下沉",
-    title: "大瓶快乐：用「聚餐场景」撬动下沉市场",
-    summary: "以家庭聚餐、夜市大排档等强场景绑定大包装，价格锚点清晰，适合参考下沉渠道的媒介与话术组合。",
-    images: [
-      "https://picsum.photos/seed/lehe-dayao-1/640/420",
-      "https://picsum.photos/seed/lehe-dayao-2/640/420"
+    "id": "demo-004",
+    "date": "2026-10-05",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/",
+    "url": "https://www.digitaling.com/projects/339401.html",
+    "advertiser": "大窑",
+    "agency": "品牌方 × 地铁媒介代理",
+    "campaignType": "户外/地铁广告",
+    "title": "11 城地铁广告：做年轻人的嘴替",
+    "summary": "在 11 座城市的地铁投方言海报，把城市饮食符号玩成梗——青岛「哈大窑吃嘎啦」、郑州「画的饼不够吃改吃烩面」、佛山「鸡会摆在眼前」，高饱和撞色绑定「大窑配美食」场景，做打工人的情绪嘴替。",
+    "images": [
+      "https://file.digitaling.com/eImg/cover/20250520/20250520113321_76126.jpg",
+      "https://file.digitaling.com/eImg/uimages/20250520/remote_174771121590392.jpg"
     ]
   }
 ];
