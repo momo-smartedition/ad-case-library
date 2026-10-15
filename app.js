@@ -20,24 +20,86 @@
     })
   );
 
-  /* ---------- 小报：动态类型下拉 ---------- */
-  const typeSel = document.getElementById("filter-type");
-  function fillTypeOptions() {
-    typeSel.innerHTML = '<option value="">全部类型</option>';
-    [...new Set(CASES.map((c) => c.campaignType).filter(Boolean))]
-      .sort()
-      .forEach((t) => {
-        const o = document.createElement("option");
-        o.value = t;
-        o.textContent = t;
-        typeSel.appendChild(o);
-      });
-  }
-
+  /* ---------- 小报：组合框（下拉 + 搜索结合） ---------- */
   const grid = document.getElementById("case-grid");
   const emptyP = document.getElementById("case-empty");
-  const searchEl = document.getElementById("search");
   const sortSel = document.getElementById("filter-sort");
+
+  // 通用组合框：点开是下拉列表，输入框也能打字模糊搜；选「全部」清空
+  function makeCombobox(rootId, optsProvider, onChange) {
+    const root = document.getElementById(rootId);
+    const input = root.querySelector(".cb-input");
+    const toggle = root.querySelector(".cb-toggle");
+    const panel = root.querySelector(".cb-panel");
+
+    function render(open) {
+      const val = input.value.trim().toLowerCase();
+      const opts = optsProvider();
+      const list = ["__all__"].concat(
+        opts.filter((o) => !val || o.toLowerCase().includes(val))
+      );
+      panel.innerHTML = "";
+      list.forEach((o) => {
+        const isAll = o === "__all__";
+        const d = document.createElement("div");
+        d.className = "cb-option" + (isAll ? " cb-all" : "");
+        d.textContent = isAll ? "全部" : o;
+        d.addEventListener("mousedown", (e) => {
+          e.preventDefault();
+          input.value = isAll ? "" : o;
+          panel.classList.add("hidden");
+          onChange();
+        });
+        panel.appendChild(d);
+      });
+      panel.classList.toggle("hidden", !open);
+    }
+
+    input.addEventListener("focus", () => render(true));
+    input.addEventListener("click", () => render(true));
+    input.addEventListener("input", () => {
+      render(true);
+      onChange();
+    });
+    toggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (panel.classList.contains("hidden")) render(true);
+      else panel.classList.add("hidden");
+    });
+    document.addEventListener("click", (e) => {
+      if (!root.contains(e.target)) panel.classList.add("hidden");
+    });
+
+    return {
+      refresh() {
+        render(false);
+      },
+      getValue() {
+        return input.value.trim();
+      },
+    };
+  }
+
+  const brandOpts = () => {
+    const s = new Set();
+    CASES.forEach((c) => {
+      if (c.advertiser) s.add(c.advertiser);
+      if (c.agency) s.add(c.agency);
+    });
+    return [...s].sort((a, b) => a.localeCompare(b, "zh"));
+  };
+  const typeOpts = () =>
+    [...new Set(CASES.map((c) => c.campaignType).filter(Boolean))].sort((a, b) =>
+      a.localeCompare(b, "zh")
+    );
+
+  const cbBrand = makeCombobox("cb-brand", brandOpts, renderCases);
+  const cbType = makeCombobox("cb-type", typeOpts, renderCases);
+
+  function fillFilters() {
+    cbBrand.refresh();
+    cbType.refresh();
+  }
 
   const gradients = [
     "linear-gradient(135deg,#FF2442,#FF8A3D)",
@@ -49,15 +111,15 @@
   const mediaStyle = (i) => gradients[i % gradients.length];
 
   function renderCases() {
-    const kw = searchEl.value.trim().toLowerCase();
-    const type = typeSel.value;
+    const kw = cbBrand.getValue().toLowerCase();
+    const type = cbType.getValue();
     const sort = sortSel.value;
     let list = CASES.filter((c) => {
       const hay = [c.advertiser, c.agency, c.title, c.summary, c.campaignType]
         .join(" ")
         .toLowerCase();
       const hitKw = !kw || hay.includes(kw);
-      const hitType = !type || c.campaignType === type;
+      const hitType = !type || (c.campaignType || "").toLowerCase().includes(type.toLowerCase());
       return hitKw && hitType;
     });
     list.sort((a, b) =>
@@ -97,8 +159,6 @@
       grid.appendChild(el);
     });
   }
-  searchEl.addEventListener("input", renderCases);
-  typeSel.addEventListener("change", renderCases);
   sortSel.addEventListener("change", renderCases);
 
   /* ---------- 案例数据：优先读云端，回退内置 ---------- */
@@ -115,7 +175,7 @@
     } catch (e) {
       /* 离线 / 双击本地打开时，使用内置兜底数据 */
     }
-    fillTypeOptions();
+    fillFilters();
     renderCases();
   }
 
@@ -159,9 +219,19 @@
       const tags = (x.tags || [])
         .map((t) => `<span class="idea-tag">#${t}</span>`)
         .join("");
+      const imgs =
+        x.images && x.images.length
+          ? `<div class="idea-imgs">${x.images
+              .map(
+                (s) =>
+                  `<img src="${s}" alt="" referrerpolicy="no-referrer" onerror="this.style.display='none'">`
+              )
+              .join("")}</div>`
+          : "";
       el.innerHTML = `
         <span class="idea-cat" style="background:${catColors[x.category] || "#FF2442"}">${x.category}</span>
         <div class="idea-content">${escapeHtml(x.content)}</div>
+        ${imgs}
         ${tags ? `<div class="idea-tags">${tags}</div>` : ""}
         <div class="idea-date">${x.createdAt || ""}${x.local ? " · 本地新增" : ""}</div>`;
       ideaGrid.appendChild(el);
@@ -195,25 +265,73 @@
     renderIdeas();
   }
 
-  /* ---------- 新建弹窗 ---------- */
+  /* ---------- 新建弹窗（支持配图） ---------- */
   const modal = document.getElementById("modal");
   const openBtn = document.getElementById("new-idea");
   const cancelBtn = document.getElementById("idea-cancel");
   const saveBtn = document.getElementById("idea-save");
-  openBtn.addEventListener("click", () => modal.classList.remove("hidden"));
-  cancelBtn.addEventListener("click", () => modal.classList.add("hidden"));
+  const imgInput = document.getElementById("idea-images");
+  const imgPreview = document.getElementById("idea-preview");
+  let pendingImages = []; // 待保存的图片（data URL）
+
+  function renderPreview() {
+    imgPreview.innerHTML = "";
+    pendingImages.forEach((src, i) => {
+      const wrap = document.createElement("div");
+      wrap.className = "thumb";
+      wrap.innerHTML = `<img src="${src}" alt=""><button type="button" class="thumb-x">×</button>`;
+      wrap.querySelector(".thumb-x").addEventListener("click", () => {
+        pendingImages.splice(i, 1);
+        renderPreview();
+      });
+      imgPreview.appendChild(wrap);
+    });
+  }
+
+  imgInput.addEventListener("change", () => {
+    [...imgInput.files].forEach((f) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        pendingImages.push(e.target.result);
+        renderPreview();
+      };
+      reader.readAsDataURL(f);
+    });
+    imgInput.value = "";
+  });
+
+  function resetModal() {
+    pendingImages = [];
+    imgPreview.innerHTML = "";
+    imgInput.value = "";
+    document.getElementById("idea-content").value = "";
+    document.getElementById("idea-tags").value = "";
+  }
+
+  openBtn.addEventListener("click", () => {
+    resetModal();
+    modal.classList.remove("hidden");
+  });
+  cancelBtn.addEventListener("click", () => {
+    resetModal();
+    modal.classList.add("hidden");
+  });
   modal.addEventListener("click", (e) => {
-    if (e.target === modal) modal.classList.add("hidden");
+    if (e.target === modal) {
+      resetModal();
+      modal.classList.add("hidden");
+    }
   });
   saveBtn.addEventListener("click", () => {
     const category = document.getElementById("idea-cat").value;
     const content = document.getElementById("idea-content").value.trim();
-    const tags = document.getElementById("idea-tags")
+    const tags = document
+      .getElementById("idea-tags")
       .value.split(/[,，]/)
       .map((s) => s.trim())
       .filter(Boolean);
-    if (!content) {
-      alert("内容不能为空哦");
+    if (!content && pendingImages.length === 0) {
+      alert("内容或图片至少填一项哦");
       return;
     }
     const local = loadIdeas();
@@ -222,12 +340,12 @@
       category,
       content,
       tags,
+      images: pendingImages.slice(),
       createdAt: new Date().toISOString().slice(0, 10),
       local: true,
     });
     saveIdeas(local);
-    document.getElementById("idea-content").value = "";
-    document.getElementById("idea-tags").value = "";
+    resetModal();
     modal.classList.add("hidden");
     renderIdeas();
   });
