@@ -80,24 +80,26 @@
     };
   }
 
-  const brandOpts = () => {
-    const s = new Set();
-    CASES.forEach((c) => {
-      if (c.advertiser) s.add(c.advertiser);
-      if (c.agency) s.add(c.agency);
-    });
-    return [...s].sort((a, b) => a.localeCompare(b, "zh"));
-  };
+  const advertiserOpts = () =>
+    [...new Set(CASES.map((c) => c.advertiser).filter(Boolean))].sort((a, b) =>
+      a.localeCompare(b, "zh")
+    );
+  const agencyOpts = () =>
+    [...new Set(CASES.map((c) => c.agency).filter(Boolean))].sort((a, b) =>
+      a.localeCompare(b, "zh")
+    );
   const typeOpts = () =>
     [...new Set(CASES.map((c) => c.campaignType).filter(Boolean))].sort((a, b) =>
       a.localeCompare(b, "zh")
     );
 
-  const cbBrand = makeCombobox("cb-brand", brandOpts, renderCases);
+  const cbAdvertiser = makeCombobox("cb-advertiser", advertiserOpts, renderCases);
+  const cbAgency = makeCombobox("cb-agency", agencyOpts, renderCases);
   const cbType = makeCombobox("cb-type", typeOpts, renderCases);
 
   function fillFilters() {
-    cbBrand.refresh();
+    cbAdvertiser.refresh();
+    cbAgency.refresh();
     cbType.refresh();
   }
 
@@ -111,16 +113,17 @@
   const mediaStyle = (i) => gradients[i % gradients.length];
 
   function renderCases() {
-    const kw = cbBrand.getValue().toLowerCase();
+    const kwAdv = cbAdvertiser.getValue().toLowerCase();
+    const kwAgency = cbAgency.getValue().toLowerCase();
     const type = cbType.getValue();
     const sort = sortSel.value;
     let list = CASES.filter((c) => {
-      const hay = [c.advertiser, c.agency, c.title, c.summary, c.campaignType]
-        .join(" ")
-        .toLowerCase();
-      const hitKw = !kw || hay.includes(kw);
+      const hitAdv =
+        !kwAdv || (c.advertiser || "").toLowerCase().includes(kwAdv);
+      const hitAgency =
+        !kwAgency || (c.agency || "").toLowerCase().includes(kwAgency);
       const hitType = !type || (c.campaignType || "").toLowerCase().includes(type.toLowerCase());
-      return hitKw && hitType;
+      return hitAdv && hitAgency && hitType;
     });
     list.sort((a, b) =>
       sort === "date-asc"
