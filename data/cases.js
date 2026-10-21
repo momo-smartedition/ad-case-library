@@ -1,4 +1,3 @@
-// 仅供乐呵案例库 · 内置兜底数据（云端真数据见 data/cases.json，离线/file:// 双击打开时回退用）
 window.CASES = [
   {
     "id": "demo-001",
@@ -126,6 +125,91 @@ window.CASES = [
     "images": [
       "https://file.digitaling.com/eImg/cover/20261014/20261014143311_56132.jpg",
       "https://file.digitaling.com/eImg/uimages/20261014/1791959603775182.jpg"
+    ]
+  },
+  {
+    "id": "auto-20261021-01",
+    "date": "2026-10-15",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/",
+    "url": "https://www.digitaling.com/projects/380421.html",
+    "advertiser": "天猫",
+    "agency": "SG胜加",
+    "campaignType": "品牌Campaign / 服务营销",
+    "title": "天猫官方服务：江湖总有师傅的传说",
+    "summary": "把上门安装、维修的「师傅」写成江湖侠客，用武侠片的气口讲售后标准。最同质化的服务环节被做出记忆点，用户从「又来个师傅」变成「来看大侠出手」，顺手把品牌靠谱感焊死。",
+    "images": [
+      "https://file.digitaling.com/eImg/cover/20261014/20261014185849_45072.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261014/1791976999233023.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261014/1791977706546914.jpg"
+    ]
+  },
+  {
+    "id": "auto-20261021-02",
+    "date": "2026-10-16",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/",
+    "url": "https://www.digitaling.com/projects/380491.html",
+    "advertiser": "淘宝闪购 × 美的",
+    "agency": "红中 上海",
+    "campaignType": "节点营销 / 公益联名",
+    "title": "世界粮食日，淘宝闪购×美的要你再吃一口",
+    "summary": "借世界粮食日，淘宝闪购拉上美的把「别浪费、再吃一口」做成轻幽默内容，把剩饭剩菜变成二次创作灵感。电商+家电跨界玩公益，不端着说教，反而让「光盘」有了可分享的梗。",
+    "images": [
+      "https://file.digitaling.com/eImg/cover/20261016/20261016174817_47528.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261016/1792125570617326.png",
+      "https://file.digitaling.com/eImg/uimages/20261016/1792128405242433.jpg"
+    ]
+  },
+  {
+    "id": "auto-20261021-03",
+    "date": "2026-10-16",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/",
+    "url": "https://www.digitaling.com/projects/379651.html",
+    "advertiser": "乐高 LEGO",
+    "agency": "Our LEGO Agency 上海",
+    "campaignType": "线下装置 / 体验营销",
+    "title": "乐高用38万朵花，为你造一场秋天里的春日奇观",
+    "summary": "拿38万朵积木花在城市里搭出一座秋日里的「春日花园」大装置，把花束套装变成公共艺术。线下大场面天然带打卡属性，路人随手一拍就是一次免费传播。",
+    "images": [
+      "https://file.digitaling.com/eImg/cover/20261015/20261015190234_21645.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261012/1791780812623386.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261012/1791784866569277.jpg"
+    ]
+  },
+  {
+    "id": "auto-20261021-04",
+    "date": "2026-10-15",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/",
+    "url": "https://www.digitaling.com/projects/379917.html",
+    "advertiser": "金典 SATINE",
+    "agency": "赞意",
+    "campaignType": "体育营销 / 亚运",
+    "title": "金典亚运会×陈妤颉：小孩姐喝奶也像是在冲刺",
+    "summary": "亚运夺金热潮里，金典没请大牌，而是抓住了「小孩姐」陈妤颉喝奶的真实瞬间，把喝奶和冲刺绑定。从素人冠军的生活细节发酵到品牌承接，反向玩了一把不刻意又不费力的体育营销。",
+    "images": [
+      "https://file.digitaling.com/eImg/cover/20261015/20261015123820_47382.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261013/remote_179188899162237.png",
+      "https://file.digitaling.com/eImg/uimages/20261013/remote_179188899319523.png"
+    ]
+  },
+  {
+    "id": "auto-20261021-05",
+    "date": "2026-10-19",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/",
+    "url": "https://www.digitaling.com/projects/380498.html",
+    "advertiser": "名创优品 MINISO",
+    "agency": "SAN'S 梵也",
+    "campaignType": "明星代言 / 毛绒IP",
+    "title": "名创优品×田曦薇：有毛绒，心里田田的",
+    "summary": "名创优品牵手田曦薇推毛绒主题，用「心里田田的」谐音把治愈感喊出口。明星+毛绒经济的组合，把情绪陪伴做成一句朗朗上口的口号，天然适合社交平台二创传播。",
+    "images": [
+      "https://file.digitaling.com/eImg/cover/20261019/20261019133518_14233.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261015/1792066491648547.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261016/1792118509278336.jpg"
     ]
   }
 ];
