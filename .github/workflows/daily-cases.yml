@@ -1,0 +1,41 @@
+name: 仅供乐呵案例库·每2天抓案例+推送
+on:
+  schedule:
+    # 北京时间 08:50 = UTC 00:50；每 2 天执行一次
+    - cron: "50 0 */2 * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 配置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 抓取最新案例并推送微信
+        env:
+          PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
+        run: python scripts/fetch_cases.py
+
+      - name: 提交数据更新
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/cases.json data/cases.js
+          if git diff --cached --quiet; then
+            echo "无新增案例，跳过提交"
+          else
+            git commit -m "chore: 自动抓取最新案例 $(date +%Y-%m-%d)"
+            git push
+          fi
