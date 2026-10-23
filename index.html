@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>乐呵车间 · 个人广告案例库</title>
+<title>momo · 个人广告案例库</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header class="site-header">
   <div class="brand">
     <span class="brand-dot"></span>
-    <span class="brand-name">乐呵车间</span>
+    <span class="brand-name">momo</span>
     <span class="brand-tag">个人广告案例库</span>
   </div>
   <nav class="tabs">
-    <button class="tab active" data-view="paper">📰 仅供乐呵小报</button>
+    <button class="tab active" data-view="paper">📰 仅供乐呵案例库</button>
     <button class="tab" data-view="idea">💡 不供参考idea</button>
   </nav>
 </header>
@@ -23,13 +23,31 @@
   <!-- ========== 小报视图 ========== -->
   <section id="view-paper" class="view active">
     <div class="hero">
-      <h1>仅供乐呵小报</h1>
-      <p class="hero-sub">每 3 天一份好广告，专供乐呵 🍿 · 资料来源：梅花网 / 数英网 / 广告门 / SocialBeta</p>
+      <h1>仅供乐呵案例库</h1>
+      <p class="hero-sub">每 2 天一份好广告，专供乐呵 🍿 · 资料来源：梅花网 / 数英网 / 广告门 / SocialBeta</p>
+      <div class="hero-badges">
+        <span>🧧 每 2 天更新</span>
+        <span>📣 自动推微信</span>
+        <span>🔍 权威站精选</span>
+      </div>
     </div>
 
     <div class="filters">
-      <input id="search" type="text" placeholder="搜品牌 / 代理商 / 关键词…">
-      <select id="filter-type"><option value="">全部类型</option></select>
+      <div class="combobox" id="cb-advertiser">
+        <input class="cb-input" id="search-advertiser" type="text" placeholder="搜品牌…" autocomplete="off">
+        <span class="cb-toggle" aria-hidden="true">▾</span>
+        <div class="cb-panel hidden"></div>
+      </div>
+      <div class="combobox" id="cb-agency">
+        <input class="cb-input" id="search-agency" type="text" placeholder="搜代理商…" autocomplete="off">
+        <span class="cb-toggle" aria-hidden="true">▾</span>
+        <div class="cb-panel hidden"></div>
+      </div>
+      <div class="combobox" id="cb-type">
+        <input class="cb-input" id="search-type" type="text" placeholder="全部类型" autocomplete="off">
+        <span class="cb-toggle" aria-hidden="true">▾</span>
+        <div class="cb-panel hidden"></div>
+      </div>
       <select id="filter-sort">
         <option value="date-desc">最新优先</option>
         <option value="date-asc">最早优先</option>
@@ -44,7 +62,7 @@
   <section id="view-idea" class="view">
     <div class="hero">
       <h1>不供参考idea</h1>
-      <p class="hero-sub">随手记下，胡思乱想也欢迎 🌀 · 阶段1 暂存本地浏览器，阶段3 上云同步</p>
+      <p class="hero-sub">随手记下，胡思乱想也欢迎 🌀 · 已上云同步，换手机 / 电脑都能看</p>
     </div>
 
     <div class="idea-bar">
@@ -72,17 +90,23 @@
     </select>
     <label>内容</label>
     <textarea id="idea-content" rows="5" placeholder="把你的小见解 / 洞察 / 文案写这里…"></textarea>
+    <label>配图（可选，可多张）</label>
+    <div class="img-upload">
+      <label class="img-drop" for="idea-images">＋ 添加图片</label>
+      <input id="idea-images" type="file" accept="image/*" multiple hidden>
+      <div id="idea-preview" class="img-preview"></div>
+    </div>
     <label>标签（逗号分隔，可选）</label>
     <input id="idea-tags" type="text" placeholder="比如：啤酒, 夏日, 反套路">
     <div class="modal-actions">
       <button id="idea-cancel" class="btn-ghost">取消</button>
       <button id="idea-save" class="btn-primary">保存</button>
     </div>
-    <p class="modal-note">阶段1 仅存当前浏览器（localStorage）。换设备 / 正式入库请发我或等阶段3 上云。</p>
+    <p class="modal-note">网站直接写 = 本机临时草稿（带图也会留在这台设备）；想跨设备同步，微信 / 对话框发我「加idea：…」并附上图片即可，我帮你存进云端 🌥️</p>
   </div>
 </div>
 
-<footer class="site-footer">乐呵车间 · 个人广告案例库 · 阶段1 MVP（纯静态 · 响应式 · 数据 script 引入）</footer>
+<footer class="site-footer">momo · 个人广告案例库 · 仅供乐呵案例库 + 不供参考idea</footer>
 
 <script src="data/cases.js"></script>
 <script src="data/ideas.js"></script>

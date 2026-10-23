@@ -1,8 +1,9 @@
 (function () {
   "use strict";
-  const CASES = window.CASES || [];
   const IDEAS = window.IDEAS || [];
+  let CLOUD_IDEAS = [];
   const LS_KEY = "lehe_ideas_v1";
+  let CASES = window.CASES || [];
 
   /* ---------- 视图切换 ---------- */
   const tabs = document.querySelectorAll(".tab");
@@ -19,42 +20,110 @@
     })
   );
 
-  /* ---------- 小报：动态类型下拉 ---------- */
-  const typeSel = document.getElementById("filter-type");
-  [...new Set(CASES.map((c) => c.campaignType).filter(Boolean))]
-    .sort()
-    .forEach((t) => {
-      const o = document.createElement("option");
-      o.value = t;
-      o.textContent = t;
-      typeSel.appendChild(o);
-    });
-
+  /* ---------- 小报：组合框（下拉 + 搜索结合） ---------- */
   const grid = document.getElementById("case-grid");
   const emptyP = document.getElementById("case-empty");
-  const searchEl = document.getElementById("search");
   const sortSel = document.getElementById("filter-sort");
 
+  // 通用组合框：点开是下拉列表，输入框也能打字模糊搜；选「全部」清空
+  function makeCombobox(rootId, optsProvider, onChange) {
+    const root = document.getElementById(rootId);
+    const input = root.querySelector(".cb-input");
+    const toggle = root.querySelector(".cb-toggle");
+    const panel = root.querySelector(".cb-panel");
+
+    function render(open) {
+      const val = input.value.trim().toLowerCase();
+      const opts = optsProvider();
+      const list = ["__all__"].concat(
+        opts.filter((o) => !val || o.toLowerCase().includes(val))
+      );
+      panel.innerHTML = "";
+      list.forEach((o) => {
+        const isAll = o === "__all__";
+        const d = document.createElement("div");
+        d.className = "cb-option" + (isAll ? " cb-all" : "");
+        d.textContent = isAll ? "全部" : o;
+        d.addEventListener("mousedown", (e) => {
+          e.preventDefault();
+          input.value = isAll ? "" : o;
+          panel.classList.add("hidden");
+          onChange();
+        });
+        panel.appendChild(d);
+      });
+      panel.classList.toggle("hidden", !open);
+    }
+
+    input.addEventListener("focus", () => render(true));
+    input.addEventListener("click", () => render(true));
+    input.addEventListener("input", () => {
+      render(true);
+      onChange();
+    });
+    toggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (panel.classList.contains("hidden")) render(true);
+      else panel.classList.add("hidden");
+    });
+    document.addEventListener("click", (e) => {
+      if (!root.contains(e.target)) panel.classList.add("hidden");
+    });
+
+    return {
+      refresh() {
+        render(false);
+      },
+      getValue() {
+        return input.value.trim();
+      },
+    };
+  }
+
+  const advertiserOpts = () =>
+    [...new Set(CASES.map((c) => c.advertiser).filter(Boolean))].sort((a, b) =>
+      a.localeCompare(b, "zh")
+    );
+  const agencyOpts = () =>
+    [...new Set(CASES.map((c) => c.agency).filter(Boolean))].sort((a, b) =>
+      a.localeCompare(b, "zh")
+    );
+  const typeOpts = () =>
+    [...new Set(CASES.map((c) => c.campaignType).filter(Boolean))].sort((a, b) =>
+      a.localeCompare(b, "zh")
+    );
+
+  const cbAdvertiser = makeCombobox("cb-advertiser", advertiserOpts, renderCases);
+  const cbAgency = makeCombobox("cb-agency", agencyOpts, renderCases);
+  const cbType = makeCombobox("cb-type", typeOpts, renderCases);
+
+  function fillFilters() {
+    cbAdvertiser.refresh();
+    cbAgency.refresh();
+    cbType.refresh();
+  }
+
   const gradients = [
-    "linear-gradient(135deg,#FF6B5B,#FFD23F)",
-    "linear-gradient(135deg,#4D8AF0,#3EC6A0)",
-    "linear-gradient(135deg,#C8102E,#FF6B5B)",
-    "linear-gradient(135deg,#8a6df0,#4D8AF0)",
-    "linear-gradient(135deg,#3EC6A0,#FFD23F)",
+    "linear-gradient(135deg,#FF2442,#FF8A3D)",
+    "linear-gradient(135deg,#36C5F0,#2BD9A8)",
+    "linear-gradient(135deg,#FFE03D,#FF2442)",
+    "linear-gradient(135deg,#B66DFF,#36C5F0)",
+    "linear-gradient(135deg,#2BD9A8,#FFE03D)",
   ];
   const mediaStyle = (i) => gradients[i % gradients.length];
 
   function renderCases() {
-    const kw = searchEl.value.trim().toLowerCase();
-    const type = typeSel.value;
+    const kwAdv = cbAdvertiser.getValue().toLowerCase();
+    const kwAgency = cbAgency.getValue().toLowerCase();
+    const type = cbType.getValue();
     const sort = sortSel.value;
     let list = CASES.filter((c) => {
-      const hay = [c.advertiser, c.agency, c.title, c.summary, c.campaignType]
-        .join(" ")
-        .toLowerCase();
-      const hitKw = !kw || hay.includes(kw);
-      const hitType = !type || c.campaignType === type;
-      return hitKw && hitType;
+      const hitAdv =
+        !kwAdv || (c.advertiser || "").toLowerCase().includes(kwAdv);
+      const hitAgency =
+        !kwAgency || (c.agency || "").toLowerCase().includes(kwAgency);
+      const hitType = !type || (c.campaignType || "").toLowerCase().includes(type.toLowerCase());
+      return hitAdv && hitAgency && hitType;
     });
     list.sort((a, b) =>
       sort === "date-asc"
@@ -67,10 +136,13 @@
     list.forEach((c, i) => {
       const el = document.createElement("article");
       el.className = "card";
-      const img =
-        c.images && c.images[0]
-          ? `<img src="${c.images[0]}" alt="" style="width:100%;height:160px;object-fit:cover">`
-          : `<div class="card-media" style="background:${mediaStyle(i)}"><span class="ph">🖼️</span></div>`;
+      const hasImg = c.images && c.images[0];
+      const img = hasImg
+        ? `<div class="card-media-wrap"><img class="card-img" src="${c.images[0]}" alt="${c.title || ""}" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="card-media img-fallback" style="display:none"><span class="ph">🖼️</span></div></div>`
+        : `<div class="card-media" style="background:${mediaStyle(i)}"><span class="ph">🖼️</span></div>`;
+      const link = c.url
+        ? `<a class="card-link" href="${c.url}" target="_blank" rel="noopener">看原文 ↗</a>`
+        : "";
       el.innerHTML = `
         ${img}
         <div class="card-body">
@@ -82,14 +154,51 @@
           <div class="card-line"><b>广告主</b> ${c.advertiser || "—"}</div>
           <div class="card-line"><b>代理商</b> ${c.agency || "—"}</div>
           <div class="card-sum">${c.summary || ""}</div>
-          <div class="card-date">${c.date || ""}</div>
+          <div class="card-foot">
+            <span class="card-date">${c.date || ""}</span>
+            ${link}
+          </div>
         </div>`;
       grid.appendChild(el);
     });
   }
-  searchEl.addEventListener("input", renderCases);
-  typeSel.addEventListener("change", renderCases);
   sortSel.addEventListener("change", renderCases);
+
+  /* ---------- 云端数据：多 CDN 镜像依次尝试（国内友好），最后回退同站点副本 ---------- */
+  const CDN_BASES = [
+    "https://gcore.jsdelivr.net/gh/momo-smartedition/ad-case-library@main",
+    "https://testingcf.jsdelivr.net/gh/momo-smartedition/ad-case-library@main",
+    "https://cdn.jsdelivr.net/gh/momo-smartedition/ad-case-library@main",
+  ];
+  async function fetchCloud(relPath) {
+    for (const base of CDN_BASES) {
+      try {
+        const r = await fetch(base + "/" + relPath, { cache: "no-store" });
+        if (r.ok) {
+          const j = await r.json();
+          if (Array.isArray(j) && j.length) return j;
+        }
+      } catch (e) {
+        /* 该镜像连不上，试下一个 */
+      }
+    }
+    try {
+      const r = await fetch(relPath, { cache: "no-store" }); // 同站点部署副本兜底
+      if (r.ok) {
+        const j = await r.json();
+        if (Array.isArray(j) && j.length) return j;
+      }
+    } catch (e) {}
+    return null;
+  }
+
+  /* ---------- 案例数据：优先读云端，回退内置 ---------- */
+  async function loadCases() {
+    const j = await fetchCloud("data/cases.json");
+    if (j) CASES = j;
+    fillFilters();
+    renderCases();
+  }
 
   /* ---------- idea ---------- */
   function loadIdeas() {
@@ -106,7 +215,7 @@
   const ideaGrid = document.getElementById("idea-grid");
   const ideaEmpty = document.getElementById("idea-empty");
   const ideaCats = document.getElementById("idea-cats");
-  const catColors = { 文案: "#FF6B5B", 洞察: "#4D8AF0", 胡思乱想: "#8a6df0" };
+  const catColors = { 文案: "#FF2442", 洞察: "#36C5F0", 胡思乱想: "#B66DFF" };
 
   function escapeHtml(s) {
     return (s || "").replace(
@@ -118,7 +227,7 @@
   function renderIdeas() {
     const cat = ideaCats.querySelector(".chip.active").dataset.cat;
     const local = loadIdeas();
-    const all = [...IDEAS, ...local].sort((a, b) =>
+    const all = [...CLOUD_IDEAS, ...local].sort((a, b) =>
       b.createdAt.localeCompare(a.createdAt)
     );
     const list = cat === "all" ? all : all.filter((x) => x.category === cat);
@@ -127,19 +236,25 @@
     list.forEach((x) => {
       const el = document.createElement("article");
       el.className = "idea-card";
-      el.style.borderLeftColor = catColors[x.category] || "#FF6B5B";
+      el.style.borderLeftColor = catColors[x.category] || "#FF2442";
       const tags = (x.tags || [])
         .map((t) => `<span class="idea-tag">#${t}</span>`)
         .join("");
+      const imgs =
+        x.images && x.images.length
+          ? `<div class="idea-imgs">${x.images
+              .map(
+                (s) =>
+                  `<img src="${s}" alt="" referrerpolicy="no-referrer" onerror="this.style.display='none'">`
+              )
+              .join("")}</div>`
+          : "";
       el.innerHTML = `
-        <span class="idea-cat" style="background:${
-          catColors[x.category] || "#FF6B5B"
-        }">${x.category}</span>
+        <span class="idea-cat" style="background:${catColors[x.category] || "#FF2442"}">${x.category}</span>
         <div class="idea-content">${escapeHtml(x.content)}</div>
+        ${imgs}
         ${tags ? `<div class="idea-tags">${tags}</div>` : ""}
-        <div class="idea-date">${x.createdAt || ""}${
-          x.local ? " · 本地新增" : ""
-        }</div>`;
+        <div class="idea-date">${x.createdAt || ""}${x.local ? " · 本地新增" : ""}</div>`;
       ideaGrid.appendChild(el);
     });
   }
@@ -154,25 +269,80 @@
     })
   );
 
-  /* ---------- 新建弹窗 ---------- */
+  /* ---------- idea 数据：优先读云端，回退内置 ---------- */
+  async function loadIdeasCloud() {
+    const j = await fetchCloud("data/ideas.json");
+    if (j) CLOUD_IDEAS = j;
+    renderIdeas();
+  }
+
+  /* ---------- 新建弹窗（支持配图） ---------- */
   const modal = document.getElementById("modal");
   const openBtn = document.getElementById("new-idea");
   const cancelBtn = document.getElementById("idea-cancel");
   const saveBtn = document.getElementById("idea-save");
-  openBtn.addEventListener("click", () => modal.classList.remove("hidden"));
-  cancelBtn.addEventListener("click", () => modal.classList.add("hidden"));
+  const imgInput = document.getElementById("idea-images");
+  const imgPreview = document.getElementById("idea-preview");
+  let pendingImages = []; // 待保存的图片（data URL）
+
+  function renderPreview() {
+    imgPreview.innerHTML = "";
+    pendingImages.forEach((src, i) => {
+      const wrap = document.createElement("div");
+      wrap.className = "thumb";
+      wrap.innerHTML = `<img src="${src}" alt=""><button type="button" class="thumb-x">×</button>`;
+      wrap.querySelector(".thumb-x").addEventListener("click", () => {
+        pendingImages.splice(i, 1);
+        renderPreview();
+      });
+      imgPreview.appendChild(wrap);
+    });
+  }
+
+  imgInput.addEventListener("change", () => {
+    [...imgInput.files].forEach((f) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        pendingImages.push(e.target.result);
+        renderPreview();
+      };
+      reader.readAsDataURL(f);
+    });
+    imgInput.value = "";
+  });
+
+  function resetModal() {
+    pendingImages = [];
+    imgPreview.innerHTML = "";
+    imgInput.value = "";
+    document.getElementById("idea-content").value = "";
+    document.getElementById("idea-tags").value = "";
+  }
+
+  openBtn.addEventListener("click", () => {
+    resetModal();
+    modal.classList.remove("hidden");
+  });
+  cancelBtn.addEventListener("click", () => {
+    resetModal();
+    modal.classList.add("hidden");
+  });
   modal.addEventListener("click", (e) => {
-    if (e.target === modal) modal.classList.add("hidden");
+    if (e.target === modal) {
+      resetModal();
+      modal.classList.add("hidden");
+    }
   });
   saveBtn.addEventListener("click", () => {
     const category = document.getElementById("idea-cat").value;
     const content = document.getElementById("idea-content").value.trim();
-    const tags = document.getElementById("idea-tags")
+    const tags = document
+      .getElementById("idea-tags")
       .value.split(/[,，]/)
       .map((s) => s.trim())
       .filter(Boolean);
-    if (!content) {
-      alert("内容不能为空哦");
+    if (!content && pendingImages.length === 0) {
+      alert("内容或图片至少填一项哦");
       return;
     }
     const local = loadIdeas();
@@ -181,17 +351,17 @@
       category,
       content,
       tags,
+      images: pendingImages.slice(),
       createdAt: new Date().toISOString().slice(0, 10),
       local: true,
     });
     saveIdeas(local);
-    document.getElementById("idea-content").value = "";
-    document.getElementById("idea-tags").value = "";
+    resetModal();
     modal.classList.add("hidden");
     renderIdeas();
   });
 
   /* ---------- 初始渲染 ---------- */
-  renderCases();
-  renderIdeas();
+  loadCases();
+  loadIdeasCloud();
 })();
