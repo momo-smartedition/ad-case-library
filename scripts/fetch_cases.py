@@ -23,16 +23,20 @@ SITE_URL = "https://34cc3ccbfb1f4c41a8bf6bf6425de755.app.workbuddy.host"
 RSS_URL = "https://www.digitaling.com/rss"
 
 
-def fetch(url, ref=None, timeout=25):
+def fetch(url, ref=None, timeout=25, retries=3):
     cmd = ["curl", "-sL", "--compressed", "--max-time", str(timeout), "-A", UA]
     if ref:
         cmd += ["-e", ref]
-    try:
-        r = subprocess.run(cmd + [url], capture_output=True, timeout=timeout + 15)
-        return r.stdout.decode("utf-8", "ignore")
-    except Exception as e:
-        print("  [FETCH_FAIL] %s -> %r" % (url, e))
-        return ""
+    for i in range(retries):
+        try:
+            r = subprocess.run(cmd + [url], capture_output=True, timeout=timeout + 15)
+            out = r.stdout.decode("utf-8", "ignore")
+            if out.strip():
+                return out
+            print("  [FETCH_EMPTY] %s attempt %d" % (url, i + 1))
+        except Exception as e:
+            print("  [FETCH_FAIL] %s attempt %d -> %r" % (url, i + 1, e))
+    return ""
 
 
 def img_ok(url, ref=None, timeout=20):
@@ -90,10 +94,23 @@ def parse_rss(xml):
     return out
 
 
+RSS_SOURCES = [
+    "https://www.digitaling.com/rss",
+    "https://socialbeta.com/feed",
+    "https://www.adquan.com/rss",
+]
+
+
 def collect(target=5, days=7):
-    xml = fetch(RSS_URL)
+    xml = ""
+    for src in RSS_SOURCES:
+        x = fetch(src)
+        if x and "<item>" in x:
+            xml = x
+            print("[RSS] 使用数据源:", src)
+            break
     if not xml:
-        print("[RSS] 抓取失败")
+        print("[RSS] 全部数据源抓取失败")
         return []
     items = parse_rss(xml)
     print("[RSS] 解析 %d 条" % len(items))
