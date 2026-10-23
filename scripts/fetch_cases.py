@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-仅供乐呵案例库 · 云端自动抓取+推送脚本
+仅供乐呵 · 云端自动抓取+推送脚本
 运行环境: GitHub Actions (Ubuntu) 或本地
 主数据源: 数英网 RSS (稳定、含最新案例+图片)
 流程: 抓 RSS -> 解析最新案例 -> 图片验证 -> 合并去重写 data/cases.json & cases.js -> PushPlus 推送
@@ -194,12 +194,12 @@ def pushplus(added):
         % (c["title"], c["source"], c["summary"], c["url"])
         for c in added
     )
-    html = ("<h3>叮🔔 仅供乐呵案例库·今日新案例来喽～</h3>"
+    html = ("<h3>叮🔔 仅供乐呵·今日新案例来喽～</h3>"
             "<p>最近数英网又整了不少好活，挑了几个有意思的给你：</p>"
             + items +
             "<p>完整案例库 & 检索在这儿 👉 <a href='%s'>%s</a></p>" % (SITE_URL, SITE_URL))
     body = json.dumps({"token": PUSHPLUS_TOKEN,
-                       "title": "仅供乐呵案例库·新案例来喽",
+                       "title": "仅供乐呵·新案例来喽",
                        "content": html}).encode("utf-8")
     req = subprocess.run(
         ["curl", "-s", "-X", "POST", "https://www.pushplus.plus/send",
