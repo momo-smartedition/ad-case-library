@@ -211,5 +211,90 @@ window.CASES = [
       "https://file.digitaling.com/eImg/uimages/20261015/1792066491648547.jpg",
       "https://file.digitaling.com/eImg/uimages/20261016/1792118509278336.jpg"
     ]
+  },
+  {
+    "id": "auto-20261021-pringles-halloween",
+    "date": "2026-10-21",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/projects/380428.html",
+    "url": "https://www.digitaling.com/projects/380428.html",
+    "advertiser": "品客 Pringles",
+    "agency": "品牌方",
+    "campaignType": "节日营销 / 互动营销",
+    "title": "品客万圣节：抽定制骨灰盒，再送200年薯片",
+    "summary": "品客借万圣节搞了支「阴间」黑色幽默广告——粉丝签数字遗嘱，承诺去世后把骨灰装进薯片罐，就能抽中纯金属定制骨灰盒 + 长达200年的免费薯片（可世袭继承）。点子源自真实往事：1966年设计薯片圆筒罐的科学家 Fredric Baur，2008年去世时真的要求把部分骨灰装进品客罐。把品牌符号玩成「生死契约」，又敢又出圈。",
+    "images": [
+      "https://file.digitaling.com/eImg/uimages/20261020/1792468782658438.png",
+      "https://file.digitaling.com/eImg/uimages/20261020/1792469004338239.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261020/1792469058438606.jpg"
+    ]
+  },
+  {
+    "id": "auto-20261020-oppo-findx10",
+    "date": "2026-10-20",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/projects/380547.html",
+    "url": "https://www.digitaling.com/projects/380547.html",
+    "advertiser": "OPPO",
+    "agency": "The N3 Agency 上海",
+    "campaignType": "广告片 / 代言人营销",
+    "title": "OPPO FindX10系列：和李现、卢昱晓一起留住最真的",
+    "summary": "OPPO 这代影像主张反其道而行——不卷参数，主打「真实还原」，还喊回十多年前的经典 slogan「留住最真的」。借李现（追雨幕的旅行摄影佬）和卢昱晓（女性视角的真实旅拍）两支主张片，把「原相机里的真情实感」讲到位。在全民滤镜时代，反而用「不完美」打动人。",
+    "images": [
+      "https://file.digitaling.com/eImg/uimages/20261016/remote_179213488016388.png",
+      "https://file.digitaling.com/eImg/uimages/20261016/remote_179213488059673.png",
+      "https://file.digitaling.com/eImg/uimages/20261016/remote_179213488161689.png"
+    ]
+  },
+  {
+    "id": "auto-20261022-jd-chongyang",
+    "date": "2026-10-22",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/projects/380680.html",
+    "url": "https://www.digitaling.com/projects/380680.html",
+    "advertiser": "京东",
+    "agency": "走神OGK",
+    "campaignType": "节日营销 / 品牌态度",
+    "title": "京东重阳节：家，会为爱改变2次",
+    "summary": "京东「搭把手计划」在重阳节抛出一个扎心设问——家会为孩子改变一次，为什么不能陪父母再改变一次？用儿童餐椅 / 小夜灯 / 小楼梯对照适老改造，把「适老化」从「出问题后的补救」翻转成「主动的关心」。像照顾孩子一样照顾父母，文案温柔但后劲大。",
+    "images": [
+      "https://file.digitaling.com/eImg/uimages/20261020/1792428173347865.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261020/1792428176171726.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261020/1792428176614869.jpg"
+    ]
+  },
+  {
+    "id": "auto-20261017-oura-ring",
+    "date": "2026-10-17",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/projects/379714.html",
+    "url": "https://www.digitaling.com/projects/379714.html",
+    "advertiser": "Oura Ring",
+    "agency": "品牌方",
+    "campaignType": "广告片 / 创意视觉",
+    "title": "智能戒指广告片有点惊悚，满屏都是手",
+    "summary": "Oura Ring 新广告片《Wear Your Best Life》全程「满屏都是手」——手掌像人一样过着自己的小日子（等地铁、健身、晒太阳）。品牌找 35 名模型师花 3 周 10:1 还原场景、招募 14 名手舞演员，用「手」这一载体把健康科技拉回「人本身」。不讲冷冰冰的数据，反而有点惊悚又很高级。",
+    "images": [
+      "https://file.digitaling.com/eImg/uimages/20261014/1791950985200279.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261014/1791951029143033.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261014/1791951043359063.jpg"
+    ]
+  },
+  {
+    "id": "auto-20261019-tmallcs-fresh",
+    "date": "2026-10-19",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/projects/380442.html",
+    "url": "https://www.digitaling.com/projects/380442.html",
+    "advertiser": "天猫超市",
+    "agency": "Heaven&Hell",
+    "campaignType": "视觉营销 / 产地美学",
+    "title": "天猫超市：从土里摘到你手里",
+    "summary": "天猫超市臻选把「产业带新品」从供应链概念升维成「产地美学」——把产品当刚出土的果实拍，带根须、沾泥土，直接从土里拔 / 树上摘到你手里。用国家地理级别的视觉，让「买臻选 = 把产地之美带回家」。把卖货拍成了风土纪录片。",
+    "images": [
+      "https://file.digitaling.com/eImg/uimages/20261017/1792207857671144.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261017/1792208151271043.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261017/1792208244433031.jpg"
+    ]
   }
 ];
