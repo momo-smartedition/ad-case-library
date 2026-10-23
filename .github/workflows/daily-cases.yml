@@ -39,3 +39,11 @@ jobs:
             git commit -m "chore: 自动抓取最新案例 $(date +%Y-%m-%d)"
             git push
           fi
+
+      - name: 刷新 jsdelivr 缓存（让网站立即读到新数据）
+        run: |
+          for host in gcore testingcf cdn; do
+            for f in data/cases.json data/cases.js; do
+              curl -s -o /dev/null -w "%{http_code} $host/$f\n" "https://purge.jsdelivr.net/$host/gh/${{ github.repository }}@main/$f"
+            done
+          done
