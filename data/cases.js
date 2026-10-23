@@ -1,300 +1,632 @@
-window.CASES = [
-  {
-    "id": "demo-001",
-    "date": "2026-10-14",
-    "source": "数英网",
-    "sourceUrl": "https://www.digitaling.com/",
-    "url": "https://www.digitaling.com/articles/399658.html",
-    "advertiser": "三顿半",
-    "agency": "品牌自运营",
-    "campaignType": "品牌Campaign",
-    "title": "返航计划：把咖啡空罐变成下一次出发",
-    "summary": "以「返航」为隐喻，把回收空罐做成线下快闪与社群仪式，小罐子成了品牌超级符号，环保动作包装成品牌浪漫，强社交传播。",
-    "images": [
-      "https://file.digitaling.com/eImg/cover/20210119/20210119174038_48999.jpg",
-      "https://file.digitaling.com/eImg/uimages/20210119/remote_161104866841948.jpg"
-    ]
-  },
-  {
-    "id": "demo-002",
-    "date": "2026-10-11",
-    "source": "广告门",
-    "sourceUrl": "https://www.adquan.com/",
-    "url": "https://www.adquan.com/detail/2-364697",
-    "advertiser": "美团",
-    "agency": "品牌内部团队",
-    "campaignType": "节点营销",
-    "title": "中秋「最美的团圆」：把品牌色变成社交符号",
-    "summary": "2026 中秋礼盒送的是一对明黄色饭碗而不是月饼，「饭碗」直指打工人情绪，网友自发玩梗「端稳饭碗」，把品牌色变成社交符号——给用户留一句他能替你喊出来的台词。",
-    "images": [
-      "https://oss.adquan.com/uploads_img/17916205344e2d2064c78fc0bd.jpg",
-      "https://oss.adquan.com/uploads_img/17916205342b65702b361e4479.jpg"
-    ]
-  },
-  {
-    "id": "demo-003",
-    "date": "2026-10-08",
-    "source": "SocialBeta",
-    "sourceUrl": "https://socialbeta.com/",
-    "url": "https://socialbeta.com/campaign/27777",
-    "advertiser": "观夏",
-    "agency": "品牌自运营",
-    "campaignType": "线下空间",
-    "title": "在国子监开一家可以「抓药」的香铺",
-    "summary": "观夏在北京国子监开出全国首家「观夏香铺」，把中医「望闻问切→抓药」的动线搬进选香体验：香引单定制、百草匣抽屉按需取香，让线香从产品体系独立成空间叙事。",
-    "images": [
-      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/38450-1782314311.jpg",
-      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/38450-1782314309.jpg"
-    ]
-  },
-  {
-    "id": "demo-004",
-    "date": "2026-10-05",
-    "source": "数英网",
-    "sourceUrl": "https://www.digitaling.com/",
-    "url": "https://www.digitaling.com/projects/339401.html",
-    "advertiser": "大窑",
-    "agency": "品牌方 × 地铁媒介代理",
-    "campaignType": "户外/地铁广告",
-    "title": "11 城地铁广告：做年轻人的嘴替",
-    "summary": "在 11 座城市的地铁投方言海报，把城市饮食符号玩成梗——青岛「哈大窑吃嘎啦」、郑州「画的饼不够吃改吃烩面」、佛山「鸡会摆在眼前」，高饱和撞色绑定「大窑配美食」场景，做打工人的情绪嘴替。",
-    "images": [
-      "https://file.digitaling.com/eImg/cover/20250520/20250520113321_76126.jpg",
-      "https://file.digitaling.com/eImg/uimages/20250520/remote_174771121590392.jpg"
-    ]
-  },
-  {
-    "id": "auto-20261016-taobao-mei",
-    "date": "2026-10-16",
-    "source": "数英网",
-    "sourceUrl": "https://www.digitaling.com/projects/380491.html",
-    "url": "https://www.digitaling.com/projects/380491.html",
-    "advertiser": "淘宝闪购 × 美的",
-    "agency": "品牌联合",
-    "campaignType": "节点营销 / TVC",
-    "title": "世界粮食日《再吃一口》：把「回家吃饭」讲成没说出口的爱",
-    "summary": "10/16 世界粮食日，淘宝闪购联合美的花瓣 PRO 电饭煲推出 TVC《再吃一口》，用「童年被喂饭—大学离家—老友火锅—恋爱—为人母」五段关系场景，把中国人含蓄的爱编码进一句餐桌叮嘱；两品牌都把产品功能退到情感之后，并邀孙悦助阵，线下取餐柜还送米。功能退场、情绪在场。",
-    "images": [
-      "https://file.digitaling.com/eImg/cover/20261016/20261016174817_47528.jpg",
-      "https://file.digitaling.com/eImg/uimages/20261016/1792128405242433.jpg"
-    ]
-  },
-  {
-    "id": "auto-20261016-bosideng",
-    "date": "2026-10-16",
-    "source": "数英网",
-    "sourceUrl": "https://www.digitaling.com/projects/380533.html",
-    "url": "https://www.digitaling.com/projects/380533.html",
-    "advertiser": "波司登",
-    "agency": "品牌自运营",
-    "campaignType": "地铁 / 场景营销",
-    "title": "上海地铁「雪国列车」：50 周年把车厢变成雪原",
-    "summary": "波司登 50 周年在上海地铁 10 号线打造沉浸式包车广告：地面铺设雪脚印地贴、车门印日照雪山、橱窗做成千层深渊镜呼应品牌半世纪时间线。弱化硬广、强化场景，让通勤者踩着雪脚印瞬间抽离城市喧嚣，自然关联羽绒服御寒属性，乘客自发拍照打卡扩散。",
-    "images": [
-      "https://file.digitaling.com/eImg/cover/20261016/20261016151551_63316.jpeg",
-      "https://file.digitaling.com/eImg/uimages/20261016/1792132782316676.jpg"
-    ]
-  },
-  {
-    "id": "auto-20261014-kangbenbei",
-    "date": "2026-10-14",
-    "source": "中国经济新闻网",
-    "sourceUrl": "https://www.cet.com.cn/wzsy/kjzx/cygdzx/10603674.shtml",
-    "url": "https://www.cet.com.cn/wzsy/kjzx/cygdzx/10603674.shtml",
-    "advertiser": "康恩贝肠炎宁",
-    "agency": "新脑子",
-    "campaignType": "户外 / 场景营销",
-    "title": "把广告牌改成「厕所导航」：先帮你找厕所，再卖止泻药",
-    "summary": "国庆黄金周，康恩贝肠炎宁在全国核心景区/商圈把传统大屏改造成厕所指引牌——三分之二版面让给绿色箭头和精准距离，只留一句「先上厕所，再吃肠炎宁」。把产品功能最自然的延伸（拉肚子→找厕所）做成了公共服务，3亿+曝光、登热搜，被网友称为「最实用的广告」。",
-    "images": [
-      "https://q8.itc.cn/q_70/images01/20261012/b2199469323849b89842a7c92280c485.jpeg",
-      "https://q8.itc.cn/q_70/images01/20261012/e1a1fd1a0e134d66a0ab6e44d3e9e7c4.jpeg"
-    ]
-  },
-  {
-    "id": "auto-20261012-mcd-brasil",
-    "date": "2026-10-12",
-    "source": "腾讯新闻 / 数英网",
-    "sourceUrl": "https://new.qq.com/rain/a/20261012A07CIO00",
-    "url": "https://new.qq.com/rain/a/20261012A07CIO00",
-    "advertiser": "麦当劳（巴西）",
-    "agency": "Galeria.ag × MagicLab",
-    "campaignType": "包装 / 公益互动",
-    "title": "把开心乐园餐盒变成视力筛查工具：Happy View",
-    "summary": "巴西儿童节暨国家阅读日，麦当劳巴西联合 CEMA 眼科医院把 Happy Meal 餐盒改造成简易视力筛查工具——内置多组屈光镜片+针孔组件，孩子隔着几米透过镜片看 LEA 视力表，像玩游戏一样初筛视力问题，异常者可现场由眼科团队进一步检查。把熟悉的套餐盒变成「有用工具」，把眼健康议题带进家庭对话。",
-    "images": [
-      "https://file.digitaling.com/eImg/cover/20261014/20261014143311_56132.jpg",
-      "https://file.digitaling.com/eImg/uimages/20261014/1791959603775182.jpg"
-    ]
-  },
-  {
-    "id": "auto-20261021-01",
-    "date": "2026-10-15",
-    "source": "数英网",
-    "sourceUrl": "https://www.digitaling.com/",
-    "url": "https://www.digitaling.com/projects/380421.html",
-    "advertiser": "天猫",
-    "agency": "SG胜加",
-    "campaignType": "品牌Campaign / 服务营销",
-    "title": "天猫官方服务：江湖总有师傅的传说",
-    "summary": "把上门安装、维修的「师傅」写成江湖侠客，用武侠片的气口讲售后标准。最同质化的服务环节被做出记忆点，用户从「又来个师傅」变成「来看大侠出手」，顺手把品牌靠谱感焊死。",
-    "images": [
-      "https://file.digitaling.com/eImg/cover/20261014/20261014185849_45072.jpg",
-      "https://file.digitaling.com/eImg/uimages/20261014/1791976999233023.jpg",
-      "https://file.digitaling.com/eImg/uimages/20261014/1791977706546914.jpg"
-    ]
-  },
-  {
-    "id": "auto-20261021-02",
-    "date": "2026-10-16",
-    "source": "数英网",
-    "sourceUrl": "https://www.digitaling.com/",
-    "url": "https://www.digitaling.com/projects/380491.html",
-    "advertiser": "淘宝闪购 × 美的",
-    "agency": "红中 上海",
-    "campaignType": "节点营销 / 公益联名",
-    "title": "世界粮食日，淘宝闪购×美的要你再吃一口",
-    "summary": "借世界粮食日，淘宝闪购拉上美的把「别浪费、再吃一口」做成轻幽默内容，把剩饭剩菜变成二次创作灵感。电商+家电跨界玩公益，不端着说教，反而让「光盘」有了可分享的梗。",
-    "images": [
-      "https://file.digitaling.com/eImg/cover/20261016/20261016174817_47528.jpg",
-      "https://file.digitaling.com/eImg/uimages/20261016/1792125570617326.png",
-      "https://file.digitaling.com/eImg/uimages/20261016/1792128405242433.jpg"
-    ]
-  },
-  {
-    "id": "auto-20261021-03",
-    "date": "2026-10-16",
-    "source": "数英网",
-    "sourceUrl": "https://www.digitaling.com/",
-    "url": "https://www.digitaling.com/projects/379651.html",
-    "advertiser": "乐高 LEGO",
-    "agency": "Our LEGO Agency 上海",
-    "campaignType": "线下装置 / 体验营销",
-    "title": "乐高用38万朵花，为你造一场秋天里的春日奇观",
-    "summary": "拿38万朵积木花在城市里搭出一座秋日里的「春日花园」大装置，把花束套装变成公共艺术。线下大场面天然带打卡属性，路人随手一拍就是一次免费传播。",
-    "images": [
-      "https://file.digitaling.com/eImg/cover/20261015/20261015190234_21645.jpg",
-      "https://file.digitaling.com/eImg/uimages/20261012/1791780812623386.jpg",
-      "https://file.digitaling.com/eImg/uimages/20261012/1791784866569277.jpg"
-    ]
-  },
-  {
-    "id": "auto-20261021-04",
-    "date": "2026-10-15",
-    "source": "数英网",
-    "sourceUrl": "https://www.digitaling.com/",
-    "url": "https://www.digitaling.com/projects/379917.html",
-    "advertiser": "金典 SATINE",
-    "agency": "赞意",
-    "campaignType": "体育营销 / 亚运",
-    "title": "金典亚运会×陈妤颉：小孩姐喝奶也像是在冲刺",
-    "summary": "亚运夺金热潮里，金典没请大牌，而是抓住了「小孩姐」陈妤颉喝奶的真实瞬间，把喝奶和冲刺绑定。从素人冠军的生活细节发酵到品牌承接，反向玩了一把不刻意又不费力的体育营销。",
-    "images": [
-      "https://file.digitaling.com/eImg/cover/20261015/20261015123820_47382.jpg",
-      "https://file.digitaling.com/eImg/uimages/20261013/remote_179188899162237.png",
-      "https://file.digitaling.com/eImg/uimages/20261013/remote_179188899319523.png"
-    ]
-  },
-  {
-    "id": "auto-20261021-05",
-    "date": "2026-10-19",
-    "source": "数英网",
-    "sourceUrl": "https://www.digitaling.com/",
-    "url": "https://www.digitaling.com/projects/380498.html",
-    "advertiser": "名创优品 MINISO",
-    "agency": "SAN'S 梵也",
-    "campaignType": "明星代言 / 毛绒IP",
-    "title": "名创优品×田曦薇：有毛绒，心里田田的",
-    "summary": "名创优品牵手田曦薇推毛绒主题，用「心里田田的」谐音把治愈感喊出口。明星+毛绒经济的组合，把情绪陪伴做成一句朗朗上口的口号，天然适合社交平台二创传播。",
-    "images": [
-      "https://file.digitaling.com/eImg/cover/20261019/20261019133518_14233.jpg",
-      "https://file.digitaling.com/eImg/uimages/20261015/1792066491648547.jpg",
-      "https://file.digitaling.com/eImg/uimages/20261016/1792118509278336.jpg"
-    ]
-  },
-  {
-    "id": "auto-20261021-pringles-halloween",
-    "date": "2026-10-21",
-    "source": "数英网",
-    "sourceUrl": "https://www.digitaling.com/projects/380428.html",
-    "url": "https://www.digitaling.com/projects/380428.html",
-    "advertiser": "品客 Pringles",
-    "agency": "品牌方",
-    "campaignType": "节日营销 / 互动营销",
-    "title": "品客万圣节：抽定制骨灰盒，再送200年薯片",
-    "summary": "品客借万圣节搞了支「阴间」黑色幽默广告——粉丝签数字遗嘱，承诺去世后把骨灰装进薯片罐，就能抽中纯金属定制骨灰盒 + 长达200年的免费薯片（可世袭继承）。点子源自真实往事：1966年设计薯片圆筒罐的科学家 Fredric Baur，2008年去世时真的要求把部分骨灰装进品客罐。把品牌符号玩成「生死契约」，又敢又出圈。",
-    "images": [
-      "https://file.digitaling.com/eImg/uimages/20261020/1792468782658438.png",
-      "https://file.digitaling.com/eImg/uimages/20261020/1792469004338239.jpg",
-      "https://file.digitaling.com/eImg/uimages/20261020/1792469058438606.jpg"
-    ]
-  },
-  {
-    "id": "auto-20261020-oppo-findx10",
-    "date": "2026-10-20",
-    "source": "数英网",
-    "sourceUrl": "https://www.digitaling.com/projects/380547.html",
-    "url": "https://www.digitaling.com/projects/380547.html",
-    "advertiser": "OPPO",
-    "agency": "The N3 Agency 上海",
-    "campaignType": "广告片 / 代言人营销",
-    "title": "OPPO FindX10系列：和李现、卢昱晓一起留住最真的",
-    "summary": "OPPO 这代影像主张反其道而行——不卷参数，主打「真实还原」，还喊回十多年前的经典 slogan「留住最真的」。借李现（追雨幕的旅行摄影佬）和卢昱晓（女性视角的真实旅拍）两支主张片，把「原相机里的真情实感」讲到位。在全民滤镜时代，反而用「不完美」打动人。",
-    "images": [
-      "https://file.digitaling.com/eImg/uimages/20261016/remote_179213488016388.png",
-      "https://file.digitaling.com/eImg/uimages/20261016/remote_179213488059673.png",
-      "https://file.digitaling.com/eImg/uimages/20261016/remote_179213488161689.png"
-    ]
-  },
-  {
-    "id": "auto-20261022-jd-chongyang",
-    "date": "2026-10-22",
-    "source": "数英网",
-    "sourceUrl": "https://www.digitaling.com/projects/380680.html",
-    "url": "https://www.digitaling.com/projects/380680.html",
-    "advertiser": "京东",
-    "agency": "走神OGK",
-    "campaignType": "节日营销 / 品牌态度",
-    "title": "京东重阳节：家，会为爱改变2次",
-    "summary": "京东「搭把手计划」在重阳节抛出一个扎心设问——家会为孩子改变一次，为什么不能陪父母再改变一次？用儿童餐椅 / 小夜灯 / 小楼梯对照适老改造，把「适老化」从「出问题后的补救」翻转成「主动的关心」。像照顾孩子一样照顾父母，文案温柔但后劲大。",
-    "images": [
-      "https://file.digitaling.com/eImg/uimages/20261020/1792428173347865.jpg",
-      "https://file.digitaling.com/eImg/uimages/20261020/1792428176171726.jpg",
-      "https://file.digitaling.com/eImg/uimages/20261020/1792428176614869.jpg"
-    ]
-  },
-  {
-    "id": "auto-20261017-oura-ring",
-    "date": "2026-10-17",
-    "source": "数英网",
-    "sourceUrl": "https://www.digitaling.com/projects/379714.html",
-    "url": "https://www.digitaling.com/projects/379714.html",
-    "advertiser": "Oura Ring",
-    "agency": "品牌方",
-    "campaignType": "广告片 / 创意视觉",
-    "title": "智能戒指广告片有点惊悚，满屏都是手",
-    "summary": "Oura Ring 新广告片《Wear Your Best Life》全程「满屏都是手」——手掌像人一样过着自己的小日子（等地铁、健身、晒太阳）。品牌找 35 名模型师花 3 周 10:1 还原场景、招募 14 名手舞演员，用「手」这一载体把健康科技拉回「人本身」。不讲冷冰冰的数据，反而有点惊悚又很高级。",
-    "images": [
-      "https://file.digitaling.com/eImg/uimages/20261014/1791950985200279.jpg",
-      "https://file.digitaling.com/eImg/uimages/20261014/1791951029143033.jpg",
-      "https://file.digitaling.com/eImg/uimages/20261014/1791951043359063.jpg"
-    ]
-  },
-  {
-    "id": "auto-20261019-tmallcs-fresh",
-    "date": "2026-10-19",
-    "source": "数英网",
-    "sourceUrl": "https://www.digitaling.com/projects/380442.html",
-    "url": "https://www.digitaling.com/projects/380442.html",
-    "advertiser": "天猫超市",
-    "agency": "Heaven&Hell",
-    "campaignType": "视觉营销 / 产地美学",
-    "title": "天猫超市：从土里摘到你手里",
-    "summary": "天猫超市臻选把「产业带新品」从供应链概念升维成「产地美学」——把产品当刚出土的果实拍，带根须、沾泥土，直接从土里拔 / 树上摘到你手里。用国家地理级别的视觉，让「买臻选 = 把产地之美带回家」。把卖货拍成了风土纪录片。",
-    "images": [
-      "https://file.digitaling.com/eImg/uimages/20261017/1792207857671144.jpg",
-      "https://file.digitaling.com/eImg/uimages/20261017/1792208151271043.jpg",
-      "https://file.digitaling.com/eImg/uimages/20261017/1792208244433031.jpg"
-    ]
-  }
-];
+window.CASES = [
+  {
+    "id": "demo-001",
+    "date": "2026-10-14",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/",
+    "url": "https://www.digitaling.com/articles/399658.html",
+    "advertiser": "三顿半",
+    "agency": "品牌自运营",
+    "campaignType": "品牌Campaign",
+    "title": "返航计划：把咖啡空罐变成下一次出发",
+    "summary": "以「返航」为隐喻，把回收空罐做成线下快闪与社群仪式，小罐子成了品牌超级符号，环保动作包装成品牌浪漫，强社交传播。",
+    "images": [
+      "https://file.digitaling.com/eImg/cover/20210119/20210119174038_48999.jpg",
+      "https://file.digitaling.com/eImg/uimages/20210119/remote_161104866841948.jpg"
+    ]
+  },
+  {
+    "id": "demo-002",
+    "date": "2026-10-11",
+    "source": "广告门",
+    "sourceUrl": "https://www.adquan.com/",
+    "url": "https://www.adquan.com/detail/2-364697",
+    "advertiser": "美团",
+    "agency": "品牌内部团队",
+    "campaignType": "节点营销",
+    "title": "中秋「最美的团圆」：把品牌色变成社交符号",
+    "summary": "2026 中秋礼盒送的是一对明黄色饭碗而不是月饼，「饭碗」直指打工人情绪，网友自发玩梗「端稳饭碗」，把品牌色变成社交符号——给用户留一句他能替你喊出来的台词。",
+    "images": [
+      "https://oss.adquan.com/uploads_img/17916205344e2d2064c78fc0bd.jpg",
+      "https://oss.adquan.com/uploads_img/17916205342b65702b361e4479.jpg"
+    ]
+  },
+  {
+    "id": "demo-003",
+    "date": "2026-10-08",
+    "source": "SocialBeta",
+    "sourceUrl": "https://socialbeta.com/",
+    "url": "https://socialbeta.com/campaign/27777",
+    "advertiser": "观夏",
+    "agency": "品牌自运营",
+    "campaignType": "线下空间",
+    "title": "在国子监开一家可以「抓药」的香铺",
+    "summary": "观夏在北京国子监开出全国首家「观夏香铺」，把中医「望闻问切→抓药」的动线搬进选香体验：香引单定制、百草匣抽屉按需取香，让线香从产品体系独立成空间叙事。",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/38450-1782314311.jpg",
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/38450-1782314309.jpg"
+    ]
+  },
+  {
+    "id": "demo-004",
+    "date": "2026-10-05",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/",
+    "url": "https://www.digitaling.com/projects/339401.html",
+    "advertiser": "大窑",
+    "agency": "品牌方 × 地铁媒介代理",
+    "campaignType": "户外/地铁广告",
+    "title": "11 城地铁广告：做年轻人的嘴替",
+    "summary": "在 11 座城市的地铁投方言海报，把城市饮食符号玩成梗——青岛「哈大窑吃嘎啦」、郑州「画的饼不够吃改吃烩面」、佛山「鸡会摆在眼前」，高饱和撞色绑定「大窑配美食」场景，做打工人的情绪嘴替。",
+    "images": [
+      "https://file.digitaling.com/eImg/cover/20250520/20250520113321_76126.jpg",
+      "https://file.digitaling.com/eImg/uimages/20250520/remote_174771121590392.jpg"
+    ]
+  },
+  {
+    "id": "auto-20261016-taobao-mei",
+    "date": "2026-10-16",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/projects/380491.html",
+    "url": "https://www.digitaling.com/projects/380491.html",
+    "advertiser": "淘宝闪购 × 美的",
+    "agency": "品牌联合",
+    "campaignType": "节点营销 / TVC",
+    "title": "世界粮食日《再吃一口》：把「回家吃饭」讲成没说出口的爱",
+    "summary": "10/16 世界粮食日，淘宝闪购联合美的花瓣 PRO 电饭煲推出 TVC《再吃一口》，用「童年被喂饭—大学离家—老友火锅—恋爱—为人母」五段关系场景，把中国人含蓄的爱编码进一句餐桌叮嘱；两品牌都把产品功能退到情感之后，并邀孙悦助阵，线下取餐柜还送米。功能退场、情绪在场。",
+    "images": [
+      "https://file.digitaling.com/eImg/cover/20261016/20261016174817_47528.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261016/1792128405242433.jpg"
+    ]
+  },
+  {
+    "id": "auto-20261016-bosideng",
+    "date": "2026-10-16",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/projects/380533.html",
+    "url": "https://www.digitaling.com/projects/380533.html",
+    "advertiser": "波司登",
+    "agency": "品牌自运营",
+    "campaignType": "地铁 / 场景营销",
+    "title": "上海地铁「雪国列车」：50 周年把车厢变成雪原",
+    "summary": "波司登 50 周年在上海地铁 10 号线打造沉浸式包车广告：地面铺设雪脚印地贴、车门印日照雪山、橱窗做成千层深渊镜呼应品牌半世纪时间线。弱化硬广、强化场景，让通勤者踩着雪脚印瞬间抽离城市喧嚣，自然关联羽绒服御寒属性，乘客自发拍照打卡扩散。",
+    "images": [
+      "https://file.digitaling.com/eImg/cover/20261016/20261016151551_63316.jpeg",
+      "https://file.digitaling.com/eImg/uimages/20261016/1792132782316676.jpg"
+    ]
+  },
+  {
+    "id": "auto-20261014-kangbenbei",
+    "date": "2026-10-14",
+    "source": "中国经济新闻网",
+    "sourceUrl": "https://www.cet.com.cn/wzsy/kjzx/cygdzx/10603674.shtml",
+    "url": "https://www.cet.com.cn/wzsy/kjzx/cygdzx/10603674.shtml",
+    "advertiser": "康恩贝肠炎宁",
+    "agency": "新脑子",
+    "campaignType": "户外 / 场景营销",
+    "title": "把广告牌改成「厕所导航」：先帮你找厕所，再卖止泻药",
+    "summary": "国庆黄金周，康恩贝肠炎宁在全国核心景区/商圈把传统大屏改造成厕所指引牌——三分之二版面让给绿色箭头和精准距离，只留一句「先上厕所，再吃肠炎宁」。把产品功能最自然的延伸（拉肚子→找厕所）做成了公共服务，3亿+曝光、登热搜，被网友称为「最实用的广告」。",
+    "images": [
+      "https://q8.itc.cn/q_70/images01/20261012/b2199469323849b89842a7c92280c485.jpeg",
+      "https://q8.itc.cn/q_70/images01/20261012/e1a1fd1a0e134d66a0ab6e44d3e9e7c4.jpeg"
+    ]
+  },
+  {
+    "id": "auto-20261012-mcd-brasil",
+    "date": "2026-10-12",
+    "source": "腾讯新闻 / 数英网",
+    "sourceUrl": "https://new.qq.com/rain/a/20261012A07CIO00",
+    "url": "https://new.qq.com/rain/a/20261012A07CIO00",
+    "advertiser": "麦当劳（巴西）",
+    "agency": "Galeria.ag × MagicLab",
+    "campaignType": "包装 / 公益互动",
+    "title": "把开心乐园餐盒变成视力筛查工具：Happy View",
+    "summary": "巴西儿童节暨国家阅读日，麦当劳巴西联合 CEMA 眼科医院把 Happy Meal 餐盒改造成简易视力筛查工具——内置多组屈光镜片+针孔组件，孩子隔着几米透过镜片看 LEA 视力表，像玩游戏一样初筛视力问题，异常者可现场由眼科团队进一步检查。把熟悉的套餐盒变成「有用工具」，把眼健康议题带进家庭对话。",
+    "images": [
+      "https://file.digitaling.com/eImg/cover/20261014/20261014143311_56132.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261014/1791959603775182.jpg"
+    ]
+  },
+  {
+    "id": "auto-20261021-01",
+    "date": "2026-10-15",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/",
+    "url": "https://www.digitaling.com/projects/380421.html",
+    "advertiser": "天猫",
+    "agency": "SG胜加",
+    "campaignType": "品牌Campaign / 服务营销",
+    "title": "天猫官方服务：江湖总有师傅的传说",
+    "summary": "把上门安装、维修的「师傅」写成江湖侠客，用武侠片的气口讲售后标准。最同质化的服务环节被做出记忆点，用户从「又来个师傅」变成「来看大侠出手」，顺手把品牌靠谱感焊死。",
+    "images": [
+      "https://file.digitaling.com/eImg/cover/20261014/20261014185849_45072.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261014/1791976999233023.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261014/1791977706546914.jpg"
+    ]
+  },
+  {
+    "id": "auto-20261021-02",
+    "date": "2026-10-16",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/",
+    "url": "https://www.digitaling.com/projects/380491.html",
+    "advertiser": "淘宝闪购 × 美的",
+    "agency": "红中 上海",
+    "campaignType": "节点营销 / 公益联名",
+    "title": "世界粮食日，淘宝闪购×美的要你再吃一口",
+    "summary": "借世界粮食日，淘宝闪购拉上美的把「别浪费、再吃一口」做成轻幽默内容，把剩饭剩菜变成二次创作灵感。电商+家电跨界玩公益，不端着说教，反而让「光盘」有了可分享的梗。",
+    "images": [
+      "https://file.digitaling.com/eImg/cover/20261016/20261016174817_47528.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261016/1792125570617326.png",
+      "https://file.digitaling.com/eImg/uimages/20261016/1792128405242433.jpg"
+    ]
+  },
+  {
+    "id": "auto-20261021-03",
+    "date": "2026-10-16",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/",
+    "url": "https://www.digitaling.com/projects/379651.html",
+    "advertiser": "乐高 LEGO",
+    "agency": "Our LEGO Agency 上海",
+    "campaignType": "线下装置 / 体验营销",
+    "title": "乐高用38万朵花，为你造一场秋天里的春日奇观",
+    "summary": "拿38万朵积木花在城市里搭出一座秋日里的「春日花园」大装置，把花束套装变成公共艺术。线下大场面天然带打卡属性，路人随手一拍就是一次免费传播。",
+    "images": [
+      "https://file.digitaling.com/eImg/cover/20261015/20261015190234_21645.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261012/1791780812623386.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261012/1791784866569277.jpg"
+    ]
+  },
+  {
+    "id": "auto-20261021-04",
+    "date": "2026-10-15",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/",
+    "url": "https://www.digitaling.com/projects/379917.html",
+    "advertiser": "金典 SATINE",
+    "agency": "赞意",
+    "campaignType": "体育营销 / 亚运",
+    "title": "金典亚运会×陈妤颉：小孩姐喝奶也像是在冲刺",
+    "summary": "亚运夺金热潮里，金典没请大牌，而是抓住了「小孩姐」陈妤颉喝奶的真实瞬间，把喝奶和冲刺绑定。从素人冠军的生活细节发酵到品牌承接，反向玩了一把不刻意又不费力的体育营销。",
+    "images": [
+      "https://file.digitaling.com/eImg/cover/20261015/20261015123820_47382.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261013/remote_179188899162237.png",
+      "https://file.digitaling.com/eImg/uimages/20261013/remote_179188899319523.png"
+    ]
+  },
+  {
+    "id": "auto-20261021-05",
+    "date": "2026-10-19",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/",
+    "url": "https://www.digitaling.com/projects/380498.html",
+    "advertiser": "名创优品 MINISO",
+    "agency": "SAN'S 梵也",
+    "campaignType": "明星代言 / 毛绒IP",
+    "title": "名创优品×田曦薇：有毛绒，心里田田的",
+    "summary": "名创优品牵手田曦薇推毛绒主题，用「心里田田的」谐音把治愈感喊出口。明星+毛绒经济的组合，把情绪陪伴做成一句朗朗上口的口号，天然适合社交平台二创传播。",
+    "images": [
+      "https://file.digitaling.com/eImg/cover/20261019/20261019133518_14233.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261015/1792066491648547.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261016/1792118509278336.jpg"
+    ]
+  },
+  {
+    "id": "auto-20261021-pringles-halloween",
+    "date": "2026-10-21",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/projects/380428.html",
+    "url": "https://www.digitaling.com/projects/380428.html",
+    "advertiser": "品客 Pringles",
+    "agency": "品牌方",
+    "campaignType": "节日营销 / 互动营销",
+    "title": "品客万圣节：抽定制骨灰盒，再送200年薯片",
+    "summary": "品客借万圣节搞了支「阴间」黑色幽默广告——粉丝签数字遗嘱，承诺去世后把骨灰装进薯片罐，就能抽中纯金属定制骨灰盒 + 长达200年的免费薯片（可世袭继承）。点子源自真实往事：1966年设计薯片圆筒罐的科学家 Fredric Baur，2008年去世时真的要求把部分骨灰装进品客罐。把品牌符号玩成「生死契约」，又敢又出圈。",
+    "images": [
+      "https://file.digitaling.com/eImg/uimages/20261020/1792468782658438.png",
+      "https://file.digitaling.com/eImg/uimages/20261020/1792469004338239.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261020/1792469058438606.jpg"
+    ]
+  },
+  {
+    "id": "auto-20261020-oppo-findx10",
+    "date": "2026-10-20",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/projects/380547.html",
+    "url": "https://www.digitaling.com/projects/380547.html",
+    "advertiser": "OPPO",
+    "agency": "The N3 Agency 上海",
+    "campaignType": "广告片 / 代言人营销",
+    "title": "OPPO FindX10系列：和李现、卢昱晓一起留住最真的",
+    "summary": "OPPO 这代影像主张反其道而行——不卷参数，主打「真实还原」，还喊回十多年前的经典 slogan「留住最真的」。借李现（追雨幕的旅行摄影佬）和卢昱晓（女性视角的真实旅拍）两支主张片，把「原相机里的真情实感」讲到位。在全民滤镜时代，反而用「不完美」打动人。",
+    "images": [
+      "https://file.digitaling.com/eImg/uimages/20261016/remote_179213488016388.png",
+      "https://file.digitaling.com/eImg/uimages/20261016/remote_179213488059673.png",
+      "https://file.digitaling.com/eImg/uimages/20261016/remote_179213488161689.png"
+    ]
+  },
+  {
+    "id": "auto-20261022-jd-chongyang",
+    "date": "2026-10-22",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/projects/380680.html",
+    "url": "https://www.digitaling.com/projects/380680.html",
+    "advertiser": "京东",
+    "agency": "走神OGK",
+    "campaignType": "节日营销 / 品牌态度",
+    "title": "京东重阳节：家，会为爱改变2次",
+    "summary": "京东「搭把手计划」在重阳节抛出一个扎心设问——家会为孩子改变一次，为什么不能陪父母再改变一次？用儿童餐椅 / 小夜灯 / 小楼梯对照适老改造，把「适老化」从「出问题后的补救」翻转成「主动的关心」。像照顾孩子一样照顾父母，文案温柔但后劲大。",
+    "images": [
+      "https://file.digitaling.com/eImg/uimages/20261020/1792428173347865.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261020/1792428176171726.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261020/1792428176614869.jpg"
+    ]
+  },
+  {
+    "id": "auto-20261017-oura-ring",
+    "date": "2026-10-17",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/projects/379714.html",
+    "url": "https://www.digitaling.com/projects/379714.html",
+    "advertiser": "Oura Ring",
+    "agency": "品牌方",
+    "campaignType": "广告片 / 创意视觉",
+    "title": "智能戒指广告片有点惊悚，满屏都是手",
+    "summary": "Oura Ring 新广告片《Wear Your Best Life》全程「满屏都是手」——手掌像人一样过着自己的小日子（等地铁、健身、晒太阳）。品牌找 35 名模型师花 3 周 10:1 还原场景、招募 14 名手舞演员，用「手」这一载体把健康科技拉回「人本身」。不讲冷冰冰的数据，反而有点惊悚又很高级。",
+    "images": [
+      "https://file.digitaling.com/eImg/uimages/20261014/1791950985200279.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261014/1791951029143033.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261014/1791951043359063.jpg"
+    ]
+  },
+  {
+    "id": "auto-20261019-tmallcs-fresh",
+    "date": "2026-10-19",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/projects/380442.html",
+    "url": "https://www.digitaling.com/projects/380442.html",
+    "advertiser": "天猫超市",
+    "agency": "Heaven&Hell",
+    "campaignType": "视觉营销 / 产地美学",
+    "title": "天猫超市：从土里摘到你手里",
+    "summary": "天猫超市臻选把「产业带新品」从供应链概念升维成「产地美学」——把产品当刚出土的果实拍，带根须、沾泥土，直接从土里拔 / 树上摘到你手里。用国家地理级别的视觉，让「买臻选 = 把产地之美带回家」。把卖货拍成了风土纪录片。",
+    "images": [
+      "https://file.digitaling.com/eImg/uimages/20261017/1792207857671144.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261017/1792208151271043.jpg",
+      "https://file.digitaling.com/eImg/uimages/20261017/1792208244433031.jpg"
+    ]
+  },
+  {
+    "id": "award-2026roi-yili-mayili",
+    "title": "伊利2026马年CNY《寻找马伊琍》",
+    "advertiser": "伊利",
+    "agency": "",
+    "campaignType": "创意整合",
+    "summary": "捕捉网友'伊利该签马伊琍'的自发呼声，把它变成官宣代言人的品牌行动，让消费者成为春节营销的共创者，成现象级案例。",
+    "images": [],
+    "source": "金投赏",
+    "award": "2026金投赏 全场大奖(金奖)·创意整合",
+    "url": "https://stock.10jqka.com.cn/20261022/c680990495.shtml",
+    "date": "2026-10-21",
+    "priority": true
+  },
+  {
+    "id": "award-2026roi-maopu",
+    "title": "毛铺草本酒《我在90年望父成龙》",
+    "advertiser": "毛铺草本酒(劲牌)",
+    "agency": "",
+    "campaignType": "内容营销",
+    "summary": "以'父子和解'国民情感切口+火热的短剧形式，微博总播放破1.26亿、话题阅读5.4亿，为白酒营销开辟年轻化新路径。",
+    "images": [],
+    "source": "金投赏",
+    "award": "2026金投赏 金奖(全场大奖候选)·内容营销",
+    "url": "https://www.adquan.com/article/364959",
+    "date": "2026-10-21",
+    "priority": true
+  },
+  {
+    "id": "award-2026roi-baiqueling",
+    "title": "百雀羚「灵」花鸟市场：一场年轻人的精神赶集",
+    "advertiser": "百雀羚",
+    "agency": "蓝色光标",
+    "campaignType": "活动策划及管理",
+    "summary": "从逐渐消失的花鸟市场汲取灵感，以AI重构海派花鸟市场，融合沪语梗、非遗与艺术装置，为年轻人找回松弛与鲜活。",
+    "images": [],
+    "source": "金投赏",
+    "award": "2026金投赏 金奖·活动策划及管理",
+    "url": "https://www.163.com/dy/article/L9RCL52G0518WI9N.html",
+    "date": "2026-10-21",
+    "priority": true
+  },
+  {
+    "id": "award-2026cannes-viagra",
+    "title": "Viagra Blue Brands（蓝色万艾可）",
+    "advertiser": "VIATRIS(晖致)",
+    "agency": "奥美上海",
+    "campaignType": "医药狮",
+    "summary": "提取万艾可标志性钴蓝色视觉，打造印有品牌标识的蓝色日用品，规避敏感药效话术，落脚伴侣长久陪伴。",
+    "images": [
+      "https://oss.adquan.com/upload/17827868903ad4b3ee26bbf802.webp"
+    ],
+    "source": "戛纳创意节",
+    "award": "2026戛纳 医药狮金狮+公共关系狮铜狮",
+    "url": "https://m.adquan.com/detail/0-361603",
+    "date": "2026-06-26",
+    "priority": true
+  },
+  {
+    "id": "award-2026greatwall-jindian",
+    "title": "伊利金典×抖音「有机自在年」",
+    "advertiser": "金典(伊利)",
+    "agency": "三人行传媒",
+    "campaignType": "数字营销",
+    "summary": "以'有机自在年'为理念，定制优质内容×抖音组合，深度链接消费者情感共鸣，于销量高峰赋能品效双收。",
+    "images": [],
+    "source": "长城奖",
+    "award": "2026长城奖 金奖·数字营销",
+    "url": "https://www.cnad.com/index.php?mod=article&act=view&titleId=354321",
+    "date": "2026-10-25",
+    "priority": true
+  },
+  {
+    "id": "award-2026greatwall-hengyuanxiang",
+    "title": "恒源祥《妈妈的绒线》",
+    "advertiser": "恒源祥",
+    "agency": "",
+    "campaignType": "公益广告",
+    "summary": "以三张系列公益海报将抽象爱心转化为具象视觉符号，搭建社会爱心与困境儿童情感需求的连接桥梁。",
+    "images": [],
+    "source": "长城奖",
+    "award": "2026长城奖 银奖+黄河奖 铜奖·公益",
+    "url": "https://hyx1927.com/Show_nowpage_229_693_688.htm",
+    "date": "2026-10-25",
+    "priority": true
+  },
+  {
+    "id": "auto-20261023-1",
+    "title": "当街撕了奥利奥广告牌，Sour Patch Kids是真的皮",
+    "advertiser": "",
+    "agency": "",
+    "campaignType": "最新案例",
+    "summary": "Sour Patch Kids跟奥利奥是亿滋国际（Mondelez International）旗下的酸味软糖品牌。它的产品看起来色彩鲜艳、造型可爱，入口还有着鲜明的酸甜反差。 最近，Sour Patch Kids在伦敦、布里斯托尔玩起了户外广告新花样： 让自家的糖果小人跨过广告牌边界，让它们“动手”撕毁隔壁奥利奥的广告牌。 其实，Sour Patch Kids与奥利奥早就在TikTok、Inst",
+    "images": [
+      "https://file.digitaling.com/eImg/uimages/20261019/1792398779630955.png"
+    ],
+    "source": "数英网",
+    "award": "",
+    "priority": false,
+    "url": "https://www.digitaling.com/projects/380659.html",
+    "date": "2026-10-23"
+  },
+  {
+    "id": "auto-20261023-2",
+    "title": "金典：邀请小孩姐的人形立牌，特别出演本片",
+    "advertiser": "",
+    "agency": "",
+    "campaignType": "最新案例",
+    "summary": "原标题：当片场来了0位代言人… 难题，从来都是创意的起点啊！ 回到最初接到金典的项目BRIEF时，客户希望： 借名古屋亚运会的节点，从这位被网友称作「最强小孩姐」的运动员陈妤颉身上， 找到能戳中年轻群体的共鸣点，推动品牌向年轻消费群进一步靠近。 在消化BRIEF的过程中，我们发现： 市面上大多数体育营销，都习惯锚定赛事高光时刻，借运动员的成绩造话题， 当然，这很对！但 这套解题思路，并不适合小孩姐",
+    "images": [
+      "https://file.digitaling.com/eImg/uimages/20261016/remote_179213440715537.png"
+    ],
+    "source": "数英网",
+    "award": "",
+    "priority": false,
+    "url": "https://www.digitaling.com/projects/380554.html",
+    "date": "2026-10-23"
+  },
+  {
+    "id": "auto-20261023-4",
+    "title": "adidas北马文案，水平如何",
+    "advertiser": "",
+    "agency": "",
+    "campaignType": "最新案例",
+    "summary": "第 46 届北京马拉松于10月18日落幕，共计3.2 万跑者参赛。 男子冠军跑出 2:03:10，刷新国内境内全马纪录，正式进入 “ 203 时代 ”。 女子冠军仍由埃塞俄比亚选手安奇纳卢・德西・根纳赫，成功卫冕。成绩 2:20:36，相比去年夺冠成绩提升明显。 其中，次仁措姆以2:23:48大幅PB，斩获国内女子第一！李大林以2:08:30的成绩，夺得国内男子冠军。 运动员成绩这么漂亮，基础建设",
+    "images": [
+      "https://file.digitaling.com/eImg/uimages/20261021/1792575042821446.jpg"
+    ],
+    "source": "数英网",
+    "award": "",
+    "priority": false,
+    "url": "https://www.digitaling.com/projects/380806.html",
+    "date": "2026-10-23"
+  },
+  {
+    "id": "auto-20261023-5",
+    "title": "野兽派家居×瞿颖：黑皮Kitty的多重身份",
+    "advertiser": "",
+    "agency": "",
+    "campaignType": "最新案例",
+    "summary": "视频 10月14日，野兽派家居推出了「美好人生号」家居家纺系列，把 Hello Kitty 和 Dear Daniel 设计成了黑皮长腿版，并邀请瞿颖担任黑皮品牌大使。 配套短片并没有在讲一个传统意义上的起承转合故事，而是用 「换频道」 的概念，把瞿颖和居家生活串起来。 画面里，瞿颖在不同电视频道之间切换：一会儿是演员，一会儿是歌手，一会儿又回到模特状态。这些频道对应的是她这些年被大众熟悉的身份，",
+    "images": [
+      "https://file.digitaling.com/eImg/uimages/20261019/1792392453473175.jpg"
+    ],
+    "source": "数英网",
+    "award": "",
+    "priority": false,
+    "url": "https://www.digitaling.com/projects/380526.html",
+    "date": "2026-10-23"
+  },
+  {
+    "id": "topys-20261023-1",
+    "title": "在分歧愈多的时代，美术馆希望让人们重新融合丨TOPYS专访皮力 | TOPYS创意内容平台",
+    "advertiser": "",
+    "agency": "",
+    "campaignType": "创意精选",
+    "summary": "深圳的文化发展，正处在最激动人心的时代。",
+    "images": [
+      "https://img-sz.topys.cn/2026-10-21/1792581331488.jpg"
+    ],
+    "source": "TOPYS",
+    "award": "",
+    "priority": false,
+    "url": "https://www.topys.cn/article/34821",
+    "date": "2026-10-23"
+  },
+  {
+    "id": "topys-20261023-2",
+    "title": "这段时间影像，让赶路的人慢下来 | TOPYS创意内容平台",
+    "advertiser": "",
+    "agency": "",
+    "campaignType": "创意精选",
+    "summary": "公共空间的时间体验可以更有趣！",
+    "images": [
+      "https://img-sz.topys.cn/2026-10-21/1792555350483.png"
+    ],
+    "source": "TOPYS",
+    "award": "",
+    "priority": false,
+    "url": "https://www.topys.cn/article/34820",
+    "date": "2026-10-23"
+  },
+  {
+    "id": "topys-20261023-3",
+    "title": "不炫技但精准，他的平面设计遍布日本街头 ｜MINDPARK Re:Think  | TOPYS创意内容平台",
+    "advertiser": "",
+    "agency": "",
+    "campaignType": "创意精选",
+    "summary": "不炫技但精准，他的平面设计遍布日本街头",
+    "images": [
+      "https://img-sz.topys.cn/2026-09-09/1788933537047.png"
+    ],
+    "source": "TOPYS",
+    "award": "",
+    "priority": false,
+    "url": "https://www.topys.cn/article/34759",
+    "date": "2026-10-23"
+  },
+  {
+    "id": "award-2026roi-yili-jielong",
+    "title": "伊利《一联抛梗，全民接龙：重塑春节社交》",
+    "advertiser": "伊利",
+    "agency": "",
+    "campaignType": "社交营销",
+    "summary": "官宣马伊琍后抛上联邀全民对下联，刘震云等名人下场斗联，品牌声量同比提升超2倍、液态奶销售额增超3倍。",
+    "images": [],
+    "source": "金投赏",
+    "award": "2026金投赏 银奖·社交营销",
+    "url": "https://stock.10jqka.com.cn/20261022/c680990495.shtml",
+    "date": "2026-10-21",
+    "priority": true
+  },
+  {
+    "id": "award-2026roi-taitaile",
+    "title": "太太乐领鲜飞「鸡」场",
+    "advertiser": "太太乐",
+    "agency": "蓝色光标",
+    "campaignType": "活动策划及管理",
+    "summary": "巧借'鸡场'与'机场'谐音，航站楼快闪+沉浸式登机体验+全国8城巡游，让'用料新鲜'可见、可感、可参与。",
+    "images": [],
+    "source": "金投赏",
+    "award": "2026金投赏 铜奖·活动策划及管理",
+    "url": "https://www.163.com/dy/article/L9RCL52G0518WI9N.html",
+    "date": "2026-10-21",
+    "priority": true
+  },
+  {
+    "id": "award-2026roi-lays",
+    "title": "乐事春收马铃薯：多新鲜呐",
+    "advertiser": "乐事",
+    "agency": "蓝色光标",
+    "campaignType": "KOL&明星项目",
+    "summary": "以'多新鲜呐'为主张，携手于谦、宋雨琦，将春季现收鲜切卖点变成魔性的新鲜感叹。",
+    "images": [],
+    "source": "金投赏",
+    "award": "2026金投赏 提名奖·KOL&明星项目",
+    "url": "https://www.163.com/dy/article/L9RCL52G0518WI9N.html",
+    "date": "2026-10-21",
+    "priority": true
+  },
+  {
+    "id": "award-2026roi-pepsi",
+    "title": "百事可乐「渴望燎原计划」",
+    "advertiser": "百事可乐",
+    "agency": "蓝色光标",
+    "campaignType": "AI创新整合",
+    "summary": "将'百事酷宝'科技资产向善转身，打破山路阻隔让前沿科技走进大凉山课堂，点亮山区孩子对未来的想象。",
+    "images": [],
+    "source": "金投赏",
+    "award": "2026金投赏 提名奖·AI创新整合",
+    "url": "https://www.163.com/dy/article/L9RCL52G0518WI9N.html",
+    "date": "2026-10-21",
+    "priority": true
+  },
+  {
+    "id": "award-2026cannes-yangzhou",
+    "title": "扬州敲背组曲 The Yangzhou Qiaobei Musical Suite",
+    "advertiser": "扬州旅游局",
+    "agency": "TBWA上海",
+    "campaignType": "音频&广播狮",
+    "summary": "把敲背拍打揉捏四种手部动作的原生声响提取为音乐节拍，用听觉重新定义扬州文旅。",
+    "images": [
+      "https://oss.adquan.com/upload/17827868903ad4b3ee26bbf802.webp"
+    ],
+    "source": "戛纳创意节",
+    "award": "2026戛纳 音频&广播狮银狮",
+    "url": "https://m.adquan.com/detail/0-361603",
+    "date": "2026-06-26",
+    "priority": true
+  },
+  {
+    "id": "award-2026cannes-kaitak",
+    "title": "回到启德 Back to Kai Tak",
+    "advertiser": "国泰航空",
+    "agency": "LEO香港",
+    "campaignType": "户外狮",
+    "summary": "复刻经典启德低空进近航线，让国泰客机飞越启德体育园上空，唤醒香港市民的本土归属感与自豪感。",
+    "images": [
+      "https://oss.adquan.com/upload/17827868903ad4b3ee26bbf802.webp"
+    ],
+    "source": "戛纳创意节",
+    "award": "2026戛纳 户外狮银狮",
+    "url": "https://m.adquan.com/detail/0-361603",
+    "date": "2026-06-26",
+    "priority": true
+  },
+  {
+    "id": "award-2026cannes-mikkeller",
+    "title": "The Switch Hit By Mikkeller",
+    "advertiser": "Mikkeller",
+    "agency": "奥美台湾",
+    "campaignType": "娱乐狮(体育)",
+    "summary": "用AI语音克隆+实时唇形同步，复刻台湾古装剧角色原声担任棒球解说，科技退居幕后制造纯粹快乐。",
+    "images": [
+      "https://oss.adquan.com/upload/17827868903ad4b3ee26bbf802.webp"
+    ],
+    "source": "戛纳创意节",
+    "award": "2026戛纳 娱乐狮(体育)银狮",
+    "url": "https://m.adquan.com/detail/0-361603",
+    "date": "2026-06-26",
+    "priority": true
+  },
+  {
+    "id": "award-2026cannes-shenzhen",
+    "title": "Fascinating（奇境）",
+    "advertiser": "深圳旅游局",
+    "agency": "The Nine",
+    "campaignType": "行业工艺狮",
+    "summary": "以超现实摄影海报+城市交响短片，用中西融合诗意视觉讲述深圳故事，打破'科技硬件之城'刻板印象。",
+    "images": [
+      "https://oss.adquan.com/upload/17827868903ad4b3ee26bbf802.webp"
+    ],
+    "source": "戛纳创意节",
+    "award": "2026戛纳 行业工艺狮铜狮",
+    "url": "https://m.adquan.com/detail/0-361603",
+    "date": "2026-06-26",
+    "priority": true
+  },
+  {
+    "id": "award-2026greatwall-guonian",
+    "title": "伊利「过年好搭子」新春'百搭'营销",
+    "advertiser": "伊利",
+    "agency": "三人行传媒",
+    "campaignType": "新春营销",
+    "summary": "抛出'过年搭子选伊利'主题，拥抱所有年货品牌做'百搭'，幽默出圈引发网友持续讨论。",
+    "images": [],
+    "source": "长城奖",
+    "award": "2026长城奖 金奖·新春营销",
+    "url": "https://www.cnad.com/index.php?mod=article&act=view&titleId=354321",
+    "date": "2026-10-25",
+    "priority": true
+  }
+];

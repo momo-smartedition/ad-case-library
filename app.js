@@ -125,11 +125,14 @@
       const hitType = !type || (c.campaignType || "").toLowerCase().includes(type.toLowerCase());
       return hitAdv && hitAgency && hitType;
     });
-    list.sort((a, b) =>
-      sort === "date-asc"
+    list.sort((a, b) => {
+      const pa = a.priority || a.award ? 1 : 0;
+      const pb = b.priority || b.award ? 1 : 0;
+      if (pa !== pb) return pb - pa; // 获奖/置顶案例优先
+      return sort === "date-asc"
         ? a.date.localeCompare(b.date)
-        : b.date.localeCompare(a.date)
-    );
+        : b.date.localeCompare(a.date);
+    });
 
     grid.innerHTML = "";
     emptyP.classList.toggle("hidden", list.length > 0);
@@ -147,6 +150,7 @@
         ${img}
         <div class="card-body">
           <div class="card-meta">
+            ${c.award ? `<span class="badge award">🏆 ${c.award}</span>` : ""}
             <span class="badge src">${c.source || "来源"}</span>
             <span class="badge type">${c.campaignType || "类型"}</span>
           </div>

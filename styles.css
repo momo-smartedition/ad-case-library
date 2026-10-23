@@ -114,6 +114,7 @@ main{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
 .badge{font-size:.72rem;padding:3px 10px;border-radius:999px;font-weight:800;color:#fff}
 .badge.src{background:var(--blue)}
 .badge.type{background:var(--mint)}
+.badge.award{background:linear-gradient(135deg,#FFD23D,#FF8A00);color:#5a3b00}
 .badge.adv{background:var(--orange)}
 .badge.age{background:var(--purple)}
 .card-line{font-size:.82rem;color:var(--ink-soft);font-weight:600}
