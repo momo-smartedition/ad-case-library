@@ -108,6 +108,12 @@ main{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
 .card-img{width:100%;height:180px;object-fit:cover;display:block}
 .card-media{height:180px;display:flex;align-items:center;justify-content:center;font-size:2.6rem;color:#fff;position:relative}
 .card-media .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:.9}
+/* 无图奖项案例：显眼"奖项信息卡"占位，避免灰块看不见 */
+.card-media.award-ph{background:linear-gradient(135deg,#fff3d6,#ffe0e6);color:#7a4a00}
+.card-media.award-ph .ph-inner{text-align:center;padding:14px 18px;display:flex;flex-direction:column;gap:4px;align-items:center}
+.card-media.award-ph .ph-emoji{font-size:2.4rem;line-height:1}
+.card-media.award-ph .ph-award{font-weight:900;font-size:.92rem;line-height:1.3;color:#5a3b00}
+.card-media.award-ph .ph-brand{font-size:.78rem;font-weight:700;color:#a06a1e}
 .card-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:9px;flex:1}
 .card-title{font-weight:900;font-size:1.08rem;line-height:1.35}
 .card-meta{display:flex;flex-wrap:wrap;gap:6px}
@@ -117,6 +123,12 @@ main{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
 .badge.award{background:linear-gradient(135deg,#FFD23D,#FF8A00);color:#5a3b00}
 .badge.adv{background:var(--orange)}
 .badge.age{background:var(--purple)}
+/* 奖项等级 + 评分徽章 */
+.badge.tier{color:#fff;font-weight:900}
+.badge.tier-S{background:linear-gradient(135deg,#FF2442,#FF6A00)}
+.badge.tier-A{background:linear-gradient(135deg,#FF8A3D,#FFB300)}
+.badge.tier-B{background:#9aa0a6}
+.badge.score{background:linear-gradient(135deg,#7C5CFF,#B66DFF);color:#fff}
 .card-line{font-size:.82rem;color:var(--ink-soft);font-weight:600}
 .card-line b{color:var(--ink)}
 .card-sum{font-size:.9rem;color:#444;margin-top:2px}

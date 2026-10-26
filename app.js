@@ -126,9 +126,9 @@
       return hitAdv && hitAgency && hitType;
     });
     list.sort((a, b) => {
-      const pa = a.priority || a.award ? 1 : 0;
-      const pb = b.priority || b.award ? 1 : 0;
-      if (pa !== pb) return pb - pa; // 获奖/置顶案例优先
+      // 优先按优质分降序（奖项/高分自然排最前），同分再按日期
+      const sa = a.score || 0, sb = b.score || 0;
+      if (sa !== sb) return sb - sa;
       return sort === "date-asc"
         ? a.date.localeCompare(b.date)
         : b.date.localeCompare(a.date);
@@ -142,7 +142,13 @@
       const hasImg = c.images && c.images[0];
       const img = hasImg
         ? `<div class="card-media-wrap"><img class="card-img" src="${c.images[0]}" alt="${c.title || ""}" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="card-media img-fallback" style="display:none"><span class="ph">🖼️</span></div></div>`
-        : `<div class="card-media" style="background:${mediaStyle(i)}"><span class="ph">🖼️</span></div>`;
+        : `<div class="card-media award-ph"><div class="ph-inner"><span class="ph-emoji">🏆</span><div class="ph-award">${c.award || "获奖案例"}</div><div class="ph-brand">${c.advertiser || ""}</div></div></div>`;
+      const tierBadge = c.award_tier
+        ? `<span class="badge tier tier-${c.award_tier}">${c.award_tier === "S" ? "杰出大奖" : c.award_tier === "A" ? "知名奖项" : "入围/提名"}</span>`
+        : "";
+      const scoreBadge = c.score
+        ? `<span class="badge score">⭐ ${c.score}</span>`
+        : "";
       const link = c.url
         ? `<a class="card-link" href="${c.url}" target="_blank" rel="noopener">看原文 ↗</a>`
         : "";
@@ -150,6 +156,8 @@
         ${img}
         <div class="card-body">
           <div class="card-meta">
+            ${tierBadge}
+            ${scoreBadge}
             ${c.award ? `<span class="badge award">🏆 ${c.award}</span>` : ""}
             <span class="badge src">${c.source || "来源"}</span>
             <span class="badge type">${c.campaignType || "类型"}</span>

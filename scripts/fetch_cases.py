@@ -35,6 +35,15 @@ TOPYS_URL = "https://www.topys.cn"
 AWARD_KW = ["金投赏", "戛纳", "长城奖", "黄河奖", "艾菲", "One Show",
             "龙吟", "D&AD", "金瞳", "金鼠标", "Effie", "Cannes", "ROI"]
 
+# 奖项等级权重（杰出 S / 知名 A / 入围 B）
+TIER_W = {"S": 40, "A": 25, "B": 15}
+# 来源权威度权重
+SRC_W = {"金投赏": 10, "戛纳创意节": 10, "长城奖": 10, "TOPYS": 6,
+         "数英网": 4, "梅花网": 3}
+# 6 维评分默认中分（RSS/普通案例无人工分时给，每维 3）
+DEFAULT_SCORE = 18
+
+
 
 def fetch(url, ref=None, timeout=25, retries=3):
     cmd = ["curl", "-sL", "--compressed", "--max-time", str(timeout), "-A", UA]
@@ -226,15 +235,23 @@ def merge(existing, new, dedup_by="all"):
     urls = {c.get("url") for c in existing}
     titles = {c.get("title") for c in existing}
     ids = {c.get("id") for c in existing}
+    index = {c.get("id"): i for i, c in enumerate(existing) if c.get("id")}
     added = []
     for c in new:
-        if dedup_by == "id":
-            # 奖项库：每条独立保留（多条可能共用同一篇报道 URL）
-            if c.get("id") and c["id"] in ids:
+        if c.get("id") and c["id"] in ids:
+            if dedup_by == "id":
+                # 奖项库：用最新策展数据刷新字段（tier/scores/award 等），不重复添加
+                ex = existing[index[c["id"]]]
+                for k in ("award_tier", "scores", "award", "title", "summary",
+                          "advertiser", "agency", "campaignType", "url", "date"):
+                    if c.get(k) is not None:
+                        ex[k] = c[k]
+                if c.get("images"):
+                    ex["images"] = c["images"]
+                continue
+            else:
                 continue
         else:
-            if c.get("id") and c["id"] in ids:
-                continue
             if c.get("url") and c["url"] in urls:
                 continue
             if c.get("title") and c["title"] in titles:
@@ -248,6 +265,18 @@ def merge(existing, new, dedup_by="all"):
             titles.add(c["title"])
         added.append(c)
     return existing, added
+
+
+def compute_score(c):
+    """优质分 = 奖项等级权重 + 6维评分和 + 有图 + 来源权威度。
+    奖项案例天然高分置顶；无人工评分的 RSS/普通案例给默认中分。"""
+    tier = c.get("award_tier")
+    tier_w = TIER_W.get(tier, 25 if c.get("award") else 0)
+    sc = c.get("scores")
+    sum_sc = sum(sc.values()) if sc else DEFAULT_SCORE
+    img_w = 5 if (c.get("images") and c["images"] and c["images"][0]) else 0
+    src_w = SRC_W.get(c.get("source"), 2)
+    return tier_w + sum_sc + img_w + src_w
 
 
 def write_files(existing, repo_root):
@@ -271,10 +300,12 @@ def pushplus(added):
     others = [c for c in added if not (c.get("priority") or c.get("award"))]
 
     def block(c):
-        return ('<p>🏆 <b>%s</b>（%s · %s）</p><p>%s</p>'
+        tier = c.get("award_tier")
+        tag = ("🏆%s " % tier) if tier else ""
+        return ('<p>%s<b>%s</b>（%s · %s · 评分%s）</p><p>%s</p>'
                 '<p><a href="%s">看原文↗</a></p><hr/>'
-                % (c["title"], c.get("source", ""), c.get("award", ""),
-                   c.get("summary", ""), c["url"]))
+                % (tag, c["title"], c.get("source", ""), c.get("award", "") or "最新案例",
+                   c.get("score", ""), c.get("summary", ""), c["url"]))
 
     html = ("<h3>叮🔔 仅供乐呵·新案例来喽～</h3>"
             + (("<p>🏆 本期 <b>%d</b> 个奖项案例优先送达：</p>" % len(award_added)) if award_added else "")
@@ -319,17 +350,24 @@ def main():
     added = added_award + added_rss + added_topys
     print("[MERGE] 本次新增共 %d 条" % len(added))
 
+    # 计算优质分，并按分数降序排序（奖项/高分优先，同分按日期降序）
+    for c in existing:
+        c["score"] = compute_score(c)
+    existing.sort(key=lambda c: (c.get("score", 0), c.get("date", "")), reverse=True)
+    added = sorted(added, key=lambda c: c.get("score", 0), reverse=True)
+
     if DRY_RUN:
         print("[DRY_RUN] 不写文件、不推送。新增预览:")
         for c in added:
-            print("  -", ("🏆 " if c.get("priority") else ""), c["title"], c.get("source"), c["url"])
+            print("  -", ("🏆 " if c.get("priority") else ""), c["title"], c.get("source"), "score=", c.get("score"), c["url"])
         return
+    # 始终写文件：固化评分/排序/奖项等级字段（无新增时仅落盘，不推送）
+    total = write_files(existing, repo_root)
+    print("[WRITE] 写入完成，共 %d 条" % total)
     if added:
-        total = write_files(existing, repo_root)
-        print("[WRITE] 写入完成，共 %d 条" % total)
         pushplus(added)
     else:
-        print("[NOOP] 无新增，无需提交")
+        print("[NOOP] 无新增案例，不推送")
 
 
 if __name__ == "__main__":

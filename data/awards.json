@@ -9,6 +9,8 @@
     "images": [],
     "source": "金投赏",
     "award": "2026金投赏 全场大奖(金奖)·创意整合",
+    "award_tier": "S",
+    "scores": { "creativity": 5, "insight": 5, "spread": 5, "fit": 5, "execution": 5, "borrow": 5 },
     "url": "https://stock.10jqka.com.cn/20261022/c680990495.shtml",
     "date": "2026-10-21",
     "priority": true
@@ -23,6 +25,8 @@
     "images": [],
     "source": "金投赏",
     "award": "2026金投赏 金奖(全场大奖候选)·内容营销",
+    "award_tier": "A",
+    "scores": { "creativity": 5, "insight": 5, "spread": 5, "fit": 4, "execution": 4, "borrow": 4 },
     "url": "https://www.adquan.com/article/364959",
     "date": "2026-10-21",
     "priority": true
@@ -37,6 +41,8 @@
     "images": [],
     "source": "金投赏",
     "award": "2026金投赏 金奖·活动策划及管理",
+    "award_tier": "A",
+    "scores": { "creativity": 5, "insight": 4, "spread": 4, "fit": 4, "execution": 5, "borrow": 4 },
     "url": "https://www.163.com/dy/article/L9RCL52G0518WI9N.html",
     "date": "2026-10-21",
     "priority": true
@@ -51,6 +57,8 @@
     "images": [],
     "source": "金投赏",
     "award": "2026金投赏 银奖·社交营销",
+    "award_tier": "A",
+    "scores": { "creativity": 4, "insight": 4, "spread": 5, "fit": 4, "execution": 4, "borrow": 4 },
     "url": "https://stock.10jqka.com.cn/20261022/c680990495.shtml",
     "date": "2026-10-21",
     "priority": true
@@ -65,6 +73,8 @@
     "images": [],
     "source": "金投赏",
     "award": "2026金投赏 铜奖·活动策划及管理",
+    "award_tier": "B",
+    "scores": { "creativity": 4, "insight": 3, "spread": 3, "fit": 4, "execution": 4, "borrow": 4 },
     "url": "https://www.163.com/dy/article/L9RCL52G0518WI9N.html",
     "date": "2026-10-21",
     "priority": true
@@ -79,6 +89,8 @@
     "images": [],
     "source": "金投赏",
     "award": "2026金投赏 提名奖·KOL&明星项目",
+    "award_tier": "B",
+    "scores": { "creativity": 3, "insight": 3, "spread": 4, "fit": 4, "execution": 3, "borrow": 3 },
     "url": "https://www.163.com/dy/article/L9RCL52G0518WI9N.html",
     "date": "2026-10-21",
     "priority": true
@@ -93,6 +105,8 @@
     "images": [],
     "source": "金投赏",
     "award": "2026金投赏 提名奖·AI创新整合",
+    "award_tier": "B",
+    "scores": { "creativity": 4, "insight": 4, "spread": 3, "fit": 4, "execution": 4, "borrow": 4 },
     "url": "https://www.163.com/dy/article/L9RCL52G0518WI9N.html",
     "date": "2026-10-21",
     "priority": true
@@ -109,6 +123,8 @@
     ],
     "source": "戛纳创意节",
     "award": "2026戛纳 医药狮金狮+公共关系狮铜狮",
+    "award_tier": "S",
+    "scores": { "creativity": 5, "insight": 5, "spread": 4, "fit": 5, "execution": 4, "borrow": 4 },
     "url": "https://m.adquan.com/detail/0-361603",
     "date": "2026-06-26",
     "priority": true
@@ -125,6 +141,8 @@
     ],
     "source": "戛纳创意节",
     "award": "2026戛纳 音频&广播狮银狮",
+    "award_tier": "A",
+    "scores": { "creativity": 5, "insight": 5, "spread": 3, "fit": 5, "execution": 4, "borrow": 3 },
     "url": "https://m.adquan.com/detail/0-361603",
     "date": "2026-06-26",
     "priority": true
@@ -141,6 +159,8 @@
     ],
     "source": "戛纳创意节",
     "award": "2026戛纳 户外狮银狮",
+    "award_tier": "A",
+    "scores": { "creativity": 5, "insight": 4, "spread": 3, "fit": 5, "execution": 4, "borrow": 3 },
     "url": "https://m.adquan.com/detail/0-361603",
     "date": "2026-06-26",
     "priority": true
@@ -157,6 +177,8 @@
     ],
     "source": "戛纳创意节",
     "award": "2026戛纳 娱乐狮(体育)银狮",
+    "award_tier": "A",
+    "scores": { "creativity": 5, "insight": 4, "spread": 3, "fit": 4, "execution": 4, "borrow": 4 },
     "url": "https://m.adquan.com/detail/0-361603",
     "date": "2026-06-26",
     "priority": true
@@ -173,6 +195,8 @@
     ],
     "source": "戛纳创意节",
     "award": "2026戛纳 行业工艺狮铜狮",
+    "award_tier": "B",
+    "scores": { "creativity": 5, "insight": 4, "spread": 3, "fit": 5, "execution": 4, "borrow": 3 },
     "url": "https://m.adquan.com/detail/0-361603",
     "date": "2026-06-26",
     "priority": true
@@ -187,6 +211,8 @@
     "images": [],
     "source": "长城奖",
     "award": "2026长城奖 金奖·数字营销",
+    "award_tier": "S",
+    "scores": { "creativity": 4, "insight": 4, "spread": 4, "fit": 4, "execution": 4, "borrow": 4 },
     "url": "https://www.cnad.com/index.php?mod=article&act=view&titleId=354321",
     "date": "2026-10-25",
     "priority": true
@@ -201,6 +227,8 @@
     "images": [],
     "source": "长城奖",
     "award": "2026长城奖 金奖·新春营销",
+    "award_tier": "S",
+    "scores": { "creativity": 4, "insight": 4, "spread": 4, "fit": 4, "execution": 4, "borrow": 4 },
     "url": "https://www.cnad.com/index.php?mod=article&act=view&titleId=354321",
     "date": "2026-10-25",
     "priority": true
@@ -215,6 +243,8 @@
     "images": [],
     "source": "长城奖",
     "award": "2026长城奖 银奖+黄河奖 铜奖·公益",
+    "award_tier": "A",
+    "scores": { "creativity": 4, "insight": 5, "spread": 3, "fit": 4, "execution": 4, "borrow": 4 },
     "url": "https://hyx1927.com/Show_nowpage_229_693_688.htm",
     "date": "2026-10-25",
     "priority": true
