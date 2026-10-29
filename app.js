@@ -176,32 +176,40 @@
   }
   sortSel.addEventListener("change", renderCases);
 
-  /* ---------- 云端数据：多 CDN 镜像依次尝试（国内友好），最后回退同站点副本 ---------- */
+  /* ---------- 云端数据：多 CDN 镜像并发取，挑「最新」的一份（避免某个镜像脏缓存卡住） ---------- */
   const CDN_BASES = [
-    "https://gcore.jsdelivr.net/gh/momo-smartedition/ad-case-library@main",
     "https://testingcf.jsdelivr.net/gh/momo-smartedition/ad-case-library@main",
     "https://cdn.jsdelivr.net/gh/momo-smartedition/ad-case-library@main",
+    "https://gcore.jsdelivr.net/gh/momo-smartedition/ad-case-library@main",
   ];
   async function fetchCloud(relPath) {
-    for (const base of CDN_BASES) {
+    const tryFetch = async (u) => {
       try {
-        const r = await fetch(base + "/" + relPath, { cache: "no-store" });
-        if (r.ok) {
-          const j = await r.json();
-          if (Array.isArray(j) && j.length) return j;
-        }
-      } catch (e) {
-        /* 该镜像连不上，试下一个 */
-      }
-    }
-    try {
-      const r = await fetch(relPath, { cache: "no-store" }); // 同站点部署副本兜底
-      if (r.ok) {
+        const r = await fetch(u, { cache: "no-store" });
+        if (!r.ok) return null;
         const j = await r.json();
-        if (Array.isArray(j) && j.length) return j;
+        return Array.isArray(j) && j.length ? j : null;
+      } catch (e) {
+        return null; /* 该镜像连不上，交给其它镜像 */
       }
-    } catch (e) {}
-    return null;
+    };
+    // 三个镜像并发取，谁返回的是最新数据就用谁
+    const results = (await Promise.all(CDN_BASES.map((b) => tryFetch(b + "/" + relPath)))).filter(Boolean);
+    if (!results.length) return await tryFetch(relPath); // 同站点部署副本兜底
+    const maxDate = (arr) => {
+      let m = "";
+      for (const it of arr) {
+        const d = (it && (it.date || it.createdAt || it.updatedAt)) || "";
+        if (typeof d === "string" && d > m) m = d;
+      }
+      return m;
+    };
+    results.sort((a, b) => {
+      const ma = maxDate(a), mb = maxDate(b);
+      if (ma !== mb) return ma > mb ? -1 : 1; // 日期更新者优先
+      return b.length - a.length;             // 日期相同则条数多者优先
+    });
+    return results[0];
   }
 
   /* ---------- 案例数据：优先读云端，回退内置 ---------- */

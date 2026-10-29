@@ -42,8 +42,15 @@ jobs:
 
       - name: 刷新 jsdelivr 缓存（让网站立即读到新数据）
         run: |
-          for host in gcore testingcf cdn; do
+          # 正确写法：purge 只认 gh/<owner>/<repo>@<ref>/<path>，不能带镜像前缀
+          for f in data/cases.json data/cases.js data/awards.json data/ideas.json; do
+            echo "== purge $f =="
+            curl -s --max-time 30 "https://purge.jsdelivr.net/gh/${{ github.repository }}@main/$f" || true
+            echo
+          done
+          # 预热各镜像并打印状态，便于排查
+          for h in testingcf cdn gcore; do
             for f in data/cases.json data/cases.js; do
-              curl -s -o /dev/null -w "%{http_code} $host/$f\n" "https://purge.jsdelivr.net/$host/gh/${{ github.repository }}@main/$f"
+              curl -s -o /dev/null -w "%{http_code} $h/$f\n" --max-time 20 "https://$h.jsdelivr.net/gh/${{ github.repository }}@main/$f" || true
             done
           done
