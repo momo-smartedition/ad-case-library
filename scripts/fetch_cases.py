@@ -359,30 +359,39 @@ def pushplus(items):
 
 
 def select_push_items(existing, added, repo_root):
-    """每次推送：1 个奖项案例（按分数轮转，避免重复）+ 2 个近期最新且评分最高的优秀案例。
-    若本次新增不足 2 个非奖项案例，则从近期库里补足，保证每期都是精选。"""
+    """每期必推：1 个奖项案例（轮转，避免重复）+ 2 个高评分优秀案例（轮转，避免期期同一两条）。
+    本期有新增则优先用新增里最新最高分的；不足 2 个时从近期高分池轮转补足，保证每期都是精选。"""
     awards = [c for c in existing if c.get("priority") or c.get("award")]
     awards.sort(key=lambda c: (c.get("score", 0), c.get("date", "")), reverse=True)
     state_path = os.path.join(repo_root, "data", "push_state.json")
     state = load_json(state_path)
     if not isinstance(state, dict):
         state = {}
+
+    # 奖项案例轮转
     idx = int(state.get("award_idx", 0)) % max(len(awards), 1)
     award_case = awards[idx] if awards else None
     state["award_idx"] = (idx + 1) % max(len(awards), 1)
-    save_json(state_path, state)
 
+    # 高评分案例：优先本期新增（最新+高分），不足则从近期高分池轮转补足
     recent = [c for c in added if not (c.get("priority") or c.get("award"))]
     recent.sort(key=lambda c: (c.get("date", ""), c.get("score", 0)), reverse=True)
     others = recent[:2]
     if len(others) < 2:
         pool = [c for c in existing if not (c.get("priority") or c.get("award"))]
-        pool.sort(key=lambda c: (c.get("date", ""), c.get("score", 0)), reverse=True)
-        seen = {id(c) for c in others}
-        for c in pool:
-            if id(c) not in seen and len(others) < 2:
+        cand = sorted(pool, key=lambda c: (c.get("score", 0), c.get("date", "")), reverse=True)[:10]
+        hidx = int(state.get("high_idx", 0)) % max(len(cand), 1)
+        seen_ids = {id(c) for c in others}
+        taken = 0
+        for i in range(max(len(cand), 1)):
+            c = cand[(hidx + i) % len(cand)] if cand else None
+            if c and id(c) not in seen_ids and len(others) < 2:
                 others.append(c)
-                seen.add(id(c))
+                seen_ids.add(id(c))
+                taken += 1
+        state["high_idx"] = (hidx + max(taken, 1)) % max(len(cand), 1)
+
+    save_json(state_path, state)
     items = [x for x in [award_case] + others if x]
     return items
 
@@ -441,12 +450,12 @@ def main():
     # 始终写文件：固化评分/排序/奖项等级字段（无新增时仅落盘，不推送）
     total = write_files(existing, repo_root)
     print("[WRITE] 写入完成，共 %d 条" % total)
-    # 每期推送：1 奖项案例 + 2 个近期最高分优秀案例
+    # 每期必推：1 奖项案例 + 2 个近期最高分优秀案例
+    # 无新增时也照发精选（奖项轮转 + 高分轮转），保证 momo 每 2 天都能收到推送，不再静默
     items = select_push_items(existing, added, repo_root)
-    if added:
-        pushplus(items)
-    else:
-        print("[NOOP] 无新增案例，不推送")
+    tag = ("本期新增 %d 条" % len(added)) if added else "无新增·精选回顾"
+    print("[PUSH] 本期推送 %d 条（%s）" % (len(items), tag))
+    pushplus(items)
 
 
 if __name__ == "__main__":
