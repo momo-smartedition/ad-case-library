@@ -370,6 +370,23 @@ window.CASES = [
     }
   },
   {
+    "id": "topys-20261029-1",
+    "title": "视频播客迭代，创作者们开始拼起了场景？ | TOPYS创意内容平台",
+    "advertiser": "",
+    "agency": "",
+    "campaignType": "创意精选",
+    "summary": "播客，你喜欢“看”的还是“听”的？",
+    "images": [
+      "https://img-sz.topys.cn/2026-10-22/1792649413548.png"
+    ],
+    "source": "TOPYS",
+    "award": "",
+    "priority": false,
+    "url": "https://www.topys.cn/article/34822",
+    "date": "2026-10-29",
+    "score": 29
+  },
+  {
     "id": "topys-20261023-1",
     "title": "在分歧愈多的时代，美术馆希望让人们重新融合丨TOPYS专访皮力 | TOPYS创意内容平台",
     "advertiser": "",
