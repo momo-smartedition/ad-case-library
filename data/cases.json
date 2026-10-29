@@ -1,5 +1,31 @@
 [
   {
+    "id": "award-2026roi-yili-mayili",
+    "title": "伊利2026马年CNY《寻找马伊琍》",
+    "advertiser": "伊利",
+    "agency": "",
+    "campaignType": "创意整合",
+    "summary": "捕捉网友'伊利该签马伊琍'的自发呼声，把它变成官宣代言人的品牌行动，让消费者成为春节营销的共创者，成现象级案例。",
+    "images": [
+      "https://file.digitaling.com/eImg/cover/20260522/20260522122120_56284.jpg"
+    ],
+    "source": "金投赏",
+    "award": "2026金投赏 全场大奖(金奖)·创意整合",
+    "url": "https://stock.10jqka.com.cn/20261022/c680990495.shtml",
+    "date": "2026-10-21",
+    "priority": true,
+    "score": 85,
+    "award_tier": "S",
+    "scores": {
+      "creativity": 5,
+      "insight": 5,
+      "spread": 5,
+      "fit": 5,
+      "execution": 5,
+      "borrow": 5
+    }
+  },
+  {
     "id": "award-2026cannes-viagra",
     "title": "Viagra Blue Brands（蓝色万艾可）",
     "advertiser": "VIATRIS(晖致)",
@@ -7,7 +33,7 @@
     "campaignType": "医药狮",
     "summary": "提取万艾可标志性钴蓝色视觉，打造印有品牌标识的蓝色日用品，规避敏感药效话术，落脚伴侣长久陪伴。",
     "images": [
-      "https://oss.adquan.com/upload/17827868903ad4b3ee26bbf802.webp"
+      "https://oss.adquan.com/uploads_img/178278689182e573993ea363fd.jpg"
     ],
     "source": "戛纳创意节",
     "award": "2026戛纳 医药狮金狮+公共关系狮铜狮",
@@ -26,43 +52,21 @@
     }
   },
   {
-    "id": "award-2026roi-yili-mayili",
-    "title": "伊利2026马年CNY《寻找马伊琍》",
-    "advertiser": "伊利",
-    "agency": "",
-    "campaignType": "创意整合",
-    "summary": "捕捉网友'伊利该签马伊琍'的自发呼声，把它变成官宣代言人的品牌行动，让消费者成为春节营销的共创者，成现象级案例。",
-    "images": [],
-    "source": "金投赏",
-    "award": "2026金投赏 全场大奖(金奖)·创意整合",
-    "url": "https://stock.10jqka.com.cn/20261022/c680990495.shtml",
-    "date": "2026-10-21",
-    "priority": true,
-    "score": 80,
-    "award_tier": "S",
-    "scores": {
-      "creativity": 5,
-      "insight": 5,
-      "spread": 5,
-      "fit": 5,
-      "execution": 5,
-      "borrow": 5
-    }
-  },
-  {
     "id": "award-2026greatwall-jindian",
     "title": "伊利金典×抖音「有机自在年」",
     "advertiser": "金典(伊利)",
     "agency": "三人行传媒",
     "campaignType": "数字营销",
     "summary": "以'有机自在年'为理念，定制优质内容×抖音组合，深度链接消费者情感共鸣，于销量高峰赋能品效双收。",
-    "images": [],
+    "images": [
+      "https://oss.adquan.com/ccma_image/20251222/1766385445376265.jpg"
+    ],
     "source": "长城奖",
     "award": "2026长城奖 金奖·数字营销",
     "url": "https://www.cnad.com/index.php?mod=article&act=view&titleId=354321",
     "date": "2026-10-25",
     "priority": true,
-    "score": 74,
+    "score": 79,
     "award_tier": "S",
     "scores": {
       "creativity": 4,
@@ -80,18 +84,98 @@
     "agency": "三人行传媒",
     "campaignType": "新春营销",
     "summary": "抛出'过年搭子选伊利'主题，拥抱所有年货品牌做'百搭'，幽默出圈引发网友持续讨论。",
-    "images": [],
+    "images": [
+      "https://file.digitaling.com/eImg/cover/20250109/20250109192115_88928.jpg"
+    ],
     "source": "长城奖",
     "award": "2026长城奖 金奖·新春营销",
     "url": "https://www.cnad.com/index.php?mod=article&act=view&titleId=354321",
     "date": "2026-10-25",
     "priority": true,
-    "score": 74,
+    "score": 79,
     "award_tier": "S",
     "scores": {
       "creativity": 4,
       "insight": 4,
       "spread": 4,
+      "fit": 4,
+      "execution": 4,
+      "borrow": 4
+    }
+  },
+  {
+    "id": "award-2026roi-maopu",
+    "title": "毛铺草本酒《我在90年望父成龙》",
+    "advertiser": "毛铺草本酒(劲牌)",
+    "agency": "",
+    "campaignType": "内容营销",
+    "summary": "以'父子和解'国民情感切口+火热的短剧形式，微博总播放破1.26亿、话题阅读5.4亿，为白酒营销开辟年轻化新路径。",
+    "images": [
+      "https://oss.adquan.com/uploads_img/202610229e7ce28ae7e27f48.jpg"
+    ],
+    "source": "金投赏",
+    "award": "2026金投赏 金奖(全场大奖候选)·内容营销",
+    "url": "https://www.adquan.com/article/364959",
+    "date": "2026-10-21",
+    "priority": true,
+    "score": 67,
+    "award_tier": "A",
+    "scores": {
+      "creativity": 5,
+      "insight": 5,
+      "spread": 5,
+      "fit": 4,
+      "execution": 4,
+      "borrow": 4
+    }
+  },
+  {
+    "id": "award-2026roi-baiqueling",
+    "title": "百雀羚「灵」花鸟市场：一场年轻人的精神赶集",
+    "advertiser": "百雀羚",
+    "agency": "蓝色光标",
+    "campaignType": "活动策划及管理",
+    "summary": "从逐渐消失的花鸟市场汲取灵感，以AI重构海派花鸟市场，融合沪语梗、非遗与艺术装置，为年轻人找回松弛与鲜活。",
+    "images": [
+      "https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2026%2F1022%2F9d99866ej00tnaghu00rfd000v900dap.jpg&thumbnail=660x2147483647&quality=80&type=jpg"
+    ],
+    "source": "金投赏",
+    "award": "2026金投赏 金奖·活动策划及管理",
+    "url": "https://www.163.com/dy/article/L9RCL52G0518WI9N.html",
+    "date": "2026-10-21",
+    "priority": true,
+    "score": 66,
+    "award_tier": "A",
+    "scores": {
+      "creativity": 5,
+      "insight": 4,
+      "spread": 4,
+      "fit": 4,
+      "execution": 5,
+      "borrow": 4
+    }
+  },
+  {
+    "id": "award-2026roi-yili-jielong",
+    "title": "伊利《一联抛梗，全民接龙：重塑春节社交》",
+    "advertiser": "伊利",
+    "agency": "",
+    "campaignType": "社交营销",
+    "summary": "官宣马伊琍后抛上联邀全民对下联，刘震云等名人下场斗联，品牌声量同比提升超2倍、液态奶销售额增超3倍。",
+    "images": [
+      "https://file.digitaling.com/eImg/cover/20260522/20260522122120_56284.jpg"
+    ],
+    "source": "金投赏",
+    "award": "2026金投赏 银奖·社交营销",
+    "url": "https://stock.10jqka.com.cn/20261022/c680990495.shtml",
+    "date": "2026-10-21",
+    "priority": true,
+    "score": 65,
+    "award_tier": "A",
+    "scores": {
+      "creativity": 4,
+      "insight": 4,
+      "spread": 5,
       "fit": 4,
       "execution": 4,
       "borrow": 4
@@ -105,7 +189,7 @@
     "campaignType": "音频&广播狮",
     "summary": "把敲背拍打揉捏四种手部动作的原生声响提取为音乐节拍，用听觉重新定义扬州文旅。",
     "images": [
-      "https://oss.adquan.com/upload/17827868903ad4b3ee26bbf802.webp"
+      "https://oss.adquan.com/uploads_img/178278689137cb50aefd5b4a1b.jpg"
     ],
     "source": "戛纳创意节",
     "award": "2026戛纳 音频&广播狮银狮",
@@ -124,6 +208,32 @@
     }
   },
   {
+    "id": "award-2026greatwall-hengyuanxiang",
+    "title": "恒源祥《妈妈的绒线》",
+    "advertiser": "恒源祥",
+    "agency": "",
+    "campaignType": "公益广告",
+    "summary": "以三张系列公益海报将抽象爱心转化为具象视觉符号，搭建社会爱心与困境儿童情感需求的连接桥梁。",
+    "images": [
+      "https://hyx1927.com/userfiles/1/img2024/QQ%e6%88%aa%e5%9b%be20251230155412.png"
+    ],
+    "source": "长城奖",
+    "award": "2026长城奖 银奖+黄河奖 铜奖·公益",
+    "url": "https://hyx1927.com/Show_nowpage_229_693_688.htm",
+    "date": "2026-10-25",
+    "priority": true,
+    "score": 64,
+    "award_tier": "A",
+    "scores": {
+      "creativity": 4,
+      "insight": 5,
+      "spread": 3,
+      "fit": 4,
+      "execution": 4,
+      "borrow": 4
+    }
+  },
+  {
     "id": "award-2026cannes-kaitak",
     "title": "回到启德 Back to Kai Tak",
     "advertiser": "国泰航空",
@@ -131,7 +241,7 @@
     "campaignType": "户外狮",
     "summary": "复刻经典启德低空进近航线，让国泰客机飞越启德体育园上空，唤醒香港市民的本土归属感与自豪感。",
     "images": [
-      "https://oss.adquan.com/upload/17827868903ad4b3ee26bbf802.webp"
+      "https://oss.adquan.com/uploads_img/1782786891c539c3dc42f3c727.jpg"
     ],
     "source": "戛纳创意节",
     "award": "2026戛纳 户外狮银狮",
@@ -157,7 +267,7 @@
     "campaignType": "娱乐狮(体育)",
     "summary": "用AI语音克隆+实时唇形同步，复刻台湾古装剧角色原声担任棒球解说，科技退居幕后制造纯粹快乐。",
     "images": [
-      "https://oss.adquan.com/upload/17827868903ad4b3ee26bbf802.webp"
+      "https://oss.adquan.com/uploads_img/178278689237516b771aeb8297.jpg"
     ],
     "source": "戛纳创意节",
     "award": "2026戛纳 娱乐狮(体育)银狮",
@@ -176,102 +286,6 @@
     }
   },
   {
-    "id": "award-2026roi-maopu",
-    "title": "毛铺草本酒《我在90年望父成龙》",
-    "advertiser": "毛铺草本酒(劲牌)",
-    "agency": "",
-    "campaignType": "内容营销",
-    "summary": "以'父子和解'国民情感切口+火热的短剧形式，微博总播放破1.26亿、话题阅读5.4亿，为白酒营销开辟年轻化新路径。",
-    "images": [],
-    "source": "金投赏",
-    "award": "2026金投赏 金奖(全场大奖候选)·内容营销",
-    "url": "https://www.adquan.com/article/364959",
-    "date": "2026-10-21",
-    "priority": true,
-    "score": 62,
-    "award_tier": "A",
-    "scores": {
-      "creativity": 5,
-      "insight": 5,
-      "spread": 5,
-      "fit": 4,
-      "execution": 4,
-      "borrow": 4
-    }
-  },
-  {
-    "id": "award-2026roi-baiqueling",
-    "title": "百雀羚「灵」花鸟市场：一场年轻人的精神赶集",
-    "advertiser": "百雀羚",
-    "agency": "蓝色光标",
-    "campaignType": "活动策划及管理",
-    "summary": "从逐渐消失的花鸟市场汲取灵感，以AI重构海派花鸟市场，融合沪语梗、非遗与艺术装置，为年轻人找回松弛与鲜活。",
-    "images": [],
-    "source": "金投赏",
-    "award": "2026金投赏 金奖·活动策划及管理",
-    "url": "https://www.163.com/dy/article/L9RCL52G0518WI9N.html",
-    "date": "2026-10-21",
-    "priority": true,
-    "score": 61,
-    "award_tier": "A",
-    "scores": {
-      "creativity": 5,
-      "insight": 4,
-      "spread": 4,
-      "fit": 4,
-      "execution": 5,
-      "borrow": 4
-    }
-  },
-  {
-    "id": "award-2026roi-yili-jielong",
-    "title": "伊利《一联抛梗，全民接龙：重塑春节社交》",
-    "advertiser": "伊利",
-    "agency": "",
-    "campaignType": "社交营销",
-    "summary": "官宣马伊琍后抛上联邀全民对下联，刘震云等名人下场斗联，品牌声量同比提升超2倍、液态奶销售额增超3倍。",
-    "images": [],
-    "source": "金投赏",
-    "award": "2026金投赏 银奖·社交营销",
-    "url": "https://stock.10jqka.com.cn/20261022/c680990495.shtml",
-    "date": "2026-10-21",
-    "priority": true,
-    "score": 60,
-    "award_tier": "A",
-    "scores": {
-      "creativity": 4,
-      "insight": 4,
-      "spread": 5,
-      "fit": 4,
-      "execution": 4,
-      "borrow": 4
-    }
-  },
-  {
-    "id": "award-2026greatwall-hengyuanxiang",
-    "title": "恒源祥《妈妈的绒线》",
-    "advertiser": "恒源祥",
-    "agency": "",
-    "campaignType": "公益广告",
-    "summary": "以三张系列公益海报将抽象爱心转化为具象视觉符号，搭建社会爱心与困境儿童情感需求的连接桥梁。",
-    "images": [],
-    "source": "长城奖",
-    "award": "2026长城奖 银奖+黄河奖 铜奖·公益",
-    "url": "https://hyx1927.com/Show_nowpage_229_693_688.htm",
-    "date": "2026-10-25",
-    "priority": true,
-    "score": 59,
-    "award_tier": "A",
-    "scores": {
-      "creativity": 4,
-      "insight": 5,
-      "spread": 3,
-      "fit": 4,
-      "execution": 4,
-      "borrow": 4
-    }
-  },
-  {
     "id": "award-2026cannes-shenzhen",
     "title": "Fascinating（奇境）",
     "advertiser": "深圳旅游局",
@@ -279,7 +293,7 @@
     "campaignType": "行业工艺狮",
     "summary": "以超现实摄影海报+城市交响短片，用中西融合诗意视觉讲述深圳故事，打破'科技硬件之城'刻板印象。",
     "images": [
-      "https://oss.adquan.com/upload/17827868903ad4b3ee26bbf802.webp"
+      "https://oss.adquan.com/uploads_img/1782786892b338d9546f890f1d.jpg"
     ],
     "source": "戛纳创意节",
     "award": "2026戛纳 行业工艺狮铜狮",
@@ -304,13 +318,15 @@
     "agency": "蓝色光标",
     "campaignType": "AI创新整合",
     "summary": "将'百事酷宝'科技资产向善转身，打破山路阻隔让前沿科技走进大凉山课堂，点亮山区孩子对未来的想象。",
-    "images": [],
+    "images": [
+      "https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2026%2F1022%2Faae43381j00tnafvs001ld000u000k0m.jpg&thumbnail=660x2147483647&quality=80&type=jpg"
+    ],
     "source": "金投赏",
     "award": "2026金投赏 提名奖·AI创新整合",
     "url": "https://www.163.com/dy/article/L9RCL52G0518WI9N.html",
     "date": "2026-10-21",
     "priority": true,
-    "score": 48,
+    "score": 53,
     "award_tier": "B",
     "scores": {
       "creativity": 4,
@@ -328,13 +344,15 @@
     "agency": "蓝色光标",
     "campaignType": "活动策划及管理",
     "summary": "巧借'鸡场'与'机场'谐音，航站楼快闪+沉浸式登机体验+全国8城巡游，让'用料新鲜'可见、可感、可参与。",
-    "images": [],
+    "images": [
+      "https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2026%2F1022%2F849d4375j00tnafvs0013d000u000kfm.jpg&thumbnail=660x2147483647&quality=80&type=jpg"
+    ],
     "source": "金投赏",
     "award": "2026金投赏 铜奖·活动策划及管理",
     "url": "https://www.163.com/dy/article/L9RCL52G0518WI9N.html",
     "date": "2026-10-21",
     "priority": true,
-    "score": 47,
+    "score": 52,
     "award_tier": "B",
     "scores": {
       "creativity": 4,
@@ -352,13 +370,15 @@
     "agency": "蓝色光标",
     "campaignType": "KOL&明星项目",
     "summary": "以'多新鲜呐'为主张，携手于谦、宋雨琦，将春季现收鲜切卖点变成魔性的新鲜感叹。",
-    "images": [],
+    "images": [
+      "https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2026%2F1022%2Fa1a5f9a2j00tnafvs002ed000u000mim.jpg&thumbnail=660x2147483647&quality=80&type=jpg"
+    ],
     "source": "金投赏",
     "award": "2026金投赏 提名奖·KOL&明星项目",
     "url": "https://www.163.com/dy/article/L9RCL52G0518WI9N.html",
     "date": "2026-10-21",
     "priority": true,
-    "score": 45,
+    "score": 50,
     "award_tier": "B",
     "scores": {
       "creativity": 3,
@@ -368,6 +388,40 @@
       "execution": 3,
       "borrow": 3
     }
+  },
+  {
+    "id": "topys-20261029-1",
+    "title": "屡获大奖的BUCK工作室，是你的梦中情司吗？｜MINDPARK Re:Think | TOPYS创意内容平台",
+    "advertiser": "",
+    "agency": "",
+    "campaignType": "创意精选",
+    "summary": "动画创意天花板BUCK，是怎么保持有趣的？",
+    "images": [
+      "https://img-sz.topys.cn/2026-10-16/1792140636485.png"
+    ],
+    "source": "TOPYS",
+    "award": "",
+    "priority": false,
+    "url": "https://www.topys.cn/article/34819",
+    "date": "2026-10-29",
+    "score": 29
+  },
+  {
+    "id": "topys-20261029-2",
+    "title": "视频播客迭代，创作者们开始拼起了场景？ | TOPYS创意内容平台",
+    "advertiser": "",
+    "agency": "",
+    "campaignType": "创意精选",
+    "summary": "播客，你喜欢“看”的还是“听”的？",
+    "images": [
+      "https://img-sz.topys.cn/2026-10-22/1792649413548.png"
+    ],
+    "source": "TOPYS",
+    "award": "",
+    "priority": false,
+    "url": "https://www.topys.cn/article/34822",
+    "date": "2026-10-29",
+    "score": 29
   },
   {
     "id": "topys-20261023-1",
@@ -419,6 +473,91 @@
     "url": "https://www.topys.cn/article/34759",
     "date": "2026-10-23",
     "score": 29
+  },
+  {
+    "id": "auto-20261029-1",
+    "title": "巴黎时装周，名创优品YOYO为中国设计举个例子",
+    "advertiser": "",
+    "agency": "",
+    "campaignType": "最新案例",
+    "summary": "巴黎时装周启幕，又是一年时尚大考。 软萌的YOYO ，这次给出了一份别样的答卷。 去年，YOYO 穿着高定礼服，在巴黎完成了一场漂亮的“初亮相”。 时隔一年，再赴巴黎时装周。如何在大牌林立、顶流云集的国际时尚盛事中，留下专属 YOYO 的印记？ 这一次，我们决定 跳出常规的看客视角，挖掘原创 IP 的独有特点，在时装周中脱颖而出。 视角回落到 IP 本身。对 YOYO 而言，这次亮相不止是一次简单",
+    "images": [
+      "https://file.digitaling.com/eImg/uimages/20261028/1793201985105374.png"
+    ],
+    "source": "数英网",
+    "award": "",
+    "priority": false,
+    "url": "https://www.digitaling.com/projects/381247.html",
+    "date": "2026-10-29",
+    "score": 27
+  },
+  {
+    "id": "auto-20261029-2",
+    "title": "招聘频道 - 美术实习生",
+    "advertiser": "",
+    "agency": "",
+    "campaignType": "最新案例",
+    "summary": "招聘企业: SG胜加 工作区域: 上海长宁区 发布时间: 2026-10-29 Job ID: 276576 职位描述 Job Description ♥为什么值得来？ →上海佰川，是胜加集团旗下的创意厂牌。 →你的「学长」是创始人佘凯：曾获8 座 ONESHOW CHINA 等全场大奖，70 多座伦敦广告节等金奖；代表作你一定刷到过：中国银联《大唐漠北的最后一次转账》、方太《油烟情书》。 →在这",
+    "images": [
+      "https://file.digitaling.com/eImg/logo/20190605/20190605170359_87854_100.jpg"
+    ],
+    "source": "数英网",
+    "award": "",
+    "priority": false,
+    "url": "https://www.digitaling.com/jobs/276576.html",
+    "date": "2026-10-29",
+    "score": 27
+  },
+  {
+    "id": "auto-20261029-3",
+    "title": "三星又又又贴脸开大，把苹果切成两半",
+    "advertiser": "",
+    "agency": "",
+    "campaignType": "最新案例",
+    "summary": "每逢苹果发布新品，三星都会贴脸开大。 在 iPhone Duo 发布当晚，美国三星官方账号就在 X 平台上连发数条： So far, so same （不过如此，都见过） ，调侃苹果是 来热我们剩下的饭 。还专门艾特多邻国，配文 抱歉，他们也抄袭了我们 。 新西兰三星更绝，请了一位真名叫 蒂姆·库克 的房产经纪人出镜给 Z Fold8 做评测。 最近，三星又又又发布了一支火药味十足的短片。 这是三",
+    "images": [
+      "https://file.digitaling.com/eImg/uimages/20261028/1793173327945955.jpg"
+    ],
+    "source": "数英网",
+    "award": "",
+    "priority": false,
+    "url": "https://www.digitaling.com/projects/381205.html",
+    "date": "2026-10-29",
+    "score": 27
+  },
+  {
+    "id": "auto-20261029-4",
+    "title": "男女理应平等保护，沃尔沃的安全意识真的超前！",
+    "advertiser": "",
+    "agency": "",
+    "campaignType": "最新案例",
+    "summary": "《男女平等保护，是沃尔沃的标配》 原来汽车安全广告还能这么拍！ 最近，沃尔沃推出了一支围绕“50/50 男女平等保护”展开的广告。 这支片子的呈现方式，很特别。 没有常见的碰撞测试画面，也没有一上来就罗列各种安全配置，而是直接 把舞者搬到了镜头前，用一连串充满张力的肢体动作，演绎交通事故发生时人体受到的冲击。 开场，画面以亮橙色为背景，黑色文字直接打出“50/50 男女平等保护”，并标注“沃尔沃安",
+    "images": [
+      "https://file.digitaling.com/eImg/uimages/20261028/1793157169786988.png"
+    ],
+    "source": "数英网",
+    "award": "",
+    "priority": false,
+    "url": "https://www.digitaling.com/projects/381163.html",
+    "date": "2026-10-29",
+    "score": 27
+  },
+  {
+    "id": "auto-20261029-5",
+    "title": "CeraVe香港户外广告，靠讲废话出圈了",
+    "advertiser": "",
+    "agency": "",
+    "campaignType": "最新案例",
+    "summary": "没有代言人，除了贴功效、讲成分，护肤品广告还能怎么做？ 今年9月，CeraVe适乐肤在香港街头以「啱又使乜Sell」主题，推出一组“不像广告”的户外广告。 “啱又使乜Sell”，粤语大意是 “好东西不需要费力推销” 。于是，整套广告也真的贯彻了“不推销”的策略。 官方海报，要么是放两只产品背面图，写上“樽背寫晒啦”，告诉大家产品咋样“背面信息都有啦”，自己看咯； 要么把产品一摊，“自己上网看风评”",
+    "images": [
+      "https://file.digitaling.com/eImg/uimages/20261027/1793098317824155.jpg"
+    ],
+    "source": "数英网",
+    "award": "",
+    "priority": false,
+    "url": "https://www.digitaling.com/projects/381128.html",
+    "date": "2026-10-29",
+    "score": 27
   },
   {
     "id": "auto-20261026-1",
