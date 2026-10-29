@@ -22,7 +22,7 @@ UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
 REPO = "momo-smartedition/ad-case-library"
 DRY_RUN = os.environ.get("DRY_RUN", "") == "1"
 PUSHPLUS_TOKEN = os.environ.get("PUSHPLUS_TOKEN", "")
-SITE_URL = "https://34cc3ccbfb1f4c41a8bf6bf6425de755.app.workbuddy.host"
+SITE_URL = "https://6152ab6c7ba745fe8a11897d460d9b9f.app.workbuddy.host"
 
 # RSS 多源（都是 git 可稳定抓取、带真实来源标签）
 RSS_SOURCES = [
@@ -231,6 +231,38 @@ def load_json(path):
         return []
 
 
+def save_json(path, data):
+    try:
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        return True
+    except Exception:
+        return False
+
+
+def find_image_for_url(url):
+    """尽力为某 URL 找到一张可加载的正文图（og:image → data-src → <img>）。
+    用于奖项案例补图的安全网：策展库里某奖项案例忘了填图时，推送前自动补。"""
+    if not url:
+        return None
+    h = fetch(url)
+    if not h:
+        return None
+    m = re.search(r'property=["\']og:image["\'][^>]*content=["\']([^"\']+)', h, re.I)
+    if m and img_ok(m.group(1)):
+        return m.group(1)
+    for m in re.finditer(r'data-(?:src|original)=["\']([^"\']+)', h, re.I):
+        if img_ok(m.group(1)):
+            return m.group(1)
+    for m in re.finditer(r'<img[^>]+src=["\']([^"\']+)', h, re.I):
+        s = m.group(1)
+        if any(x in s.lower() for x in ("logo", "icon", "avatar", "qrcode", "1x1", "pixel", "nopic", "header_default")):
+            continue
+        if img_ok(s):
+            return s
+    return None
+
+
 def merge(existing, new, dedup_by="all"):
     urls = {c.get("url") for c in existing}
     titles = {c.get("title") for c in existing}
@@ -289,15 +321,15 @@ def write_files(existing, repo_root):
     return len(existing)
 
 
-def pushplus(added):
+def pushplus(items):
     if not PUSHPLUS_TOKEN:
         print("[PUSH] 未配置 PUSHPLUS_TOKEN，跳过推送")
         return
-    if not added:
-        print("[PUSH] 无新增案例，跳过推送")
+    if not items:
+        print("[PUSH] 无推送内容，跳过")
         return
-    award_added = [c for c in added if c.get("priority") or c.get("award")]
-    others = [c for c in added if not (c.get("priority") or c.get("award"))]
+    award_items = [c for c in items if c.get("priority") or c.get("award")]
+    other_items = [c for c in items if not (c.get("priority") or c.get("award"))]
 
     def block(c):
         tier = c.get("award_tier")
@@ -307,14 +339,14 @@ def pushplus(added):
                 % (tag, c["title"], c.get("source", ""), c.get("award", "") or "最新案例",
                    c.get("score", ""), c.get("summary", ""), c["url"]))
 
-    html = ("<h3>叮🔔 仅供乐呵·新案例来喽～</h3>"
-            + (("<p>🏆 本期 <b>%d</b> 个奖项案例优先送达：</p>" % len(award_added)) if award_added else "")
-            + "".join(block(c) for c in award_added)
-            + (("".join(block(c) for c in others)) if others else "")
+    html = ("<h3>叮🔔 仅供乐呵·精选案例来喽～</h3>"
+            + (("<p>🏆 本期精选 <b>%d</b> 个奖项案例：</p>" % len(award_items)) if award_items else "")
+            + "".join(block(c) for c in award_items)
+            + (("<p>⭐ 本期 <b>%d</b> 个高评分最新案例：</p>" % len(other_items)) if other_items else "")
+            + "".join(block(c) for c in other_items)
             + "<p>完整案例库 & 检索在这儿 👉 <a href='%s'>%s</a></p>" % (SITE_URL, SITE_URL))
-    body = json.dumps({"token": PUSHPLUS_TOKEN,
-                       "title": "仅供乐呵·新案例来喽（含%d个奖项案例）" % len(award_added),
-                       "content": html}).encode("utf-8")
+    title = "仅供乐呵·精选（%d奖项+%d高分）" % (len(award_items), len(other_items))
+    body = json.dumps({"token": PUSHPLUS_TOKEN, "title": title, "content": html}).encode("utf-8")
     req = subprocess.run(
         ["curl", "-s", "-X", "POST", "https://www.pushplus.plus/send",
          "-H", "Content-Type: application/json; charset=utf-8",
@@ -324,6 +356,35 @@ def pushplus(added):
         print("[PUSH] 推送结果:", req.stdout.decode("utf-8", "ignore"))
     except Exception as e:
         print("[PUSH] 推送失败:", repr(e))
+
+
+def select_push_items(existing, added, repo_root):
+    """每次推送：1 个奖项案例（按分数轮转，避免重复）+ 2 个近期最新且评分最高的优秀案例。
+    若本次新增不足 2 个非奖项案例，则从近期库里补足，保证每期都是精选。"""
+    awards = [c for c in existing if c.get("priority") or c.get("award")]
+    awards.sort(key=lambda c: (c.get("score", 0), c.get("date", "")), reverse=True)
+    state_path = os.path.join(repo_root, "data", "push_state.json")
+    state = load_json(state_path)
+    if not isinstance(state, dict):
+        state = {}
+    idx = int(state.get("award_idx", 0)) % max(len(awards), 1)
+    award_case = awards[idx] if awards else None
+    state["award_idx"] = (idx + 1) % max(len(awards), 1)
+    save_json(state_path, state)
+
+    recent = [c for c in added if not (c.get("priority") or c.get("award"))]
+    recent.sort(key=lambda c: (c.get("date", ""), c.get("score", 0)), reverse=True)
+    others = recent[:2]
+    if len(others) < 2:
+        pool = [c for c in existing if not (c.get("priority") or c.get("award"))]
+        pool.sort(key=lambda c: (c.get("date", ""), c.get("score", 0)), reverse=True)
+        seen = {id(c) for c in others}
+        for c in pool:
+            if id(c) not in seen and len(others) < 2:
+                others.append(c)
+                seen.add(id(c))
+    items = [x for x in [award_case] + others if x]
+    return items
 
 
 def main():
@@ -356,6 +417,22 @@ def main():
     existing.sort(key=lambda c: (c.get("score", 0), c.get("date", "")), reverse=True)
     added = sorted(added, key=lambda c: c.get("score", 0), reverse=True)
 
+    # 推送前强制补图：奖项案例务必带真图（策展库漏填时自动从来源页补）
+    award_imgs_changed = False
+    for c in existing:
+        if (c.get("priority") or c.get("award")) and not (c.get("images") and c["images"]):
+            img = find_image_for_url(c.get("url", ""))
+            if img:
+                c["images"] = [img]
+                for k in curated:
+                    if k.get("id") == c.get("id"):
+                        k["images"] = [img]
+                award_imgs_changed = True
+                print("[IMG] 奖项案例补图:", c.get("id"), img[:60])
+    if award_imgs_changed:
+        save_json(os.path.join(repo_root, "data", "awards.json"), curated)
+        print("[IMG] 已把补图写回 awards.json")
+
     if DRY_RUN:
         print("[DRY_RUN] 不写文件、不推送。新增预览:")
         for c in added:
@@ -364,8 +441,10 @@ def main():
     # 始终写文件：固化评分/排序/奖项等级字段（无新增时仅落盘，不推送）
     total = write_files(existing, repo_root)
     print("[WRITE] 写入完成，共 %d 条" % total)
+    # 每期推送：1 奖项案例 + 2 个近期最高分优秀案例
+    items = select_push_items(existing, added, repo_root)
     if added:
-        pushplus(added)
+        pushplus(items)
     else:
         print("[NOOP] 无新增案例，不推送")
 
