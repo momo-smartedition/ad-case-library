@@ -1,5 +1,88 @@
 [
   {
+    "id": "topys-20261102-1",
+    "title": "TOPYS | 创意内容平台 OPEN YOUR MIND",
+    "advertiser": "TOPYS",
+    "agency": "",
+    "campaignType": "创意精选",
+    "summary": "（详见原文）",
+    "images": [],
+    "source": "TOPYS",
+    "award": "",
+    "priority": false,
+    "url": "https://www.topys.cn/article/34572",
+    "date": "2026-11-02",
+    "score": 24
+  },
+  {
+    "id": "sb-28891",
+    "title": "CHANEL 将冬日雪境搬进上海弄堂",
+    "advertiser": "CHANEL",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "邀请王一博演绎全新 COCO NEIGE 2026 系列，共赴冬日旅程。",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/38450-rG25PjdcdZoyaMri.jpg?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/28891",
+    "date": "2026-11-01",
+    "score": 25
+  },
+  {
+    "id": "sb-28890",
+    "title": "LV 将经典 Monogram 带上滑雪场",
+    "advertiser": "LV",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "滑雪板饰以 Damier 棋盘格，为专业装备增添品牌辨识度。",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/38450-cfs54lmspKVgJrH4.png?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/28890",
+    "date": "2026-11-01",
+    "score": 25
+  },
+  {
+    "id": "sb-28888",
+    "title": "美的携手 F5 上海在北欧地区「贩卖温暖」",
+    "advertiser": "美的",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "将冬日温暖化为一场亲子游戏",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/224935-m43h9xlfQ9_Re3uh.jpg?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/28888",
+    "date": "2026-11-01",
+    "score": 25
+  },
+  {
+    "id": "sb-28889",
+    "title": "Balenciaga 为滑雪外套装上搜救反射器",
+    "advertiser": "Balenciaga",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "全新滑雪系列兼顾专业性能与日常穿搭。",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/38450-GWFFqhVHpaEitGIC.jpg?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/28889",
+    "date": "2026-11-01",
+    "score": 25
+  },
+  {
     "id": "auto-20261029-1",
     "title": "巴黎时装周，名创优品YOYO为中国设计举个例子",
     "advertiser": "名创优品",
