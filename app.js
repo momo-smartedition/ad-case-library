@@ -126,12 +126,10 @@
       return hitAdv && hitAgency && hitType;
     });
     list.sort((a, b) => {
-      // 优先按优质分降序（奖项/高分自然排最前），同分再按日期
-      const sa = a.score || 0, sb = b.score || 0;
-      if (sa !== sb) return sb - sa;
-      return sort === "date-asc"
-        ? a.date.localeCompare(b.date)
-        : b.date.localeCompare(a.date);
+      // 默认「最新在前」：先比日期（新→旧），同日期再比优质分（高→低）
+      const d = (a.date || "").localeCompare(b.date || "");
+      if (d !== 0) return sort === "date-asc" ? d : -d;
+      return (b.score || 0) - (a.score || 0);
     });
 
     grid.innerHTML = "";

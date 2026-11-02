@@ -30,6 +30,7 @@ RSS_SOURCES = [
     {"name": "梅花网", "url": "https://www.meihua.info/feed"},
 ]
 TOPYS_URL = "https://www.topys.cn"
+SB_URL = "https://socialbeta.com/campaign"   # SocialBeta 每日品牌营销快讯（案例库）
 
 # 奖项关键词（用于从 RSS/标题里识别是否获奖）
 AWARD_KW = ["金投赏", "戛纳", "长城奖", "黄河奖", "艾菲", "One Show",
@@ -88,6 +89,20 @@ BRAND_LEXICON = [
     "云南白药", "片仔癀", "同仁堂", "汤臣倍健", "Swisse", "善存",
     "中国移动", "中国电信", "中国联通", "中国邮政", "顺丰", "中通", "韵达",
     "宜家", "居然之家", "红星美凯龙", "林氏家居", "顾家家居", "慕思",
+    # SocialBeta 高频（奢侈品/时尚/国际品牌）
+    "CHANEL", "LV", "Louis Vuitton", "Balenciaga", "Dior", "Gucci", "Prada",
+    "Hermès", "Hermes", "Cartier", "Tiffany", "Burberry", "Rolex", "Omega",
+    "Miu Miu", "Loewe", "Fendi", "Versace", "Armani", "Coach", "Michael Kors",
+    "Ray-Ban", "Swarovski", "Moncler", "Canada Goose", "The North Face",
+    "Puma", "Under Armour", "New Balance", "ASICS", "Lululemon", "Arc'teryx",
+    "Levi's", "Calvin Klein", "Tommy Hilfiger", "Ralph Lauren", "COS", "Massimo Dutti",
+    # 中国家电/3C/新消费（SocialBeta 高频）
+    "美的", "海尔", "格力", "TCL", "海信", "方太", "老板电器", "九阳", "苏泊尔",
+    "追觅", "石头科技", "添可", "科沃斯", "大疆", "Insta360", "影石",
+    "自然堂", "韩束", "谷雨", "夸迪", "可复美", "巨子生物", "润百颜",
+    "泡泡玛特", "TOP TOY", "52TOYS", "卡游", "三只松鼠", "良品铺子", "周黑鸭",
+    "蜜雪冰城", "古茗", "茶百道", "沪上阿姨", "霸王茶姬", "Manner", "Seesaw",
+    "始祖鸟", "Salomon", "迪桑特", "KOLON SPORT", "骆驼", "探路者",
 ]
 
 
@@ -113,7 +128,13 @@ def guess_advertiser(title, summary=""):
                 return b
         elif b.lower() in t.lower():
             return b
-    # 分隔符前提取：「金典：邀请小孩姐…」→ 金典；「野兽派家居×瞿颖」→ 野兽派家居
+    # ② 标题开头就是英文品牌（SocialBeta 常见格式：CHANEL 将冬日雪境… / LV 将经典…）
+    m = re.match(r"^([A-Za-z][A-Za-z&\.'\s\-]{1,18}?)\s+[\u4e00-\u9fa5]", t)
+    if m:
+        cand = m.group(1).strip()
+        if 2 <= len(cand) <= 20 and cand.lower() not in ("the", "a", "an"):
+            return cand
+    # ③ 分隔符前提取：「金典：邀请小孩姐…」→ 金典；「野兽派家居×瞿颖」→ 野兽派家居
     head = re.split(r"[：:｜|×✕\-—–]", t, maxsplit=1)[0].strip()
     if 2 <= len(head) <= 10 and not is_junk(head):
         # 纯中文/英文品牌片段才认，避免把整句当前缀
@@ -309,6 +330,64 @@ def collect_topys(target=3):
     return out
 
 
+def collect_socialbeta(target=4):
+    """SocialBeta「每日品牌营销快讯」案例库（无可用 RSS，抓 /campaign 列表页）。
+    卡片结构：<a class="pic" href="/campaign/ID"><img src="图"></a>
+              <div class="tit"><a>标题</a></div><div class="meta">简介</div>
+    日期来自分组标题 <div class="hdtitle">昨天 <span>11月1日</span></div>。
+    id 用 campaign 数字 id（跨天稳定，天然去重）。"""
+    html = fetch(SB_URL)
+    if not html or "hdtitle" not in html:
+        print("[SB] 列表页抓取失败/结构变更")
+        return []
+    parts = re.split(r'<div class="hdtitle[^"]*">(.*?)</div>', html, flags=re.S)
+    out, now = [], datetime.now()
+    for i in range(1, len(parts) - 1, 2):
+        header, body = parts[i], parts[i + 1]
+        m = re.search(r'(\d{1,2})\s*月\s*(\d{1,2})\s*日', header)
+        date = now.strftime("%Y-%m-%d")
+        if m:
+            try:
+                date = datetime(now.year, int(m.group(1)), int(m.group(2))).strftime("%Y-%m-%d")
+            except ValueError:
+                pass
+        cards = re.findall(
+            r'<a class="pic"[^>]*href="(https://socialbeta\.com/campaign/(\d+))"[^>]*>\s*'
+            r'<img src="([^"]+)"[^>]*>.*?'
+            r'<div class="tit"><a[^>]*>([^<]+)</a></div>\s*'
+            r'<div class="meta">\s*([^<]*)</div>',
+            body, re.S)
+        for url, cid, img, title, meta in cards:
+            if len(out) >= target:
+                break
+            title = clean_title(title)
+            if not title or len(title) < 4:
+                continue
+            if is_junk(title):
+                print("  [SB] 跳过(非案例):", title[:30])
+                continue
+            if not img_ok(img, ref=SB_URL):
+                print("  [SB] 跳过(无图):", title[:26])
+                continue
+            summary = text_of(meta)[:200] if meta else "（详见原文）"
+            out.append({
+                "id": "sb-" + cid,
+                "title": title,
+                "advertiser": guess_advertiser(title),
+                "agency": "",
+                "campaignType": "每日快讯",
+                "summary": summary,
+                "images": [img],
+                "source": "SocialBeta",
+                "award": detect_award(title + " " + summary),
+                "priority": False,
+                "url": url,
+                "date": date,
+            })
+    print("[SB] 采集 %d 条" % len(out))
+    return out
+
+
 def load_json(path):
     if not os.path.exists(path):
         return []
@@ -447,41 +526,40 @@ def pushplus(items):
 
 
 def select_push_items(existing, added, repo_root):
-    """每期必推：1 个奖项案例（轮转，避免重复）+ 2 个高评分优秀案例（轮转，避免期期同一两条）。
-    本期有新增则优先用新增里最新最高分的；不足 2 个时从近期高分池轮转补足，保证每期都是精选。"""
-    awards = [c for c in existing if c.get("priority") or c.get("award")]
-    awards.sort(key=lambda c: (c.get("score", 0), c.get("date", "")), reverse=True)
+    """每期必推：**2 个最新案例放前面** + **1 个奖项案例压轴**（轮转，避免期期重复）。
+    最新案例优先取本期新增，不足 2 条时从全库按日期补齐。"""
     state_path = os.path.join(repo_root, "data", "push_state.json")
     state = load_json(state_path)
     if not isinstance(state, dict):
         state = {}
 
-    # 奖项案例轮转
-    idx = int(state.get("award_idx", 0)) % max(len(awards), 1)
-    award_case = awards[idx] if awards else None
-    state["award_idx"] = (idx + 1) % max(len(awards), 1)
+    def is_curated_award(c):
+        # 只认策展奖项库（priority），SocialBeta/数英快讯里带「戛纳」字样不算
+        return bool(c.get("priority"))
 
-    # 高评分案例：优先本期新增（最新+高分），不足则从近期高分池轮转补足
-    recent = [c for c in added if not (c.get("priority") or c.get("award"))]
-    recent.sort(key=lambda c: (c.get("date", ""), c.get("score", 0)), reverse=True)
-    others = recent[:2]
-    if len(others) < 2:
-        pool = [c for c in existing if not (c.get("priority") or c.get("award"))]
-        cand = sorted(pool, key=lambda c: (c.get("score", 0), c.get("date", "")), reverse=True)[:10]
-        hidx = int(state.get("high_idx", 0)) % max(len(cand), 1)
-        seen_ids = {id(c) for c in others}
-        taken = 0
-        for i in range(max(len(cand), 1)):
-            c = cand[(hidx + i) % len(cand)] if cand else None
-            if c and id(c) not in seen_ids and len(others) < 2:
-                others.append(c)
-                seen_ids.add(id(c))
-                taken += 1
-        state["high_idx"] = (hidx + max(taken, 1)) % max(len(cand), 1)
+    # 1) 两个最新案例：优先本期新增，不足从全库按日期补
+    fresh = [c for c in added if not is_curated_award(c)]
+    fresh.sort(key=lambda c: (c.get("date", ""), c.get("score", 0)), reverse=True)
+    latest = fresh[:2]
+    if len(latest) < 2:
+        picked = {c.get("id") for c in latest}
+        pool = [c for c in existing
+                if not is_curated_award(c) and c.get("id") not in picked]
+        pool.sort(key=lambda c: (c.get("date", ""), c.get("score", 0)), reverse=True)
+        latest += pool[:2 - len(latest)]
+
+    # 2) 一个奖项案例（轮转）
+    awards = [c for c in existing if is_curated_award(c)]
+    awards.sort(key=lambda c: (c.get("score", 0), c.get("date", "")), reverse=True)
+    award_case = None
+    if awards:
+        idx = int(state.get("award_idx", 0)) % len(awards)
+        award_case = awards[idx]
+        state["award_idx"] = (idx + 1) % len(awards)
 
     save_json(state_path, state)
-    items = [x for x in [award_case] + others if x]
-    return items
+    # 最新两条在前，奖项案例压轴
+    return latest + ([award_case] if award_case else [])
 
 
 def main():
@@ -505,14 +583,19 @@ def main():
     existing, added_topys = merge(existing, new_topys)
     print("[TOPYS] 新增 %d 条" % len(added_topys))
 
-    added = added_award + added_rss + added_topys
+    # 4) SocialBeta 每日品牌营销快讯（案例库）
+    new_sb = collect_socialbeta(target=4)
+    existing, added_sb = merge(existing, new_sb)
+    print("[SB] 新增 %d 条" % len(added_sb))
+
+    added = added_award + added_rss + added_topys + added_sb
     print("[MERGE] 本次新增共 %d 条" % len(added))
 
-    # 计算优质分，并按分数降序排序（奖项/高分优先，同分按日期降序）
+    # 计算优质分（仍保留用于展示分数徽章）；列表排序改为「最新在前」，同日期再比分数
     for c in existing:
         c["score"] = compute_score(c)
-    existing.sort(key=lambda c: (c.get("score", 0), c.get("date", "")), reverse=True)
-    added = sorted(added, key=lambda c: c.get("score", 0), reverse=True)
+    existing.sort(key=lambda c: (c.get("date", ""), c.get("score", 0)), reverse=True)
+    added = sorted(added, key=lambda c: (c.get("date", ""), c.get("score", 0)), reverse=True)
 
     # 推送前强制补图：奖项案例务必带真图（策展库漏填时自动从来源页补）
     award_imgs_changed = False

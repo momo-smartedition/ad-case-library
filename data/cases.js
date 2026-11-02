@@ -1,395 +1,5 @@
 window.CASES = [
   {
-    "id": "award-2026roi-yili-mayili",
-    "title": "伊利2026马年CNY《寻找马伊琍》",
-    "advertiser": "伊利",
-    "agency": "",
-    "campaignType": "创意整合",
-    "summary": "捕捉网友'伊利该签马伊琍'的自发呼声，把它变成官宣代言人的品牌行动，让消费者成为春节营销的共创者，成现象级案例。",
-    "images": [
-      "https://file.digitaling.com/eImg/cover/20260522/20260522122120_56284.jpg"
-    ],
-    "source": "金投赏",
-    "award": "2026金投赏 全场大奖(金奖)·创意整合",
-    "url": "https://stock.10jqka.com.cn/20261022/c680990495.shtml",
-    "date": "2026-10-21",
-    "priority": true,
-    "score": 85,
-    "award_tier": "S",
-    "scores": {
-      "creativity": 5,
-      "insight": 5,
-      "spread": 5,
-      "fit": 5,
-      "execution": 5,
-      "borrow": 5
-    }
-  },
-  {
-    "id": "award-2026cannes-viagra",
-    "title": "Viagra Blue Brands（蓝色万艾可）",
-    "advertiser": "VIATRIS(晖致)",
-    "agency": "奥美上海",
-    "campaignType": "医药狮",
-    "summary": "提取万艾可标志性钴蓝色视觉，打造印有品牌标识的蓝色日用品，规避敏感药效话术，落脚伴侣长久陪伴。",
-    "images": [
-      "https://oss.adquan.com/uploads_img/178278689182e573993ea363fd.jpg"
-    ],
-    "source": "戛纳创意节",
-    "award": "2026戛纳 医药狮金狮+公共关系狮铜狮",
-    "url": "https://m.adquan.com/detail/0-361603",
-    "date": "2026-06-26",
-    "priority": true,
-    "score": 82,
-    "award_tier": "S",
-    "scores": {
-      "creativity": 5,
-      "insight": 5,
-      "spread": 4,
-      "fit": 5,
-      "execution": 4,
-      "borrow": 4
-    }
-  },
-  {
-    "id": "award-2026greatwall-jindian",
-    "title": "伊利金典×抖音「有机自在年」",
-    "advertiser": "金典(伊利)",
-    "agency": "三人行传媒",
-    "campaignType": "数字营销",
-    "summary": "以'有机自在年'为理念，定制优质内容×抖音组合，深度链接消费者情感共鸣，于销量高峰赋能品效双收。",
-    "images": [
-      "https://oss.adquan.com/ccma_image/20251222/1766385445376265.jpg"
-    ],
-    "source": "长城奖",
-    "award": "2026长城奖 金奖·数字营销",
-    "url": "https://www.cnad.com/index.php?mod=article&act=view&titleId=354321",
-    "date": "2026-10-25",
-    "priority": true,
-    "score": 79,
-    "award_tier": "S",
-    "scores": {
-      "creativity": 4,
-      "insight": 4,
-      "spread": 4,
-      "fit": 4,
-      "execution": 4,
-      "borrow": 4
-    }
-  },
-  {
-    "id": "award-2026greatwall-guonian",
-    "title": "伊利「过年好搭子」新春'百搭'营销",
-    "advertiser": "伊利",
-    "agency": "三人行传媒",
-    "campaignType": "新春营销",
-    "summary": "抛出'过年搭子选伊利'主题，拥抱所有年货品牌做'百搭'，幽默出圈引发网友持续讨论。",
-    "images": [
-      "https://file.digitaling.com/eImg/cover/20250109/20250109192115_88928.jpg"
-    ],
-    "source": "长城奖",
-    "award": "2026长城奖 金奖·新春营销",
-    "url": "https://www.cnad.com/index.php?mod=article&act=view&titleId=354321",
-    "date": "2026-10-25",
-    "priority": true,
-    "score": 79,
-    "award_tier": "S",
-    "scores": {
-      "creativity": 4,
-      "insight": 4,
-      "spread": 4,
-      "fit": 4,
-      "execution": 4,
-      "borrow": 4
-    }
-  },
-  {
-    "id": "award-2026roi-maopu",
-    "title": "毛铺草本酒《我在90年望父成龙》",
-    "advertiser": "毛铺草本酒(劲牌)",
-    "agency": "",
-    "campaignType": "内容营销",
-    "summary": "以'父子和解'国民情感切口+火热的短剧形式，微博总播放破1.26亿、话题阅读5.4亿，为白酒营销开辟年轻化新路径。",
-    "images": [
-      "https://oss.adquan.com/uploads_img/202610229e7ce28ae7e27f48.jpg"
-    ],
-    "source": "金投赏",
-    "award": "2026金投赏 金奖(全场大奖候选)·内容营销",
-    "url": "https://www.adquan.com/article/364959",
-    "date": "2026-10-21",
-    "priority": true,
-    "score": 67,
-    "award_tier": "A",
-    "scores": {
-      "creativity": 5,
-      "insight": 5,
-      "spread": 5,
-      "fit": 4,
-      "execution": 4,
-      "borrow": 4
-    }
-  },
-  {
-    "id": "award-2026roi-baiqueling",
-    "title": "百雀羚「灵」花鸟市场：一场年轻人的精神赶集",
-    "advertiser": "百雀羚",
-    "agency": "蓝色光标",
-    "campaignType": "活动策划及管理",
-    "summary": "从逐渐消失的花鸟市场汲取灵感，以AI重构海派花鸟市场，融合沪语梗、非遗与艺术装置，为年轻人找回松弛与鲜活。",
-    "images": [
-      "https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2026%2F1022%2F9d99866ej00tnaghu00rfd000v900dap.jpg&thumbnail=660x2147483647&quality=80&type=jpg"
-    ],
-    "source": "金投赏",
-    "award": "2026金投赏 金奖·活动策划及管理",
-    "url": "https://www.163.com/dy/article/L9RCL52G0518WI9N.html",
-    "date": "2026-10-21",
-    "priority": true,
-    "score": 66,
-    "award_tier": "A",
-    "scores": {
-      "creativity": 5,
-      "insight": 4,
-      "spread": 4,
-      "fit": 4,
-      "execution": 5,
-      "borrow": 4
-    }
-  },
-  {
-    "id": "award-2026roi-yili-jielong",
-    "title": "伊利《一联抛梗，全民接龙：重塑春节社交》",
-    "advertiser": "伊利",
-    "agency": "",
-    "campaignType": "社交营销",
-    "summary": "官宣马伊琍后抛上联邀全民对下联，刘震云等名人下场斗联，品牌声量同比提升超2倍、液态奶销售额增超3倍。",
-    "images": [
-      "https://file.digitaling.com/eImg/cover/20260522/20260522122120_56284.jpg"
-    ],
-    "source": "金投赏",
-    "award": "2026金投赏 银奖·社交营销",
-    "url": "https://stock.10jqka.com.cn/20261022/c680990495.shtml",
-    "date": "2026-10-21",
-    "priority": true,
-    "score": 65,
-    "award_tier": "A",
-    "scores": {
-      "creativity": 4,
-      "insight": 4,
-      "spread": 5,
-      "fit": 4,
-      "execution": 4,
-      "borrow": 4
-    }
-  },
-  {
-    "id": "award-2026cannes-yangzhou",
-    "title": "扬州敲背组曲 The Yangzhou Qiaobei Musical Suite",
-    "advertiser": "扬州旅游局",
-    "agency": "TBWA上海",
-    "campaignType": "音频&广播狮",
-    "summary": "把敲背拍打揉捏四种手部动作的原生声响提取为音乐节拍，用听觉重新定义扬州文旅。",
-    "images": [
-      "https://oss.adquan.com/uploads_img/178278689137cb50aefd5b4a1b.jpg"
-    ],
-    "source": "戛纳创意节",
-    "award": "2026戛纳 音频&广播狮银狮",
-    "url": "https://m.adquan.com/detail/0-361603",
-    "date": "2026-06-26",
-    "priority": true,
-    "score": 65,
-    "award_tier": "A",
-    "scores": {
-      "creativity": 5,
-      "insight": 5,
-      "spread": 3,
-      "fit": 5,
-      "execution": 4,
-      "borrow": 3
-    }
-  },
-  {
-    "id": "award-2026greatwall-hengyuanxiang",
-    "title": "恒源祥《妈妈的绒线》",
-    "advertiser": "恒源祥",
-    "agency": "",
-    "campaignType": "公益广告",
-    "summary": "以三张系列公益海报将抽象爱心转化为具象视觉符号，搭建社会爱心与困境儿童情感需求的连接桥梁。",
-    "images": [
-      "https://hyx1927.com/userfiles/1/img2024/QQ%e6%88%aa%e5%9b%be20251230155412.png"
-    ],
-    "source": "长城奖",
-    "award": "2026长城奖 银奖+黄河奖 铜奖·公益",
-    "url": "https://hyx1927.com/Show_nowpage_229_693_688.htm",
-    "date": "2026-10-25",
-    "priority": true,
-    "score": 64,
-    "award_tier": "A",
-    "scores": {
-      "creativity": 4,
-      "insight": 5,
-      "spread": 3,
-      "fit": 4,
-      "execution": 4,
-      "borrow": 4
-    }
-  },
-  {
-    "id": "award-2026cannes-kaitak",
-    "title": "回到启德 Back to Kai Tak",
-    "advertiser": "国泰航空",
-    "agency": "LEO香港",
-    "campaignType": "户外狮",
-    "summary": "复刻经典启德低空进近航线，让国泰客机飞越启德体育园上空，唤醒香港市民的本土归属感与自豪感。",
-    "images": [
-      "https://oss.adquan.com/uploads_img/1782786891c539c3dc42f3c727.jpg"
-    ],
-    "source": "戛纳创意节",
-    "award": "2026戛纳 户外狮银狮",
-    "url": "https://m.adquan.com/detail/0-361603",
-    "date": "2026-06-26",
-    "priority": true,
-    "score": 64,
-    "award_tier": "A",
-    "scores": {
-      "creativity": 5,
-      "insight": 4,
-      "spread": 3,
-      "fit": 5,
-      "execution": 4,
-      "borrow": 3
-    }
-  },
-  {
-    "id": "award-2026cannes-mikkeller",
-    "title": "The Switch Hit By Mikkeller",
-    "advertiser": "Mikkeller",
-    "agency": "奥美台湾",
-    "campaignType": "娱乐狮(体育)",
-    "summary": "用AI语音克隆+实时唇形同步，复刻台湾古装剧角色原声担任棒球解说，科技退居幕后制造纯粹快乐。",
-    "images": [
-      "https://oss.adquan.com/uploads_img/178278689237516b771aeb8297.jpg"
-    ],
-    "source": "戛纳创意节",
-    "award": "2026戛纳 娱乐狮(体育)银狮",
-    "url": "https://m.adquan.com/detail/0-361603",
-    "date": "2026-06-26",
-    "priority": true,
-    "score": 64,
-    "award_tier": "A",
-    "scores": {
-      "creativity": 5,
-      "insight": 4,
-      "spread": 3,
-      "fit": 4,
-      "execution": 4,
-      "borrow": 4
-    }
-  },
-  {
-    "id": "award-2026cannes-shenzhen",
-    "title": "Fascinating（奇境）",
-    "advertiser": "深圳旅游局",
-    "agency": "The Nine",
-    "campaignType": "行业工艺狮",
-    "summary": "以超现实摄影海报+城市交响短片，用中西融合诗意视觉讲述深圳故事，打破'科技硬件之城'刻板印象。",
-    "images": [
-      "https://oss.adquan.com/uploads_img/1782786892b338d9546f890f1d.jpg"
-    ],
-    "source": "戛纳创意节",
-    "award": "2026戛纳 行业工艺狮铜狮",
-    "url": "https://m.adquan.com/detail/0-361603",
-    "date": "2026-06-26",
-    "priority": true,
-    "score": 54,
-    "award_tier": "B",
-    "scores": {
-      "creativity": 5,
-      "insight": 4,
-      "spread": 3,
-      "fit": 5,
-      "execution": 4,
-      "borrow": 3
-    }
-  },
-  {
-    "id": "award-2026roi-pepsi",
-    "title": "百事可乐「渴望燎原计划」",
-    "advertiser": "百事可乐",
-    "agency": "蓝色光标",
-    "campaignType": "AI创新整合",
-    "summary": "将'百事酷宝'科技资产向善转身，打破山路阻隔让前沿科技走进大凉山课堂，点亮山区孩子对未来的想象。",
-    "images": [
-      "https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2026%2F1022%2Faae43381j00tnafvs001ld000u000k0m.jpg&thumbnail=660x2147483647&quality=80&type=jpg"
-    ],
-    "source": "金投赏",
-    "award": "2026金投赏 提名奖·AI创新整合",
-    "url": "https://www.163.com/dy/article/L9RCL52G0518WI9N.html",
-    "date": "2026-10-21",
-    "priority": true,
-    "score": 53,
-    "award_tier": "B",
-    "scores": {
-      "creativity": 4,
-      "insight": 4,
-      "spread": 3,
-      "fit": 4,
-      "execution": 4,
-      "borrow": 4
-    }
-  },
-  {
-    "id": "award-2026roi-taitaile",
-    "title": "太太乐领鲜飞「鸡」场",
-    "advertiser": "太太乐",
-    "agency": "蓝色光标",
-    "campaignType": "活动策划及管理",
-    "summary": "巧借'鸡场'与'机场'谐音，航站楼快闪+沉浸式登机体验+全国8城巡游，让'用料新鲜'可见、可感、可参与。",
-    "images": [
-      "https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2026%2F1022%2F849d4375j00tnafvs0013d000u000kfm.jpg&thumbnail=660x2147483647&quality=80&type=jpg"
-    ],
-    "source": "金投赏",
-    "award": "2026金投赏 铜奖·活动策划及管理",
-    "url": "https://www.163.com/dy/article/L9RCL52G0518WI9N.html",
-    "date": "2026-10-21",
-    "priority": true,
-    "score": 52,
-    "award_tier": "B",
-    "scores": {
-      "creativity": 4,
-      "insight": 3,
-      "spread": 3,
-      "fit": 4,
-      "execution": 4,
-      "borrow": 4
-    }
-  },
-  {
-    "id": "award-2026roi-lays",
-    "title": "乐事春收马铃薯：多新鲜呐",
-    "advertiser": "乐事",
-    "agency": "蓝色光标",
-    "campaignType": "KOL&明星项目",
-    "summary": "以'多新鲜呐'为主张，携手于谦、宋雨琦，将春季现收鲜切卖点变成魔性的新鲜感叹。",
-    "images": [
-      "https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2026%2F1022%2Fa1a5f9a2j00tnafvs002ed000u000mim.jpg&thumbnail=660x2147483647&quality=80&type=jpg"
-    ],
-    "source": "金投赏",
-    "award": "2026金投赏 提名奖·KOL&明星项目",
-    "url": "https://www.163.com/dy/article/L9RCL52G0518WI9N.html",
-    "date": "2026-10-21",
-    "priority": true,
-    "score": 50,
-    "award_tier": "B",
-    "scores": {
-      "creativity": 3,
-      "insight": 3,
-      "spread": 4,
-      "fit": 4,
-      "execution": 3,
-      "borrow": 3
-    }
-  },
-  {
     "id": "auto-20261029-1",
     "title": "巴黎时装周，名创优品YOYO为中国设计举个例子",
     "advertiser": "名创优品",
@@ -473,6 +83,84 @@ window.CASES = [
     "url": "https://www.digitaling.com/projects/380932.html",
     "date": "2026-10-26",
     "score": 27
+  },
+  {
+    "id": "award-2026greatwall-jindian",
+    "title": "伊利金典×抖音「有机自在年」",
+    "advertiser": "金典(伊利)",
+    "agency": "三人行传媒",
+    "campaignType": "数字营销",
+    "summary": "瞄准25-45岁品质中产「想团圆、也想松弛」的春节心态，金典请张泉灵（家庭糖画）、马伯庸（用「闲/趣/活」三字解年）、那尔那茜（马场换新鞍）各拍一支短片，把春节情绪从团圆感怀递进到文化仪式感。抖音端三层推进：OGC明星立调性、PGC开屏+热榜+话题矩阵造势、UGC用AIGC新春贴纸加全民任务卷人。定向A3/5A人群加推近千万核心人群。总曝光29亿+（完成率290%）、#定格新年自在瞬间 话题27亿播放、5A人群+37%、核心A3+143%、日均搜索+110%。",
+    "images": [
+      "https://oss.adquan.com/ccma_image/20251222/1766385445376265.jpg"
+    ],
+    "source": "长城奖",
+    "award": "2026长城奖 金奖·数字营销",
+    "url": "https://m.adquan.com/creative/detail/363380",
+    "date": "2026-10-25",
+    "priority": true,
+    "score": 79,
+    "award_tier": "S",
+    "scores": {
+      "creativity": 4,
+      "insight": 4,
+      "spread": 4,
+      "fit": 4,
+      "execution": 4,
+      "borrow": 4
+    }
+  },
+  {
+    "id": "award-2026greatwall-guonian",
+    "title": "伊利「过年好搭子」新春'百搭'营销",
+    "advertiser": "伊利",
+    "agency": "三人行传媒",
+    "campaignType": "新春营销",
+    "summary": "调研发现消费者对伊利就是「顺手买、搭着买」，品牌干脆承认自己不是主角——「过年搭子选伊利」，拥抱所有年货品牌一起当搭子，不做红花甘当绿叶。贾冰、李现演喜剧短片而非温情片，抖音高曝光点位打出幽默出圈。上线当日全网互动量破亿、正向评论约86%。这套「X搭子选伊利」句式此后连用四个节点（过年、团圆、假期），从借梗的人变成养梗的人，把热词做成了品牌资产。",
+    "images": [
+      "https://file.digitaling.com/eImg/cover/20250109/20250109192115_88928.jpg"
+    ],
+    "source": "长城奖",
+    "award": "2026长城奖 金奖·新春营销",
+    "url": "https://shichangbu.com/know_info/73587.html",
+    "date": "2026-10-25",
+    "priority": true,
+    "score": 79,
+    "award_tier": "S",
+    "scores": {
+      "creativity": 4,
+      "insight": 4,
+      "spread": 4,
+      "fit": 4,
+      "execution": 4,
+      "borrow": 4
+    }
+  },
+  {
+    "id": "award-2026greatwall-hengyuanxiang",
+    "title": "恒源祥《妈妈的绒线》",
+    "advertiser": "恒源祥",
+    "agency": "",
+    "campaignType": "公益广告",
+    "summary": "公益最怕「抽象」——「关爱困境儿童」喊了很多年，公众却无感。恒源祥用三张系列公益海报把抽象的爱心织成具象的「绒线」：妈妈手里的毛线既是温暖也是牵挂，一根线从母亲的手牵到孩子身上，让「被爱」有了可触摸的形状。品牌把公益从捐款叙事拉回情感连接，也让「恒源祥＝绒线」这个老资产重新有了当代情绪。",
+    "images": [
+      "https://hyx1927.com/userfiles/1/img2024/QQ%e6%88%aa%e5%9b%be20251230155412.png"
+    ],
+    "source": "长城奖",
+    "award": "2026长城奖 银奖+黄河奖 铜奖·公益",
+    "url": "https://hyx1927.com/Show_nowpage_229_693_688.htm",
+    "date": "2026-10-25",
+    "priority": true,
+    "score": 64,
+    "award_tier": "A",
+    "scores": {
+      "creativity": 4,
+      "insight": 5,
+      "spread": 3,
+      "fit": 4,
+      "execution": 4,
+      "borrow": 4
+    }
   },
   {
     "id": "auto-20261023-1",
@@ -559,6 +247,188 @@ window.CASES = [
       "https://file.digitaling.com/eImg/uimages/20261020/1792428176614869.jpg"
     ],
     "score": 27
+  },
+  {
+    "id": "award-2026roi-yili-mayili",
+    "title": "伊利2026马年CNY《寻找马伊琍》",
+    "advertiser": "伊利",
+    "agency": "NPLUS Digital",
+    "campaignType": "创意整合",
+    "summary": "网友自发玩梗「马年伊利该签马伊琍」，伊利没按常规官宣，而是把这个民间脑洞直接拍成广告：伪花絮形式，导演向李现、马思纯讲创意，两人上街「寻人」，结尾集体致谢网友。从玩梗到全民事件只用了14天，把「听劝」做成品牌最鲜明的标签。主创团队 NPLUS Digital 复盘：难点是让谐音梗不停留在玩梗，还要控制尺度、不过度消费艺人。资源共创、内容共创、传播共创三层推进，成为开年第一个现象级营销范本。",
+    "images": [
+      "https://file.digitaling.com/eImg/cover/20260522/20260522122120_56284.jpg"
+    ],
+    "source": "金投赏",
+    "award": "2026金投赏 全场大奖(金奖)·创意整合",
+    "url": "https://www.5iidea.com/contents/47711",
+    "date": "2026-10-21",
+    "priority": true,
+    "score": 85,
+    "award_tier": "S",
+    "scores": {
+      "creativity": 5,
+      "insight": 5,
+      "spread": 5,
+      "fit": 5,
+      "execution": 5,
+      "borrow": 5
+    }
+  },
+  {
+    "id": "award-2026roi-maopu",
+    "title": "毛铺草本酒《我在90年望父成龙》",
+    "advertiser": "毛铺草本酒(劲牌)",
+    "agency": "",
+    "campaignType": "内容营销",
+    "summary": "白酒最难的是进年轻人的圈层——在年轻人眼里那是「父辈的酒」。毛铺挑了「父子和解」这个最普世的情感切口，用当时最热的短剧形式讲一个90年代孩子「望父成龙」的故事：两代人的期待、误解与和解都压在剧情里，白酒从应酬符号变回情感载体。微博总播放破1.26亿、话题阅读5.4亿，为白酒营销的年轻化开出一条新路径。",
+    "images": [
+      "https://oss.adquan.com/uploads_img/202610229e7ce28ae7e27f48.jpg"
+    ],
+    "source": "金投赏",
+    "award": "2026金投赏 金奖(全场大奖候选)·内容营销",
+    "url": "https://www.adquan.com/article/364959",
+    "date": "2026-10-21",
+    "priority": true,
+    "score": 67,
+    "award_tier": "A",
+    "scores": {
+      "creativity": 5,
+      "insight": 5,
+      "spread": 5,
+      "fit": 4,
+      "execution": 4,
+      "borrow": 4
+    }
+  },
+  {
+    "id": "award-2026roi-baiqueling",
+    "title": "百雀羚「灵」花鸟市场：一场年轻人的精神赶集",
+    "advertiser": "百雀羚",
+    "agency": "蓝色光标",
+    "campaignType": "活动策划及管理",
+    "summary": "快闪同质化的当下，百雀羚从正在消失的花鸟市场里取灵感，用AI重构海派花鸟市场，把95年品牌积淀做成一场年轻人的「精神赶集」：沪语梗、非遗体验、艺术装置、全息花鸟光影，让花与雀从品牌符号升维成城市文化符号。线下把整条圆明园路变成《花鸟图卷》，先以「金的很灵」礼车巡游预热导流，再由小红书博主点亮礼市。总互动540万、线下参与1030万、总曝光2.82亿。",
+    "images": [
+      "https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2026%2F1022%2F9d99866ej00tnaghu00rfd000v900dap.jpg&thumbnail=660x2147483647&quality=80&type=jpg"
+    ],
+    "source": "金投赏",
+    "award": "2026金投赏 金奖·活动策划及管理",
+    "url": "https://www.163.com/dy/article/L9RCL52G0518WI9N.html",
+    "date": "2026-10-21",
+    "priority": true,
+    "score": 66,
+    "award_tier": "A",
+    "scores": {
+      "creativity": 5,
+      "insight": 4,
+      "spread": 4,
+      "fit": 4,
+      "execution": 5,
+      "borrow": 4
+    }
+  },
+  {
+    "id": "award-2026roi-yili-jielong",
+    "title": "伊利《一联抛梗，全民接龙：重塑春节社交》",
+    "advertiser": "伊利",
+    "agency": "",
+    "campaignType": "社交营销",
+    "summary": "借「马伊琍马年喝伊利」的谐音梗起势，伊利在微博抛出一副上联，邀全民对下联：刘震云等名人下场斗联、AI 实时智评互动、网友二创刷屏、官媒定调收尾，把春节写对联的老习俗变成一场全民接龙。品牌 CNY 声量同比提升202%，液态奶销售额增超3倍，拿下金鼠标社会化营销金奖，被行业当作「把节日营销升维成民俗新仪式」的样本。",
+    "images": [
+      "https://file.digitaling.com/eImg/cover/20260522/20260522122120_56284.jpg"
+    ],
+    "source": "金投赏",
+    "award": "2026金投赏 银奖·社交营销",
+    "url": "https://stock.10jqka.com.cn/20261022/c680990495.shtml",
+    "date": "2026-10-21",
+    "priority": true,
+    "score": 65,
+    "award_tier": "A",
+    "scores": {
+      "creativity": 4,
+      "insight": 4,
+      "spread": 5,
+      "fit": 4,
+      "execution": 4,
+      "borrow": 4
+    }
+  },
+  {
+    "id": "award-2026roi-pepsi",
+    "title": "百事可乐「渴望燎原计划」",
+    "advertiser": "百事可乐",
+    "agency": "蓝色光标",
+    "campaignType": "AI创新整合",
+    "summary": "把「百事酷宝」这个科技资产向善转身：联合中国妇女发展基金会把科技带进大凉山——第一堂课让酷宝化身「酷老师」，让孩子第一次伸手触碰科技、开口提问；接着搭建数字化课堂与教学设备，让科技教育能持续发生；再以人民网回访报道和纪录片《时代的渴望 百事的回答》放大影响。300+家媒体、316篇报道、总曝光2400万+，从资源补足走到科技启蒙。",
+    "images": [
+      "https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2026%2F1022%2Faae43381j00tnafvs001ld000u000k0m.jpg&thumbnail=660x2147483647&quality=80&type=jpg"
+    ],
+    "source": "金投赏",
+    "award": "2026金投赏 提名奖·AI创新整合",
+    "url": "https://www.163.com/dy/article/L9RCL52G0518WI9N.html",
+    "date": "2026-10-21",
+    "priority": true,
+    "score": 53,
+    "award_tier": "B",
+    "scores": {
+      "creativity": 4,
+      "insight": 4,
+      "spread": 3,
+      "fit": 4,
+      "execution": 4,
+      "borrow": 4
+    }
+  },
+  {
+    "id": "award-2026roi-taitaile",
+    "title": "太太乐领鲜飞「鸡」场",
+    "advertiser": "太太乐",
+    "agency": "蓝色光标",
+    "campaignType": "活动策划及管理",
+    "summary": "消费者很难直观感受鸡精的原料有多新鲜，太太乐借「鸡场」与「机场」的谐音，在航站楼做快闪和沉浸式登机体验：原料溯源、品质把控全部按「登机流程」呈现；再让白羽鸡化身飞机，搭「领鲜号」巡游车跑遍全国8城。把「用料新鲜」做成可见、可感、可参与的一场体验。",
+    "images": [
+      "https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2026%2F1022%2F849d4375j00tnafvs0013d000u000kfm.jpg&thumbnail=660x2147483647&quality=80&type=jpg"
+    ],
+    "source": "金投赏",
+    "award": "2026金投赏 铜奖·活动策划及管理",
+    "url": "https://www.163.com/dy/article/L9RCL52G0518WI9N.html",
+    "date": "2026-10-21",
+    "priority": true,
+    "score": 52,
+    "award_tier": "B",
+    "scores": {
+      "creativity": 4,
+      "insight": 3,
+      "spread": 3,
+      "fit": 4,
+      "execution": 4,
+      "borrow": 4
+    }
+  },
+  {
+    "id": "award-2026roi-lays",
+    "title": "乐事春收马铃薯：多新鲜呐",
+    "advertiser": "乐事",
+    "agency": "蓝色光标",
+    "campaignType": "KOL&明星项目",
+    "summary": "明星种草已经让人免疫，「看得到但不相信」。乐事换了个切口：把国民口头禅「多新鲜呐」做成主张——同一句话换个语气就能表达疑问、惊讶、惊叹，正好对应「4小时现收鲜切」的新鲜感。于谦、宋雨琦拍趣味短片，同步在广州农场做线下溯源，把消费者对产品的好奇，转成一句脱口而出的新鲜感叹。",
+    "images": [
+      "https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2026%2F1022%2Fa1a5f9a2j00tnafvs002ed000u000mim.jpg&thumbnail=660x2147483647&quality=80&type=jpg"
+    ],
+    "source": "金投赏",
+    "award": "2026金投赏 提名奖·KOL&明星项目",
+    "url": "https://www.163.com/dy/article/L9RCL52G0518WI9N.html",
+    "date": "2026-10-21",
+    "priority": true,
+    "score": 50,
+    "award_tier": "B",
+    "scores": {
+      "creativity": 3,
+      "insight": 3,
+      "spread": 4,
+      "fit": 4,
+      "execution": 3,
+      "borrow": 3
+    }
   },
   {
     "id": "auto-20261021-pringles-halloween",
@@ -774,23 +644,6 @@ window.CASES = [
     "score": 27
   },
   {
-    "id": "demo-004",
-    "date": "2026-10-05",
-    "source": "数英网",
-    "sourceUrl": "https://www.digitaling.com/",
-    "url": "https://www.digitaling.com/projects/339401.html",
-    "advertiser": "大窑",
-    "agency": "品牌方 × 地铁媒介代理",
-    "campaignType": "户外/地铁广告",
-    "title": "11 城地铁广告：做年轻人的嘴替",
-    "summary": "在 11 座城市的地铁投方言海报，把城市饮食符号玩成梗——青岛「哈大窑吃嘎啦」、郑州「画的饼不够吃改吃烩面」、佛山「鸡会摆在眼前」，高饱和撞色绑定「大窑配美食」场景，做打工人的情绪嘴替。",
-    "images": [
-      "https://file.digitaling.com/eImg/cover/20250520/20250520113321_76126.jpg",
-      "https://file.digitaling.com/eImg/uimages/20250520/remote_174771121590392.jpg"
-    ],
-    "score": 27
-  },
-  {
     "id": "auto-20261014-kangbenbei",
     "date": "2026-10-14",
     "source": "中国经济新闻网",
@@ -857,5 +710,152 @@ window.CASES = [
       "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/38450-1782314309.jpg"
     ],
     "score": 25
+  },
+  {
+    "id": "demo-004",
+    "date": "2026-10-05",
+    "source": "数英网",
+    "sourceUrl": "https://www.digitaling.com/",
+    "url": "https://www.digitaling.com/projects/339401.html",
+    "advertiser": "大窑",
+    "agency": "品牌方 × 地铁媒介代理",
+    "campaignType": "户外/地铁广告",
+    "title": "11 城地铁广告：做年轻人的嘴替",
+    "summary": "在 11 座城市的地铁投方言海报，把城市饮食符号玩成梗——青岛「哈大窑吃嘎啦」、郑州「画的饼不够吃改吃烩面」、佛山「鸡会摆在眼前」，高饱和撞色绑定「大窑配美食」场景，做打工人的情绪嘴替。",
+    "images": [
+      "https://file.digitaling.com/eImg/cover/20250520/20250520113321_76126.jpg",
+      "https://file.digitaling.com/eImg/uimages/20250520/remote_174771121590392.jpg"
+    ],
+    "score": 27
+  },
+  {
+    "id": "award-2026cannes-viagra",
+    "title": "Viagra Blue Brands（蓝色万艾可）",
+    "advertiser": "VIATRIS(晖致)",
+    "agency": "奥美上海",
+    "campaignType": "医药狮",
+    "summary": "处方药不能直接宣传功效，奥美上海反手把「Viagra」商标注册延伸到发蜡、充电宝、自拍杆、千斤顶等16类日用品，全部做成标志性钴蓝色——「超硬挺」「超持久」「超能扛」这些词合法可说，消费者自己完成联想。所有产品上线官方电商，点击购买自动跳转合规问诊与处方平台，把内容、电商、医疗服务串成一条链路。结果：曝光超1亿次、品牌好感度+48%、电商访问量涨1.5倍，被视作敏感品类合规营销的可复用解法。",
+    "images": [
+      "https://oss.adquan.com/uploads_img/178278689182e573993ea363fd.jpg"
+    ],
+    "source": "戛纳创意节",
+    "award": "2026戛纳 医药狮金狮+公共关系狮铜狮",
+    "url": "https://www.adquan.com/article/361462",
+    "date": "2026-06-26",
+    "priority": true,
+    "score": 82,
+    "award_tier": "S",
+    "scores": {
+      "creativity": 5,
+      "insight": 5,
+      "spread": 4,
+      "fit": 5,
+      "execution": 4,
+      "borrow": 4
+    }
+  },
+  {
+    "id": "award-2026cannes-yangzhou",
+    "title": "扬州敲背组曲 The Yangzhou Qiaobei Musical Suite",
+    "advertiser": "扬州旅游局",
+    "agency": "TBWA上海",
+    "campaignType": "音频&广播狮",
+    "summary": "扬州敲背是市级非遗，但年轻人只知扬州园林和美食。TBWA上海跳出文旅宣传片的套路，发现「敲背即节奏」——把拍打、叩击、推拿、揉捏四种手法自带的原生声响提取成节拍，改编出《万马奔腾》《铜钱声声》等纯器乐组曲，把街头按摩的日常声响变成专属扬州的城市听觉名片，用听觉重新定义一座城。",
+    "images": [
+      "https://oss.adquan.com/uploads_img/178278689137cb50aefd5b4a1b.jpg"
+    ],
+    "source": "戛纳创意节",
+    "award": "2026戛纳 音频&广播狮银狮",
+    "url": "https://m.adquan.com/creative/detail/361439",
+    "date": "2026-06-26",
+    "priority": true,
+    "score": 65,
+    "award_tier": "A",
+    "scores": {
+      "creativity": 5,
+      "insight": 5,
+      "spread": 3,
+      "fit": 5,
+      "execution": 4,
+      "borrow": 3
+    }
+  },
+  {
+    "id": "award-2026cannes-kaitak",
+    "title": "回到启德 Back to Kai Tak",
+    "advertiser": "国泰航空",
+    "agency": "LEO香港",
+    "campaignType": "户外狮",
+    "summary": "国泰在香港本土市场占比近五成，却长期背着负面舆论。恰逢启德机场旧址改建的启德体育园落成、国际七人榄球赛在此开打，LEO香港抓住「启德低空进近」这个全港跨世代的集体记忆，策划了一场看似不可能完成的实景事件：复刻经典低空航线，让国泰客机真的从场馆上空掠过。用一场可感可拍的城市奇观，重新唤醒港人对国泰的归属感与自豪。",
+    "images": [
+      "https://oss.adquan.com/uploads_img/1782786891c539c3dc42f3c727.jpg"
+    ],
+    "source": "戛纳创意节",
+    "award": "2026戛纳 户外狮银狮",
+    "url": "https://m.adquan.com/detail/0-361603",
+    "date": "2026-06-26",
+    "priority": true,
+    "score": 64,
+    "award_tier": "A",
+    "scores": {
+      "creativity": 5,
+      "insight": 4,
+      "spread": 3,
+      "fit": 5,
+      "execution": 4,
+      "borrow": 3
+    }
+  },
+  {
+    "id": "award-2026cannes-mikkeller",
+    "title": "The Switch Hit By Mikkeller",
+    "advertiser": "Mikkeller",
+    "agency": "奥美台湾",
+    "campaignType": "娱乐狮(体育)",
+    "summary": "用AI语音克隆+实时唇形同步，把台湾古装剧角色的原声「搬」到棒球解说席，让观众熟悉的声音去解说一场比赛。技术全部退居幕后，观众只接收到荒诞又好笑的纯粹快乐——一条把AI当工具、而不是把AI当卖点的娱乐营销。",
+    "images": [
+      "https://oss.adquan.com/uploads_img/178278689237516b771aeb8297.jpg"
+    ],
+    "source": "戛纳创意节",
+    "award": "2026戛纳 娱乐狮(体育)银狮",
+    "url": "https://m.adquan.com/detail/0-361603",
+    "date": "2026-06-26",
+    "priority": true,
+    "score": 64,
+    "award_tier": "A",
+    "scores": {
+      "creativity": 5,
+      "insight": 4,
+      "spread": 3,
+      "fit": 4,
+      "execution": 4,
+      "borrow": 4
+    }
+  },
+  {
+    "id": "award-2026cannes-shenzhen",
+    "title": "Fascinating（奇境）",
+    "advertiser": "深圳旅游局",
+    "agency": "The Nine",
+    "campaignType": "行业工艺狮",
+    "summary": "用超现实摄影海报加城市交响短片，把深圳的中西融合、科技与人文剪成一套诗性视觉，专门对冲「深圳＝科技硬件之城」的刻板印象，为城市形象做了一次审美升级。",
+    "images": [
+      "https://oss.adquan.com/uploads_img/1782786892b338d9546f890f1d.jpg"
+    ],
+    "source": "戛纳创意节",
+    "award": "2026戛纳 行业工艺狮铜狮",
+    "url": "https://m.adquan.com/detail/0-361603",
+    "date": "2026-06-26",
+    "priority": true,
+    "score": 54,
+    "award_tier": "B",
+    "scores": {
+      "creativity": 5,
+      "insight": 4,
+      "spread": 3,
+      "fit": 5,
+      "execution": 4,
+      "borrow": 3
+    }
   }
 ];
