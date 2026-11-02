@@ -390,94 +390,9 @@ window.CASES = [
     }
   },
   {
-    "id": "topys-20261029-1",
-    "title": "屡获大奖的BUCK工作室，是你的梦中情司吗？｜MINDPARK Re:Think | TOPYS创意内容平台",
-    "advertiser": "",
-    "agency": "",
-    "campaignType": "创意精选",
-    "summary": "动画创意天花板BUCK，是怎么保持有趣的？",
-    "images": [
-      "https://img-sz.topys.cn/2026-10-16/1792140636485.png"
-    ],
-    "source": "TOPYS",
-    "award": "",
-    "priority": false,
-    "url": "https://www.topys.cn/article/34819",
-    "date": "2026-10-29",
-    "score": 29
-  },
-  {
-    "id": "topys-20261029-2",
-    "title": "视频播客迭代，创作者们开始拼起了场景？ | TOPYS创意内容平台",
-    "advertiser": "",
-    "agency": "",
-    "campaignType": "创意精选",
-    "summary": "播客，你喜欢“看”的还是“听”的？",
-    "images": [
-      "https://img-sz.topys.cn/2026-10-22/1792649413548.png"
-    ],
-    "source": "TOPYS",
-    "award": "",
-    "priority": false,
-    "url": "https://www.topys.cn/article/34822",
-    "date": "2026-10-29",
-    "score": 29
-  },
-  {
-    "id": "topys-20261023-1",
-    "title": "在分歧愈多的时代，美术馆希望让人们重新融合丨TOPYS专访皮力 | TOPYS创意内容平台",
-    "advertiser": "",
-    "agency": "",
-    "campaignType": "创意精选",
-    "summary": "深圳的文化发展，正处在最激动人心的时代。",
-    "images": [
-      "https://img-sz.topys.cn/2026-10-21/1792581331488.jpg"
-    ],
-    "source": "TOPYS",
-    "award": "",
-    "priority": false,
-    "url": "https://www.topys.cn/article/34821",
-    "date": "2026-10-23",
-    "score": 29
-  },
-  {
-    "id": "topys-20261023-2",
-    "title": "这段时间影像，让赶路的人慢下来 | TOPYS创意内容平台",
-    "advertiser": "",
-    "agency": "",
-    "campaignType": "创意精选",
-    "summary": "公共空间的时间体验可以更有趣！",
-    "images": [
-      "https://img-sz.topys.cn/2026-10-21/1792555350483.png"
-    ],
-    "source": "TOPYS",
-    "award": "",
-    "priority": false,
-    "url": "https://www.topys.cn/article/34820",
-    "date": "2026-10-23",
-    "score": 29
-  },
-  {
-    "id": "topys-20261023-3",
-    "title": "不炫技但精准，他的平面设计遍布日本街头 ｜MINDPARK Re:Think  | TOPYS创意内容平台",
-    "advertiser": "",
-    "agency": "",
-    "campaignType": "创意精选",
-    "summary": "不炫技但精准，他的平面设计遍布日本街头",
-    "images": [
-      "https://img-sz.topys.cn/2026-09-09/1788933537047.png"
-    ],
-    "source": "TOPYS",
-    "award": "",
-    "priority": false,
-    "url": "https://www.topys.cn/article/34759",
-    "date": "2026-10-23",
-    "score": 29
-  },
-  {
     "id": "auto-20261029-1",
     "title": "巴黎时装周，名创优品YOYO为中国设计举个例子",
-    "advertiser": "",
+    "advertiser": "名创优品",
     "agency": "",
     "campaignType": "最新案例",
     "summary": "巴黎时装周启幕，又是一年时尚大考。 软萌的YOYO ，这次给出了一份别样的答卷。 去年，YOYO 穿着高定礼服，在巴黎完成了一场漂亮的“初亮相”。 时隔一年，再赴巴黎时装周。如何在大牌林立、顶流云集的国际时尚盛事中，留下专属 YOYO 的印记？ 这一次，我们决定 跳出常规的看客视角，挖掘原创 IP 的独有特点，在时装周中脱颖而出。 视角回落到 IP 本身。对 YOYO 而言，这次亮相不止是一次简单",
@@ -492,26 +407,9 @@ window.CASES = [
     "score": 27
   },
   {
-    "id": "auto-20261029-2",
-    "title": "招聘频道 - 美术实习生",
-    "advertiser": "",
-    "agency": "",
-    "campaignType": "最新案例",
-    "summary": "招聘企业: SG胜加 工作区域: 上海长宁区 发布时间: 2026-10-29 Job ID: 276576 职位描述 Job Description ♥为什么值得来？ →上海佰川，是胜加集团旗下的创意厂牌。 →你的「学长」是创始人佘凯：曾获8 座 ONESHOW CHINA 等全场大奖，70 多座伦敦广告节等金奖；代表作你一定刷到过：中国银联《大唐漠北的最后一次转账》、方太《油烟情书》。 →在这",
-    "images": [
-      "https://file.digitaling.com/eImg/logo/20190605/20190605170359_87854_100.jpg"
-    ],
-    "source": "数英网",
-    "award": "",
-    "priority": false,
-    "url": "https://www.digitaling.com/jobs/276576.html",
-    "date": "2026-10-29",
-    "score": 27
-  },
-  {
     "id": "auto-20261029-3",
     "title": "三星又又又贴脸开大，把苹果切成两半",
-    "advertiser": "",
+    "advertiser": "三星",
     "agency": "",
     "campaignType": "最新案例",
     "summary": "每逢苹果发布新品，三星都会贴脸开大。 在 iPhone Duo 发布当晚，美国三星官方账号就在 X 平台上连发数条： So far, so same （不过如此，都见过） ，调侃苹果是 来热我们剩下的饭 。还专门艾特多邻国，配文 抱歉，他们也抄袭了我们 。 新西兰三星更绝，请了一位真名叫 蒂姆·库克 的房产经纪人出镜给 Z Fold8 做评测。 最近，三星又又又发布了一支火药味十足的短片。 这是三",
@@ -528,7 +426,7 @@ window.CASES = [
   {
     "id": "auto-20261029-4",
     "title": "男女理应平等保护，沃尔沃的安全意识真的超前！",
-    "advertiser": "",
+    "advertiser": "沃尔沃",
     "agency": "",
     "campaignType": "最新案例",
     "summary": "《男女平等保护，是沃尔沃的标配》 原来汽车安全广告还能这么拍！ 最近，沃尔沃推出了一支围绕“50/50 男女平等保护”展开的广告。 这支片子的呈现方式，很特别。 没有常见的碰撞测试画面，也没有一上来就罗列各种安全配置，而是直接 把舞者搬到了镜头前，用一连串充满张力的肢体动作，演绎交通事故发生时人体受到的冲击。 开场，画面以亮橙色为背景，黑色文字直接打出“50/50 男女平等保护”，并标注“沃尔沃安",
@@ -545,7 +443,7 @@ window.CASES = [
   {
     "id": "auto-20261029-5",
     "title": "CeraVe香港户外广告，靠讲废话出圈了",
-    "advertiser": "",
+    "advertiser": "CeraVe",
     "agency": "",
     "campaignType": "最新案例",
     "summary": "没有代言人，除了贴功效、讲成分，护肤品广告还能怎么做？ 今年9月，CeraVe适乐肤在香港街头以「啱又使乜Sell」主题，推出一组“不像广告”的户外广告。 “啱又使乜Sell”，粤语大意是 “好东西不需要费力推销” 。于是，整套广告也真的贯彻了“不推销”的策略。 官方海报，要么是放两只产品背面图，写上“樽背寫晒啦”，告诉大家产品咋样“背面信息都有啦”，自己看咯； 要么把产品一摊，“自己上网看风评”",
@@ -562,7 +460,7 @@ window.CASES = [
   {
     "id": "auto-20261026-1",
     "title": "百事可乐穿娃衣，简直太可爱了",
-    "advertiser": "",
+    "advertiser": "百事可乐",
     "agency": "",
     "campaignType": "最新案例",
     "summary": "近期，百事可乐官宣了与时尚运动服饰品牌 Off Season 的合作，这是双方的首次联名。 Off Season 由设计师克里斯汀·尤施奇克 Kristin Juszczyk 和企业家艾玛·格雷德 Emma Grede 联合创立，品牌于 2025 年 1 月推出。它的特色是把传统的球队周边做得更接近日常潮流服饰。其中，格雷德是金·卡戴珊的塑身衣品牌 SKIMS 的联合创始人。 品牌的起点要追溯到 ",
@@ -579,7 +477,7 @@ window.CASES = [
   {
     "id": "auto-20261023-1",
     "title": "当街撕了奥利奥广告牌，Sour Patch Kids是真的皮",
-    "advertiser": "",
+    "advertiser": "Sour Patch Kids",
     "agency": "",
     "campaignType": "最新案例",
     "summary": "Sour Patch Kids跟奥利奥是亿滋国际（Mondelez International）旗下的酸味软糖品牌。它的产品看起来色彩鲜艳、造型可爱，入口还有着鲜明的酸甜反差。 最近，Sour Patch Kids在伦敦、布里斯托尔玩起了户外广告新花样： 让自家的糖果小人跨过广告牌边界，让它们“动手”撕毁隔壁奥利奥的广告牌。 其实，Sour Patch Kids与奥利奥早就在TikTok、Inst",
@@ -596,7 +494,7 @@ window.CASES = [
   {
     "id": "auto-20261023-2",
     "title": "金典：邀请小孩姐的人形立牌，特别出演本片",
-    "advertiser": "",
+    "advertiser": "金典",
     "agency": "",
     "campaignType": "最新案例",
     "summary": "原标题：当片场来了0位代言人… 难题，从来都是创意的起点啊！ 回到最初接到金典的项目BRIEF时，客户希望： 借名古屋亚运会的节点，从这位被网友称作「最强小孩姐」的运动员陈妤颉身上， 找到能戳中年轻群体的共鸣点，推动品牌向年轻消费群进一步靠近。 在消化BRIEF的过程中，我们发现： 市面上大多数体育营销，都习惯锚定赛事高光时刻，借运动员的成绩造话题， 当然，这很对！但 这套解题思路，并不适合小孩姐",
@@ -613,7 +511,7 @@ window.CASES = [
   {
     "id": "auto-20261023-4",
     "title": "adidas北马文案，水平如何",
-    "advertiser": "",
+    "advertiser": "adidas",
     "agency": "",
     "campaignType": "最新案例",
     "summary": "第 46 届北京马拉松于10月18日落幕，共计3.2 万跑者参赛。 男子冠军跑出 2:03:10，刷新国内境内全马纪录，正式进入 “ 203 时代 ”。 女子冠军仍由埃塞俄比亚选手安奇纳卢・德西・根纳赫，成功卫冕。成绩 2:20:36，相比去年夺冠成绩提升明显。 其中，次仁措姆以2:23:48大幅PB，斩获国内女子第一！李大林以2:08:30的成绩，夺得国内男子冠军。 运动员成绩这么漂亮，基础建设",
@@ -630,7 +528,7 @@ window.CASES = [
   {
     "id": "auto-20261023-5",
     "title": "野兽派家居×瞿颖：黑皮Kitty的多重身份",
-    "advertiser": "",
+    "advertiser": "野兽派",
     "agency": "",
     "campaignType": "最新案例",
     "summary": "视频 10月14日，野兽派家居推出了「美好人生号」家居家纺系列，把 Hello Kitty 和 Dear Daniel 设计成了黑皮长腿版，并邀请瞿颖担任黑皮品牌大使。 配套短片并没有在讲一个传统意义上的起承转合故事，而是用 「换频道」 的概念，把瞿颖和居家生活串起来。 画面里，瞿颖在不同电视频道之间切换：一会儿是演员，一会儿是歌手，一会儿又回到模特状态。这些频道对应的是她这些年被大众熟悉的身份，",

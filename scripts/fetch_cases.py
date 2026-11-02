@@ -43,6 +43,84 @@ SRC_W = {"金投赏": 10, "戛纳创意节": 10, "长城奖": 10, "TOPYS": 6,
 # 6 维评分默认中分（RSS/普通案例无人工分时给，每维 3）
 DEFAULT_SCORE = 18
 
+# ---------- 非案例内容黑名单（招聘/专访/活动预告/观点文，不是广告案例） ----------
+JUNK_KW = [
+    "招聘", "实习生", "校招", "社招", "招贤", "纳新", "招新", "求职", "简历", "岗位",
+    "专访", "访谈", "对话", "独家对话", "面对面", "人物", "设计师介绍",
+    "创意大会", "峰会", "论坛", "报名", "预告", "倒计时", "直播预约", "招募",
+    "周报", "月报", "日报", "盘点", "榜单", "排行", "汇总", "精选集", "合辑",
+    "投稿", "征稿", "课程", "训练营", "讲座", "沙龙", "工作坊",
+    "MINDPARK", "Re:Think", "ReThink", "梦中情司", "开放日", "参观",
+    "影像", "摄影集", "街头摄影", "平面设计遍布", "插画师", "字体设计",
+    "观点", "观察", "深度解析", "行业观察", "编辑说", "专栏",
+]
+
+# ---------- 广告主（品牌）词库：用于自动补全 advertiser ----------
+# 长词在前，避免「伊利」抢掉「金典(伊利)」这类短词误匹配
+BRAND_LEXICON = [
+    # 已有获奖案例品牌
+    "名创优品 MINISO", "金典 SATINE", "金典(伊利)", "麦当劳（巴西）",
+    "毛铺草本酒(劲牌)", "淘宝闪购 × 美的", "VIATRIS(晖致)", "乐高 LEGO",
+    "品客 Pringles", "康恩贝肠炎宁", "Oura Ring", "Mikkeller",
+    "太太乐", "恒源祥", "波司登", "百雀羚", "三顿半", "百事可乐",
+    "国泰航空", "扬州旅游局", "深圳旅游局", "天猫超市", "天猫",
+    "伊利", "京东", "美团", "乐事", "观夏", "金典", "OPPO",
+    # 常见广告主（持续补充）
+    "三星", "苹果", "华为", "小米", "vivo", "荣耀", "联想", "戴尔",
+    "耐克", "阿迪达斯", "adidas", "NIKE", "安踏", "李宁", "斐乐", "新百伦", "NB",
+    "优衣库", "无印良品", "ZARA", "H&M", "GAP", "UR", "海澜之家",
+    "可口可乐", "雪碧", "芬达", "元气森林", "农夫山泉", "怡宝", "康师傅",
+    "统一", "娃哈哈", "蒙牛", "光明", "君乐宝", "简爱", "认养一头牛",
+    "麦当劳", "肯德基", "星巴克", "瑞幸", "喜茶", "奈雪", "蜜雪冰城",
+    "霸王茶姬", "海底捞", "西贝", "老乡鸡", "白象", "汤达人",
+    "沃尔沃", "宝马", "奔驰", "奥迪", "大众", "丰田", "本田", "日产",
+    "比亚迪", "蔚来", "小鹏", "理想", "特斯拉", "五菱", "长安", "吉利",
+    "奥利奥", "好丽友", "玛氏", "德芙", "士力架", "绿箭", "益达",
+    "宝洁", "联合利华", "欧莱雅", "雅诗兰黛", "兰蔻", "SK-II", "资生堂",
+    "珀莱雅", "薇诺娜", "花西子", "完美日记", "CeraVe", "Cetaphil", "理肤泉",
+    "野兽派", "泡泡玛特", "名创优品", "晨光", "得力", "B站", "哔哩哔哩",
+    "抖音", "快手", "小红书", "微博", "微信", "支付宝", "淘宝", "拼多多",
+    "携程", "飞猪", "去哪儿", "同程", "马蜂窝", "滴滴", "高德", "百度地图",
+    "腾讯", "阿里", "字节跳动", "网易", "京东健康", "平安", "招商银行",
+    "中国银联", "工商银行", "建设银行", "支付宝", "云闪付",
+    "Sour Patch Kids", "MINISO", "MINI", "MINI Cooper",
+    "立白", "蓝月亮", "滴露", "舒肤佳", "海飞丝", "飘柔", "潘婷",
+    "云南白药", "片仔癀", "同仁堂", "汤臣倍健", "Swisse", "善存",
+    "中国移动", "中国电信", "中国联通", "中国邮政", "顺丰", "中通", "韵达",
+    "宜家", "居然之家", "红星美凯龙", "林氏家居", "顾家家居", "慕思",
+]
+
+
+def is_junk(title):
+    """判断是否为非案例内容（招聘/专访/活动预告/观点文），True 则丢弃。"""
+    t = (title or "")
+    for kw in JUNK_KW:
+        if kw.lower() in t.lower():
+            return True
+    return False
+
+
+def guess_advertiser(title, summary=""):
+    """从标题里猜广告主（品牌名），用于补全 advertiser 让品牌检索可用。
+    ⚠️ 只用标题匹配词库：摘要里常有站点通用词（如「中国银联」「大众」出自页面描述），
+    拿摘要匹配会张冠李戴。策略：① 词库匹配（长词优先，英文用词边界）
+    ② 标题分隔符前提取（金典：xxx / 野兽派×xxx）。"""
+    t = title or ""
+    for b in sorted(BRAND_LEXICON, key=len, reverse=True):
+        if re.fullmatch(r"[A-Za-z0-9&\.\+\- ]+", b):
+            # 纯英文/数字品牌用词边界，避免 UR 命中 S-o-ur、MINI 命中 MINIMAL
+            if re.search(r"(?<![A-Za-z0-9])" + re.escape(b) + r"(?![A-Za-z0-9])", t, re.I):
+                return b
+        elif b.lower() in t.lower():
+            return b
+    # 分隔符前提取：「金典：邀请小孩姐…」→ 金典；「野兽派家居×瞿颖」→ 野兽派家居
+    head = re.split(r"[：:｜|×✕\-—–]", t, maxsplit=1)[0].strip()
+    if 2 <= len(head) <= 10 and not is_junk(head):
+        # 纯中文/英文品牌片段才认，避免把整句当前缀
+        if re.fullmatch(r"[一-龥A-Za-z0-9&·\.\(\)（） ]{2,10}", head):
+            return head
+    return ""
+
 
 
 def fetch(url, ref=None, timeout=25, retries=3):
@@ -140,6 +218,9 @@ def collect_rss(target=5, days=7):
                 break
             if "/articles/" in it["url"]:
                 continue  # 只收案例项目，跳过观点文章
+            if is_junk(it["title"]):
+                print("  跳过(非案例):", it["title"][:36])
+                continue  # 招聘/专访/活动预告/观点文，不是广告案例
             if it["pub"] and it["pub"].replace(tzinfo=None) < cutoff:
                 continue
             img = it["image"]
@@ -155,7 +236,7 @@ def collect_rss(target=5, days=7):
             results.append({
                 "id": "auto-" + datetime.now().strftime("%Y%m%d") + "-" + str(len(results) + 1),
                 "title": it["title"],
-                "advertiser": "",
+                "advertiser": guess_advertiser(it["title"], it["summary"]),
                 "agency": "",
                 "campaignType": "最新案例",
                 "summary": it["summary"] or "（详见原文）",
@@ -195,6 +276,13 @@ def collect_topys(target=3):
             title = clean_title(tm.group(1)) if tm else ""
             if not title or len(title) < 4:
                 continue
+            # 标题末尾带「| TOPYS…」的是 TOPYS 自媒体栏目（观点/影像/专访），非广告案例
+            if re.search(r"[|｜]\s*TOPYS", title):
+                print("  [TOPYS] 跳过(自媒体栏目):", title[:36])
+                continue
+            if is_junk(title):
+                print("  [TOPYS] 跳过(非案例):", title[:36])
+                continue
             om = re.search(r'property=["\']og:image["\'][^>]*content=["\']([^"\']+)', d, re.I)
             img = om.group(1) if om else None
             if img and not img_ok(img, ref=url):
@@ -204,7 +292,7 @@ def collect_topys(target=3):
             out.append({
                 "id": "topys-" + datetime.now().strftime("%Y%m%d") + "-" + str(len(out) + 1),
                 "title": title,
-                "advertiser": "",
+                "advertiser": guess_advertiser(title, summary),
                 "agency": "",
                 "campaignType": "创意精选",
                 "summary": summary,
