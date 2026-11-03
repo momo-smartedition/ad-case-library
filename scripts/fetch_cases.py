@@ -105,6 +105,7 @@ BRAND_LEXICON = [
     "泡泡玛特", "TOP TOY", "52TOYS", "卡游", "三只松鼠", "良品铺子", "周黑鸭",
     "蜜雪冰城", "古茗", "茶百道", "沪上阿姨", "霸王茶姬", "Manner", "Seesaw",
     "始祖鸟", "Salomon", "迪桑特", "KOLON SPORT", "骆驼", "探路者",
+    "999感冒灵", "999皮炎平", "999", "三九", "华润三九", "江中",
 ]
 
 
@@ -123,6 +124,14 @@ def guess_advertiser(title, summary=""):
     拿摘要匹配会张冠李戴。策略：① 词库匹配（长词优先，英文用词边界）
     ② 标题分隔符前提取（金典：xxx / 野兽派×xxx）。"""
     t = title or ""
+    # ⓪ 联名格式「品牌A × B」：A 是主广告主（茉酸奶 × 自嘲熊 → 茉酸奶），
+    #    必须先于词库，否则「…苹果狂欢夜」会被词库里的“苹果”抢走
+    mx = re.match(r"^(.{2,15}?)\s*[×✕]\s*", t)
+    if mx:
+        cand = mx.group(1).strip()
+        if (2 <= len(cand) <= 15 and not is_junk(cand)
+                and re.fullmatch(r"[一-龥A-Za-z0-9&·\.\(\)（） ]{2,15}", cand)):
+            return cand
     for b in sorted(BRAND_LEXICON, key=len, reverse=True):
         if re.fullmatch(r"[A-Za-z0-9&\.\+\- ]+", b):
             # 纯英文/数字品牌用词边界，避免 UR 命中 S-o-ur、MINI 命中 MINIMAL
@@ -334,10 +343,11 @@ def collect_topys(target=3):
 
 def collect_socialbeta(target=4):
     """SocialBeta「每日品牌营销快讯」案例库（无可用 RSS，抓 /campaign 列表页）。
-    卡片结构：<a class="pic" href="/campaign/ID"><img src="图"></a>
-              <div class="tit"><a>标题</a></div><div class="meta">简介</div>
-    日期来自分组标题 <div class="hdtitle">昨天 <span>11月1日</span></div>。
-    id 用 campaign 数字 id（跨天稳定，天然去重）。"""
+    卡片结构：<li><a class="pic" href="/campaign/ID"><img src="图"></a>
+              <div class="tit"><a>标题</a></div><div class="meta">简介</div></li>
+    ⚠️ 必须逐卡解析（按 <a class="pic" 切段），不能用跨卡 findall：
+    旧正则的 .*? 会跨越卡片边界，把 A 卡的链接/图配上 B 卡的标题（实测错位事故）。
+    最后再用详情页 <title> 校准一次，双保险。"""
     html = fetch(SB_URL)
     if not html or "hdtitle" not in html:
         print("[SB] 列表页抓取失败/结构变更")
@@ -353,29 +363,46 @@ def collect_socialbeta(target=4):
                 date = datetime(now.year, int(m.group(1)), int(m.group(2))).strftime("%Y-%m-%d")
             except ValueError:
                 pass
-        cards = re.findall(
-            r'<a class="pic"[^>]*href="(https://socialbeta\.com/campaign/(\d+))"[^>]*>\s*'
-            r'<img src="([^"]+)"[^>]*>.*?'
-            r'<div class="tit"><a[^>]*>([^<]+)</a></div>\s*'
-            r'<div class="meta">\s*([^<]*)</div>',
-            body, re.S)
-        for url, cid, img, title, meta in cards:
+        # 逐卡切段：每段从本卡 <a class="pic" 开始，到下一卡为止 → 段内 tit/meta 一定属于本卡
+        segs = re.split(r'<a class="pic"', body)
+        for seg in segs[1:]:
             if len(out) >= target:
                 break
-            title = clean_title(title)
+            um = re.search(r'href="(https://socialbeta\.com/campaign/(\d+))"', seg)
+            if not um:
+                continue
+            url, cid = um.group(1), um.group(2)
+            im = re.search(r'<img src="([^"]+)"', seg)
+            tm = re.search(r'<div class="tit"><a[^>]*>([^<]+)</a></div>', seg)
+            mm = re.search(r'<div class="meta">\s*([^<]*)</div>', seg)
+            title = clean_title(tm.group(1)) if tm else ""
+            img = im.group(1) if im else ""
             if not title or len(title) < 4:
                 continue
             if is_junk(title):
                 print("  [SB] 跳过(非案例):", title[:30])
                 continue
-            if not img_ok(img, ref=SB_URL):
+            # 详情页校准：真实标题/描述以详情页为准（防列表页结构变化）
+            page = fetch(url, ref=SB_URL)
+            pt = re.search(r"<title>(.*?)</title>", page, re.S)
+            if pt:
+                real = clean_title(pt.group(1)).replace("｜SocialBeta", "").strip()
+                if real and len(real) >= 4 and not is_junk(real):
+                    if real != title:
+                        print("  [SB] 校准标题:", title[:20], "->", real[:30])
+                    title = real
+            pd = re.search(r'name=["\']description["\'][^>]+content=["\']([^"\']+)', page, re.I)
+            summary = text_of(pd.group(1))[:200] if pd else (text_of(mm.group(1))[:200] if mm and mm.group(1) else "（详见原文）")
+            if not img or not img_ok(img, ref=url):
+                # 列表图失效则从详情页 og:image / 正文首图补
+                img = find_image_for_url(url) or ""
+            if not img:
                 print("  [SB] 跳过(无图):", title[:26])
                 continue
-            summary = text_of(meta)[:200] if meta else "（详见原文）"
             out.append({
                 "id": "sb-" + cid,
                 "title": title,
-                "advertiser": guess_advertiser(title),
+                "advertiser": guess_advertiser(title, summary),
                 "agency": "",
                 "campaignType": "每日快讯",
                 "summary": summary,
