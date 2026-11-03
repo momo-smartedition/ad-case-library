@@ -177,8 +177,11 @@
   }
   sortSel.addEventListener("change", renderCases);
 
-  /* ---------- 云端数据：多 CDN 镜像并发取，挑「最新」的一份（避免某个镜像脏缓存卡住） ---------- */
+  /* ---------- 云端数据：部署副本 + 多 CDN 镜像一起并发取，挑「最新」的一份 ----------
+     部署副本（./data/*）随每次部署 100% 同步，是最可控的源；jsdelivr 镜像会自动跟 GitHub，
+     但个别镜像（gcore）缓存清不掉。四个源一起取、挑最新的，任何一路是新的都能读到。 */
   const CDN_BASES = [
+    ".", // 部署副本（最高可控，优先参与比较）
     "https://testingcf.jsdelivr.net/gh/momo-smartedition/ad-case-library@main",
     "https://cdn.jsdelivr.net/gh/momo-smartedition/ad-case-library@main",
     "https://gcore.jsdelivr.net/gh/momo-smartedition/ad-case-library@main",
@@ -191,24 +194,24 @@
         const j = await r.json();
         return Array.isArray(j) && j.length ? j : null;
       } catch (e) {
-        return null; /* 该镜像连不上，交给其它镜像 */
+        return null; /* 该源连不上，交给其它源 */
       }
     };
-    // 三个镜像并发取，谁返回的是最新数据就用谁
+    // 全部并发取，谁返回的是最新数据就用谁
     const results = (await Promise.all(CDN_BASES.map((b) => tryFetch(b + "/" + relPath)))).filter(Boolean);
-    if (!results.length) return await tryFetch(relPath); // 同站点部署副本兜底
+    if (!results.length) return null;
     const maxDate = (arr) => {
       let m = "";
       for (const it of arr) {
-        const d = (it && (it.date || it.createdAt || it.updatedAt)) || "";
+        const d = (it && (it.added_at || it.date || it.createdAt || it.updatedAt)) || "";
         if (typeof d === "string" && d > m) m = d;
       }
       return m;
     };
     results.sort((a, b) => {
       const ma = maxDate(a), mb = maxDate(b);
-      if (ma !== mb) return ma > mb ? -1 : 1; // 日期更新者优先
-      return b.length - a.length;             // 日期相同则条数多者优先
+      if (ma !== mb) return ma > mb ? -1 : 1; // 更新时间更新者优先
+      return b.length - a.length;             // 相同则条数多者优先
     });
     return results[0];
   }
