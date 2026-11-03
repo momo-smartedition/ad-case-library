@@ -14,7 +14,8 @@ window.CASES = [
     "priority": false,
     "url": "https://socialbeta.com/campaign/28861",
     "date": "2026-11-03",
-    "score": 25
+    "score": 25,
+    "added_at": "2026-11-03"
   },
   {
     "id": "sb-28896",
@@ -31,7 +32,8 @@ window.CASES = [
     "priority": false,
     "url": "https://socialbeta.com/campaign/28896",
     "date": "2026-11-03",
-    "score": 25
+    "score": 25,
+    "added_at": "2026-11-03"
   },
   {
     "id": "sb-28881",
@@ -48,7 +50,8 @@ window.CASES = [
     "priority": false,
     "url": "https://socialbeta.com/campaign/28881",
     "date": "2026-11-03",
-    "score": 25
+    "score": 25,
+    "added_at": "2026-11-03"
   },
   {
     "id": "sb-28885",
@@ -65,7 +68,8 @@ window.CASES = [
     "priority": false,
     "url": "https://socialbeta.com/campaign/28885",
     "date": "2026-11-03",
-    "score": 25
+    "score": 25,
+    "added_at": "2026-11-03"
   },
   {
     "id": "sb-28843",
@@ -82,7 +86,8 @@ window.CASES = [
     "priority": false,
     "url": "https://socialbeta.com/campaign/28843",
     "date": "2026-11-02",
-    "score": 25
+    "score": 25,
+    "added_at": "2026-11-03"
   },
   {
     "id": "sb-28891",
@@ -99,7 +104,8 @@ window.CASES = [
     "priority": false,
     "url": "https://socialbeta.com/campaign/28891",
     "date": "2026-11-01",
-    "score": 25
+    "score": 25,
+    "added_at": "2026-11-01"
   },
   {
     "id": "sb-28890",
@@ -116,7 +122,8 @@ window.CASES = [
     "priority": false,
     "url": "https://socialbeta.com/campaign/28890",
     "date": "2026-11-01",
-    "score": 25
+    "score": 25,
+    "added_at": "2026-11-01"
   },
   {
     "id": "sb-28888",
@@ -133,7 +140,8 @@ window.CASES = [
     "priority": false,
     "url": "https://socialbeta.com/campaign/28888",
     "date": "2026-11-01",
-    "score": 25
+    "score": 25,
+    "added_at": "2026-11-01"
   },
   {
     "id": "sb-28889",
@@ -150,7 +158,8 @@ window.CASES = [
     "priority": false,
     "url": "https://socialbeta.com/campaign/28889",
     "date": "2026-11-01",
-    "score": 25
+    "score": 25,
+    "added_at": "2026-11-01"
   },
   {
     "id": "auto-20261029-1",
@@ -167,7 +176,8 @@ window.CASES = [
     "priority": false,
     "url": "https://www.digitaling.com/projects/381247.html",
     "date": "2026-10-29",
-    "score": 27
+    "score": 27,
+    "added_at": "2026-10-29"
   },
   {
     "id": "auto-20261029-3",
@@ -184,7 +194,8 @@ window.CASES = [
     "priority": false,
     "url": "https://www.digitaling.com/projects/381205.html",
     "date": "2026-10-29",
-    "score": 27
+    "score": 27,
+    "added_at": "2026-10-29"
   },
   {
     "id": "auto-20261029-4",
@@ -201,7 +212,8 @@ window.CASES = [
     "priority": false,
     "url": "https://www.digitaling.com/projects/381163.html",
     "date": "2026-10-29",
-    "score": 27
+    "score": 27,
+    "added_at": "2026-10-29"
   },
   {
     "id": "auto-20261029-5",
@@ -218,7 +230,8 @@ window.CASES = [
     "priority": false,
     "url": "https://www.digitaling.com/projects/381128.html",
     "date": "2026-10-29",
-    "score": 27
+    "score": 27,
+    "added_at": "2026-10-29"
   },
   {
     "id": "auto-20261026-1",
@@ -235,7 +248,8 @@ window.CASES = [
     "priority": false,
     "url": "https://www.digitaling.com/projects/380932.html",
     "date": "2026-10-26",
-    "score": 27
+    "score": 27,
+    "added_at": "2026-10-26"
   },
   {
     "id": "award-2026greatwall-jindian",
@@ -261,7 +275,8 @@ window.CASES = [
       "fit": 4,
       "execution": 4,
       "borrow": 4
-    }
+    },
+    "added_at": "2026-10-25"
   },
   {
     "id": "award-2026greatwall-guonian",
@@ -287,7 +302,8 @@ window.CASES = [
       "fit": 4,
       "execution": 4,
       "borrow": 4
-    }
+    },
+    "added_at": "2026-10-25"
   },
   {
     "id": "award-2026greatwall-hengyuanxiang",
@@ -313,7 +329,8 @@ window.CASES = [
       "fit": 4,
       "execution": 4,
       "borrow": 4
-    }
+    },
+    "added_at": "2026-10-25"
   },
   {
     "id": "auto-20261023-1",
@@ -330,7 +347,8 @@ window.CASES = [
     "priority": false,
     "url": "https://www.digitaling.com/projects/380659.html",
     "date": "2026-10-23",
-    "score": 27
+    "score": 27,
+    "added_at": "2026-10-23"
   },
   {
     "id": "auto-20261023-2",
@@ -347,7 +365,8 @@ window.CASES = [
     "priority": false,
     "url": "https://www.digitaling.com/projects/380554.html",
     "date": "2026-10-23",
-    "score": 27
+    "score": 27,
+    "added_at": "2026-10-23"
   },
   {
     "id": "auto-20261023-4",
@@ -364,7 +383,8 @@ window.CASES = [
     "priority": false,
     "url": "https://www.digitaling.com/projects/380806.html",
     "date": "2026-10-23",
-    "score": 27
+    "score": 27,
+    "added_at": "2026-10-23"
   },
   {
     "id": "auto-20261023-5",
@@ -381,7 +401,8 @@ window.CASES = [
     "priority": false,
     "url": "https://www.digitaling.com/projects/380526.html",
     "date": "2026-10-23",
-    "score": 27
+    "score": 27,
+    "added_at": "2026-10-23"
   },
   {
     "id": "auto-20261022-jd-chongyang",
@@ -399,7 +420,8 @@ window.CASES = [
       "https://file.digitaling.com/eImg/uimages/20261020/1792428176171726.jpg",
       "https://file.digitaling.com/eImg/uimages/20261020/1792428176614869.jpg"
     ],
-    "score": 27
+    "score": 27,
+    "added_at": "2026-10-22"
   },
   {
     "id": "award-2026roi-yili-mayili",
@@ -425,7 +447,8 @@ window.CASES = [
       "fit": 5,
       "execution": 5,
       "borrow": 5
-    }
+    },
+    "added_at": "2026-10-21"
   },
   {
     "id": "award-2026roi-maopu",
@@ -451,7 +474,8 @@ window.CASES = [
       "fit": 4,
       "execution": 4,
       "borrow": 4
-    }
+    },
+    "added_at": "2026-10-21"
   },
   {
     "id": "award-2026roi-baiqueling",
@@ -477,7 +501,8 @@ window.CASES = [
       "fit": 4,
       "execution": 5,
       "borrow": 4
-    }
+    },
+    "added_at": "2026-10-21"
   },
   {
     "id": "award-2026roi-yili-jielong",
@@ -503,7 +528,8 @@ window.CASES = [
       "fit": 4,
       "execution": 4,
       "borrow": 4
-    }
+    },
+    "added_at": "2026-10-21"
   },
   {
     "id": "award-2026roi-pepsi",
@@ -529,7 +555,8 @@ window.CASES = [
       "fit": 4,
       "execution": 4,
       "borrow": 4
-    }
+    },
+    "added_at": "2026-10-21"
   },
   {
     "id": "award-2026roi-taitaile",
@@ -555,7 +582,8 @@ window.CASES = [
       "fit": 4,
       "execution": 4,
       "borrow": 4
-    }
+    },
+    "added_at": "2026-10-21"
   },
   {
     "id": "award-2026roi-lays",
@@ -581,7 +609,8 @@ window.CASES = [
       "fit": 4,
       "execution": 3,
       "borrow": 3
-    }
+    },
+    "added_at": "2026-10-21"
   },
   {
     "id": "auto-20261021-pringles-halloween",
@@ -599,7 +628,8 @@ window.CASES = [
       "https://file.digitaling.com/eImg/uimages/20261020/1792469004338239.jpg",
       "https://file.digitaling.com/eImg/uimages/20261020/1792469058438606.jpg"
     ],
-    "score": 27
+    "score": 27,
+    "added_at": "2026-10-21"
   },
   {
     "id": "auto-20261020-oppo-findx10",
@@ -617,7 +647,8 @@ window.CASES = [
       "https://file.digitaling.com/eImg/uimages/20261016/remote_179213488059673.png",
       "https://file.digitaling.com/eImg/uimages/20261016/remote_179213488161689.png"
     ],
-    "score": 27
+    "score": 27,
+    "added_at": "2026-10-20"
   },
   {
     "id": "auto-20261021-05",
@@ -635,7 +666,8 @@ window.CASES = [
       "https://file.digitaling.com/eImg/uimages/20261015/1792066491648547.jpg",
       "https://file.digitaling.com/eImg/uimages/20261016/1792118509278336.jpg"
     ],
-    "score": 27
+    "score": 27,
+    "added_at": "2026-10-19"
   },
   {
     "id": "auto-20261019-tmallcs-fresh",
@@ -653,7 +685,8 @@ window.CASES = [
       "https://file.digitaling.com/eImg/uimages/20261017/1792208151271043.jpg",
       "https://file.digitaling.com/eImg/uimages/20261017/1792208244433031.jpg"
     ],
-    "score": 27
+    "score": 27,
+    "added_at": "2026-10-19"
   },
   {
     "id": "auto-20261017-oura-ring",
@@ -671,7 +704,8 @@ window.CASES = [
       "https://file.digitaling.com/eImg/uimages/20261014/1791951029143033.jpg",
       "https://file.digitaling.com/eImg/uimages/20261014/1791951043359063.jpg"
     ],
-    "score": 27
+    "score": 27,
+    "added_at": "2026-10-17"
   },
   {
     "id": "auto-20261016-taobao-mei",
@@ -688,7 +722,8 @@ window.CASES = [
       "https://file.digitaling.com/eImg/cover/20261016/20261016174817_47528.jpg",
       "https://file.digitaling.com/eImg/uimages/20261016/1792128405242433.jpg"
     ],
-    "score": 27
+    "score": 27,
+    "added_at": "2026-10-16"
   },
   {
     "id": "auto-20261016-bosideng",
@@ -705,7 +740,8 @@ window.CASES = [
       "https://file.digitaling.com/eImg/cover/20261016/20261016151551_63316.jpeg",
       "https://file.digitaling.com/eImg/uimages/20261016/1792132782316676.jpg"
     ],
-    "score": 27
+    "score": 27,
+    "added_at": "2026-10-16"
   },
   {
     "id": "auto-20261021-02",
@@ -723,7 +759,8 @@ window.CASES = [
       "https://file.digitaling.com/eImg/uimages/20261016/1792125570617326.png",
       "https://file.digitaling.com/eImg/uimages/20261016/1792128405242433.jpg"
     ],
-    "score": 27
+    "score": 27,
+    "added_at": "2026-10-16"
   },
   {
     "id": "auto-20261021-03",
@@ -741,7 +778,8 @@ window.CASES = [
       "https://file.digitaling.com/eImg/uimages/20261012/1791780812623386.jpg",
       "https://file.digitaling.com/eImg/uimages/20261012/1791784866569277.jpg"
     ],
-    "score": 27
+    "score": 27,
+    "added_at": "2026-10-16"
   },
   {
     "id": "auto-20261021-01",
@@ -759,7 +797,8 @@ window.CASES = [
       "https://file.digitaling.com/eImg/uimages/20261014/1791976999233023.jpg",
       "https://file.digitaling.com/eImg/uimages/20261014/1791977706546914.jpg"
     ],
-    "score": 27
+    "score": 27,
+    "added_at": "2026-10-15"
   },
   {
     "id": "auto-20261021-04",
@@ -777,7 +816,8 @@ window.CASES = [
       "https://file.digitaling.com/eImg/uimages/20261013/remote_179188899162237.png",
       "https://file.digitaling.com/eImg/uimages/20261013/remote_179188899319523.png"
     ],
-    "score": 27
+    "score": 27,
+    "added_at": "2026-10-15"
   },
   {
     "id": "demo-001",
@@ -794,7 +834,8 @@ window.CASES = [
       "https://file.digitaling.com/eImg/cover/20210119/20210119174038_48999.jpg",
       "https://file.digitaling.com/eImg/uimages/20210119/remote_161104866841948.jpg"
     ],
-    "score": 27
+    "score": 27,
+    "added_at": "2026-10-14"
   },
   {
     "id": "auto-20261014-kangbenbei",
@@ -811,7 +852,8 @@ window.CASES = [
       "https://q8.itc.cn/q_70/images01/20261012/b2199469323849b89842a7c92280c485.jpeg",
       "https://q8.itc.cn/q_70/images01/20261012/e1a1fd1a0e134d66a0ab6e44d3e9e7c4.jpeg"
     ],
-    "score": 25
+    "score": 25,
+    "added_at": "2026-10-14"
   },
   {
     "id": "auto-20261012-mcd-brasil",
@@ -828,7 +870,8 @@ window.CASES = [
       "https://file.digitaling.com/eImg/cover/20261014/20261014143311_56132.jpg",
       "https://file.digitaling.com/eImg/uimages/20261014/1791959603775182.jpg"
     ],
-    "score": 25
+    "score": 25,
+    "added_at": "2026-10-12"
   },
   {
     "id": "demo-002",
@@ -845,7 +888,8 @@ window.CASES = [
       "https://oss.adquan.com/uploads_img/17916205344e2d2064c78fc0bd.jpg",
       "https://oss.adquan.com/uploads_img/17916205342b65702b361e4479.jpg"
     ],
-    "score": 25
+    "score": 25,
+    "added_at": "2026-10-11"
   },
   {
     "id": "demo-003",
@@ -862,7 +906,8 @@ window.CASES = [
       "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/38450-1782314311.jpg",
       "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/38450-1782314309.jpg"
     ],
-    "score": 25
+    "score": 25,
+    "added_at": "2026-10-08"
   },
   {
     "id": "demo-004",
@@ -879,7 +924,8 @@ window.CASES = [
       "https://file.digitaling.com/eImg/cover/20250520/20250520113321_76126.jpg",
       "https://file.digitaling.com/eImg/uimages/20250520/remote_174771121590392.jpg"
     ],
-    "score": 27
+    "score": 27,
+    "added_at": "2026-10-05"
   },
   {
     "id": "award-2026cannes-viagra",
@@ -905,7 +951,8 @@ window.CASES = [
       "fit": 5,
       "execution": 4,
       "borrow": 4
-    }
+    },
+    "added_at": "2026-06-26"
   },
   {
     "id": "award-2026cannes-yangzhou",
@@ -931,7 +978,8 @@ window.CASES = [
       "fit": 5,
       "execution": 4,
       "borrow": 3
-    }
+    },
+    "added_at": "2026-06-26"
   },
   {
     "id": "award-2026cannes-kaitak",
@@ -957,7 +1005,8 @@ window.CASES = [
       "fit": 5,
       "execution": 4,
       "borrow": 3
-    }
+    },
+    "added_at": "2026-06-26"
   },
   {
     "id": "award-2026cannes-mikkeller",
@@ -983,7 +1032,8 @@ window.CASES = [
       "fit": 4,
       "execution": 4,
       "borrow": 4
-    }
+    },
+    "added_at": "2026-06-26"
   },
   {
     "id": "award-2026cannes-shenzhen",
@@ -1009,6 +1059,7 @@ window.CASES = [
       "fit": 5,
       "execution": 4,
       "borrow": 3
-    }
+    },
+    "added_at": "2026-06-26"
   }
 ];

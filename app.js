@@ -126,7 +126,10 @@
       return hitAdv && hitAgency && hitType;
     });
     list.sort((a, b) => {
-      // 默认「最新在前」：先比日期（新→旧），同日期再比优质分（高→低）
+      // 默认「按更新时间」：本期新入库的排最前，其次发布日期（新→旧），最后比优质分
+      const ka = a.added_at || a.date || "";
+      const kb = b.added_at || b.date || "";
+      if (ka !== kb) return sort === "date-asc" ? ka.localeCompare(kb) : kb.localeCompare(ka);
       const d = (a.date || "").localeCompare(b.date || "");
       if (d !== 0) return sort === "date-asc" ? d : -d;
       return (b.score || 0) - (a.score || 0);

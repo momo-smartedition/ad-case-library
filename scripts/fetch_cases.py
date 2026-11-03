@@ -620,11 +620,23 @@ def main():
     added = added_award + added_rss + added_topys + added_sb
     print("[MERGE] 本次新增共 %d 条" % len(added))
 
-    # 计算优质分（仍保留用于展示分数徽章）；列表排序改为「最新在前」，同日期再比分数
+    # 入库时间 added_at：本期新增标今天，历史条目用发布日期兜底
+    # → 保证「本次更新抓到的案例永远排最前面」，哪怕它发布日期较早
+    today = datetime.now().strftime("%Y-%m-%d")
+    for c in added:
+        c["added_at"] = today
+    for c in existing:
+        if not c.get("added_at"):
+            c["added_at"] = c.get("date", "") or today
+
+    # 计算优质分（仍保留用于展示分数徽章）
     for c in existing:
         c["score"] = compute_score(c)
-    existing.sort(key=lambda c: (c.get("date", ""), c.get("score", 0)), reverse=True)
-    added = sorted(added, key=lambda c: (c.get("date", ""), c.get("score", 0)), reverse=True)
+    # 排序：先按「更新时间」倒序（今天新更新的在最前），再按发布日期，最后比分数
+    existing.sort(key=lambda c: (c.get("added_at", ""), c.get("date", ""), c.get("score", 0)),
+                  reverse=True)
+    added = sorted(added, key=lambda c: (c.get("added_at", ""), c.get("date", ""), c.get("score", 0)),
+                   reverse=True)
 
     # 推送前强制补图：奖项案例务必带真图（策展库漏填时自动从来源页补）
     award_imgs_changed = False
