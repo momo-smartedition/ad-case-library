@@ -540,8 +540,11 @@ def pushplus(items):
             + "".join(block(c) for c in award_items)
             + (("<p>⭐ 本期 <b>%d</b> 个高评分最新案例：</p>" % len(other_items)) if other_items else "")
             + "".join(block(c) for c in other_items)
-            + "<p>完整案例库 & 检索在这儿 👉 <a href='%s'>%s</a></p>" % (SITE_URL, SITE_URL))
-    title = "仅供乐呵·精选（%d奖项+%d高分）" % (len(award_items), len(other_items))
+            + "<p>✅ <b>完整案例库 & 检索在这儿</b>（唯一官网，认准这个）👉 "
+              "<a href='%s'>%s</a></p>"
+              "<p style='color:#888;font-size:13px'>仅供乐呵，认真搬砖的 momo 专属 🌾</p>"
+              % (SITE_URL, SITE_URL))
+    title = "仅供乐呵·精选（%d最新+%d奖项）" % (len(other_items), len(award_items))
     body = json.dumps({"token": PUSHPLUS_TOKEN, "title": title, "content": html}).encode("utf-8")
     req = subprocess.run(
         ["curl", "-s", "-X", "POST", "https://www.pushplus.plus/send",
