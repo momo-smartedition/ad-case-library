@@ -1,5 +1,77 @@
 window.CASES = [
   {
+    "id": "sb-28941",
+    "title": "LOEWE 携手蒂姆·伯顿上演「圣诞夜惊魂」",
+    "advertiser": "Loewe",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "和奇幻角色共度节日季~",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/38450-EEz9QDjGTBIy5s6p.jpg?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/28941",
+    "date": "2026-11-08",
+    "added_at": "2026-11-09",
+    "score": 25
+  },
+  {
+    "id": "sb-28931",
+    "title": "chillmore 给你谷物的「关照」",
+    "advertiser": "chillmore",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "粒粒皆辛苦，粒粒也皆幸福",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/210618-X6S1g1nEtsX9cJCQ.jpg?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/28931",
+    "date": "2026-11-08",
+    "added_at": "2026-11-09",
+    "score": 25
+  },
+  {
+    "id": "sb-28936",
+    "title": "京东让沈腾马丽「反向」来演绎 AI ？",
+    "advertiser": "京东",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "买啥都能「省」！",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/224935-zCYMeTqrk5ksxyLw.jpg?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/28936",
+    "date": "2026-11-07",
+    "added_at": "2026-11-09",
+    "score": 25
+  },
+  {
+    "id": "sb-28935",
+    "title": "过日子就来支付宝找阿宝！",
+    "advertiser": "支付宝",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "千人千种过日子模样",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/224935-SIR9q7BzmaORVtt5.png?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/28935",
+    "date": "2026-11-07",
+    "added_at": "2026-11-09",
+    "score": 25
+  },
+  {
     "id": "sb-28900",
     "title": "绝味鸭脖来给你补偿经济损失了，厉娜！",
     "advertiser": "",
