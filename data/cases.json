@@ -1,5 +1,59 @@
 [
   {
+    "id": "sb-28987",
+    "title": "跳海举办第一届「鸭舌聊天会」",
+    "advertiser": "",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "周四一起看《后会友期》，周五一起吃鸭舌聊天。",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/210618-L5OIDBube2iSzioA.jpg?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/28987",
+    "date": "2026-11-12",
+    "added_at": "2026-11-13",
+    "score": 25
+  },
+  {
+    "id": "sb-28945",
+    "title": "奈雪的茶 ×《世界之外》共赴「初雪」之约",
+    "advertiser": "奈雪的茶",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "云岭初雪，赴梦之约",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/198246-aGeqILEGfEbOK4CX.jpg?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/28945",
+    "date": "2026-11-12",
+    "added_at": "2026-11-13",
+    "score": 25
+  },
+  {
+    "id": "sb-28948",
+    "title": "抖音双十一单场 GMV 破 6 亿的品牌竟然是它？",
+    "advertiser": "抖音",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "今天你被「奶化」了吗？",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/198246-cA6uNEd0uYVgRITM.jpg?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/28948",
+    "date": "2026-11-12",
+    "added_at": "2026-11-13",
+    "score": 25
+  },
+  {
     "id": "sb-28940",
     "title": "999 感冒灵给你提前供暖！",
     "advertiser": "999",
