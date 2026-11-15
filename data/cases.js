@@ -1,5 +1,77 @@
 window.CASES = [
   {
+    "id": "sb-28995",
+    "title": "WorkBuddy 联手星巴克给打工人一个「GAP HOUR」",
+    "advertiser": "GAP",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "我们在星巴克多见一点",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/224935-yhjHXs3xTu_oK9X6.jpg?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/28995",
+    "date": "2026-11-14",
+    "added_at": "2026-11-15",
+    "score": 25
+  },
+  {
+    "id": "sb-28994",
+    "title": "Babycare 用「守护每一片安心」回应风波",
+    "advertiser": "Babycare",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "谨以此片，敬畏品质",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/224935-nUsa8St_SWUT41dE.png?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/28994",
+    "date": "2026-11-14",
+    "added_at": "2026-11-15",
+    "score": 25
+  },
+  {
+    "id": "sb-28993",
+    "title": "赛百味携手 wiggle wiggle 开启「暖友季」",
+    "advertiser": "",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "赛百味组建「暖友天团」",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/224935-PiUT2PiunP8JPfjI.jpg?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/28993",
+    "date": "2026-11-14",
+    "added_at": "2026-11-15",
+    "score": 25
+  },
+  {
+    "id": "sb-28979",
+    "title": "请不到飞雪 CP，雪中飞请到了「飞雪女儿」",
+    "advertiser": "",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "军娃刘力扬也是拿到小芒果了！",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/24325-DAM714tucvIe1Qag.jpg?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/28979",
+    "date": "2026-11-13",
+    "added_at": "2026-11-15",
+    "score": 25
+  },
+  {
     "id": "sb-28987",
     "title": "跳海举办第一届「鸭舌聊天会」",
     "advertiser": "",
