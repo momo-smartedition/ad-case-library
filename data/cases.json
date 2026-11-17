@@ -1,5 +1,77 @@
 [
   {
+    "id": "sb-29006",
+    "title": "肯德基列车来了！",
+    "advertiser": "肯德基",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "谁不想急头白脸在周四坐一趟 V550 啊？",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/210618-18fj4yunTjJIvoBL.jpg?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/29006",
+    "date": "2026-11-17",
+    "added_at": "2026-11-17",
+    "score": 25
+  },
+  {
+    "id": "sb-29019",
+    "title": "安踏发布「灵犀」穿搭大模型",
+    "advertiser": "安踏",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "以 AI 重塑消费者购物体验",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/24325-D0P-r2csOhi5mpYf.jpg?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/29019",
+    "date": "2026-11-17",
+    "added_at": "2026-11-17",
+    "score": 25
+  },
+  {
+    "id": "sb-29021",
+    "title": "让茶与八马联合研发开启跨界试探",
+    "advertiser": "",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "联合研发背后的商业模式升级。",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/204546-e2JoP8rNUrLwHCBk.jpg?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/29021",
+    "date": "2026-11-17",
+    "added_at": "2026-11-17",
+    "score": 25
+  },
+  {
+    "id": "sb-29018",
+    "title": "马天宇成为喜马拉雅「中国山」巅峰大使",
+    "advertiser": "",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "高寒之上，无束穿行。",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/24325-idUlTJTzwFNzaAWK.jpg?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/29018",
+    "date": "2026-11-17",
+    "added_at": "2026-11-17",
+    "score": 25
+  },
+  {
     "id": "sb-28995",
     "title": "WorkBuddy 联手星巴克给打工人一个「GAP HOUR」",
     "advertiser": "GAP",
