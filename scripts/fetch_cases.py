@@ -517,6 +517,34 @@ def write_files(existing, repo_root):
     return len(existing)
 
 
+def check_site_health():
+    """推送前给官网做体检：返回 (是否正常, 提示文案)。
+    沙箱可能因长期不发布被平台回收（公网 403「链接不完整」），
+    这时在推送顶部醒目提醒 momo 去客户端重新发布，而不是等她自己撞见。"""
+    hint = (
+        "<div style='background:#FFF3CD;border-left:4px solid #FF2442;padding:12px;"
+        "margin-bottom:16px;line-height:1.7'>"
+        "🚨 <b>网站体检异常，可能打不开！</b><br/>"
+        "若打开显示「链接不完整」，说明云端应用被平台回收了。<br/>"
+        "请到 WorkBuddy 客户端：<b>头像 → 设置 → 数据管理 → 应用 → 右侧三点 → "
+        "下线应用 → 再发布应用</b>，重新发布即可恢复（新链接若变化记得同步给宝宝）。"
+        "</div>"
+    )
+    try:
+        r = subprocess.run(
+            ["curl", "-sL", "-o", "/dev/null", "-w", "%{http_code}",
+             "--max-time", "20", SITE_URL],
+            capture_output=True, timeout=25)
+        code = r.stdout.decode("utf-8", "ignore").strip()
+        print("[HEALTH] 官网 HTTP:", code)
+        if code == "200":
+            return True, ""
+        return False, hint
+    except Exception as e:
+        print("[HEALTH] 体检异常:", repr(e))
+        return False, hint
+
+
 def pushplus(items):
     if not PUSHPLUS_TOKEN:
         print("[PUSH] 未配置 PUSHPLUS_TOKEN，跳过推送")
@@ -535,7 +563,9 @@ def pushplus(items):
                 % (tag, c["title"], c.get("source", ""), c.get("award", "") or "最新案例",
                    c.get("score", ""), c.get("summary", ""), c["url"]))
 
-    html = ("<h3>叮🔔 仅供乐呵·精选案例来喽～</h3>"
+    healthy, health_hint = check_site_health()
+    html = (health_hint
+            + "<h3>叮🔔 仅供乐呵·精选案例来喽～</h3>"
             + (("<p>🏆 本期精选 <b>%d</b> 个奖项案例：</p>" % len(award_items)) if award_items else "")
             + "".join(block(c) for c in award_items)
             + (("<p>⭐ 本期 <b>%d</b> 个高评分最新案例：</p>" % len(other_items)) if other_items else "")
