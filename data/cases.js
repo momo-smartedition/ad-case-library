@@ -1,5 +1,77 @@
 window.CASES = [
   {
+    "id": "sb-29024",
+    "title": "霸王茶姬把店开进了菜市场里！",
+    "advertiser": "霸王茶姬",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "一起逛逛，一起想象",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/198246-QebJARuwvcjhObYy.jpg?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/29024",
+    "date": "2026-11-23",
+    "added_at": "2026-11-23",
+    "score": 25
+  },
+  {
+    "id": "sb-29070",
+    "title": "丽思卡尔顿 × ULT. 开启「奇思艺旅」",
+    "advertiser": "丽思卡尔顿",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "匠心入杯，灵感入味",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/198246-758584LK9f0LS7yi.jpg?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/29070",
+    "date": "2026-11-23",
+    "added_at": "2026-11-23",
+    "score": 25
+  },
+  {
+    "id": "sb-29075",
+    "title": "于适成为迪奥中国旷野男士香水系列大使",
+    "advertiser": "",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "在姜饼屋中分享冬日祝福。",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/38450-w0b4v37w-Y43Jhfy.jpg?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/29075",
+    "date": "2026-11-23",
+    "added_at": "2026-11-23",
+    "score": 25
+  },
+  {
+    "id": "sb-29039",
+    "title": "迪桑特记录那些「追雪山的人」",
+    "advertiser": "迪桑特",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "一切始于滑雪",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/198246-8v4Coa3chakawTwJ.jpg?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/29039",
+    "date": "2026-11-23",
+    "added_at": "2026-11-23",
+    "score": 25
+  },
+  {
     "id": "sb-29049",
     "title": "积家把 200 年制表工艺做成了一个游戏！",
     "advertiser": "",
