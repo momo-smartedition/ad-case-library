@@ -22,7 +22,7 @@ UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
 REPO = "momo-smartedition/ad-case-library"
 DRY_RUN = os.environ.get("DRY_RUN", "") == "1"
 PUSHPLUS_TOKEN = os.environ.get("PUSHPLUS_TOKEN", "")
-SITE_URL = "https://6152ab6c7ba745fe8a11897d460d9b9f.app.workbuddy.host"
+SITE_URL = "https://momo-smartedition.github.io/ad-case-library/"
 
 # RSS 多源（都是 git 可稳定抓取、带真实来源标签）
 RSS_SOURCES = [
