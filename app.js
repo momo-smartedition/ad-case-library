@@ -182,9 +182,9 @@
      但个别镜像（gcore）缓存清不掉。四个源一起取、挑最新的，任何一路是新的都能读到。 */
   const CDN_BASES = [
     ".", // 部署副本（最高可控，优先参与比较）
-    "https://testingcf.jsdelivr.net/gh/momo-smartedition/ad-case-library@main",
-    "https://cdn.jsdelivr.net/gh/momo-smartedition/ad-case-library@main",
-    "https://gcore.jsdelivr.net/gh/momo-smartedition/ad-case-library@main",
+    "https://testingcf.jsdelivr.net/gh/momora0328/ad-case-library@main",
+    "https://cdn.jsdelivr.net/gh/momora0328/ad-case-library@main",
+    "https://gcore.jsdelivr.net/gh/momora0328/ad-case-library@main",
   ];
   async function fetchCloud(relPath) {
     const tryFetch = async (u) => {

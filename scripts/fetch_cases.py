@@ -19,10 +19,10 @@ from email.utils import parsedate_to_datetime
 
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/120.0 Safari/537.36")
-REPO = "momo-smartedition/ad-case-library"
+REPO = "momora0328/ad-case-library"
 DRY_RUN = os.environ.get("DRY_RUN", "") == "1"
 PUSHPLUS_TOKEN = os.environ.get("PUSHPLUS_TOKEN", "")
-SITE_URL = "https://momo-smartedition.github.io/ad-case-library/"
+SITE_URL = "https://momora0328.github.io/ad-case-library/"
 
 # RSS 多源（都是 git 可稳定抓取、带真实来源标签）
 RSS_SOURCES = [
