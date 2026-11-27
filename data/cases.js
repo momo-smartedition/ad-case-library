@@ -1,5 +1,77 @@
 window.CASES = [
   {
+    "id": "auto-20261127-1",
+    "title": "OPPO x 宋雨琦 x 文淇：陪你一起把“感知力”重新打开",
+    "advertiser": "OPPO",
+    "agency": "",
+    "campaignType": "最新案例",
+    "summary": "当我们对世界的感知力慢慢消失，OPPO 携手宋雨琦、文淇，带你邂逅一场关于色彩的奇遇。 成长不只是奔向远方，更是一路向前时，依然看得见沿途的色彩。 “世界也许有它的底色，但你永远可以调出自己喜欢的颜色。”",
+    "images": [
+      "https://resource.meihua.info/Fm-GHVP1oRgw4r79ul7VbIYRaEL-"
+    ],
+    "source": "梅花网",
+    "award": "",
+    "priority": false,
+    "url": "https://www.meihua.info/shots/7095020042241024",
+    "date": "2026-11-26",
+    "added_at": "2026-11-27",
+    "score": 26
+  },
+  {
+    "id": "sb-29091",
+    "title": "元彬成为舒肤佳品牌大使",
+    "advertiser": "舒肤佳",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "Wonderful，only for you",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/198246-hZkcxdOgtli8gb4r.jpg?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/29091",
+    "date": "2026-11-26",
+    "added_at": "2026-11-27",
+    "score": 25
+  },
+  {
+    "id": "sb-29066",
+    "title": "香奈儿在岁末护送一颗「蛋」回家",
+    "advertiser": "",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "高级珠宝与腕表给一颗蛋当配角。",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/38450-IeBJsxSThKox0yvL.png?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/29066",
+    "date": "2026-11-26",
+    "added_at": "2026-11-27",
+    "score": 25
+  },
+  {
+    "id": "sb-29097",
+    "title": "雷蛇 × Pokémon 重启像素冒险",
+    "advertiser": "雷蛇",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "像素重现，冒险再启！",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/198246-G52Q-Tzixwa3Y88b.jpg?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/29097",
+    "date": "2026-11-26",
+    "added_at": "2026-11-27",
+    "score": 25
+  },
+  {
     "id": "sb-29077",
     "title": "杜海涛真去考雅迪了！",
     "advertiser": "",
