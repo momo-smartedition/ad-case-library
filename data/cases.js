@@ -1,5 +1,149 @@
 window.CASES = [
   {
+    "id": "auto-20261127-2",
+    "title": "世界儿童日，喜茶把小朋友们的画做成了绘本",
+    "advertiser": "喜茶",
+    "agency": "",
+    "campaignType": "最新案例",
+    "summary": "世界儿童日之际，喜茶联合人民美术出版社，把建水小朋友们的画，出版成了一本真正的童画绘本。 邀请大朋友们翻开这些自由的笔触和大胆的想象，心情也跟着轻快起来~",
+    "images": [
+      "https://resource.meihua.info/FmcnuW_ZHY5OW_QoqbSZk_hokpoI?imageslim"
+    ],
+    "source": "梅花网",
+    "award": "",
+    "priority": false,
+    "url": "https://www.meihua.info/shots/7105127802375168",
+    "date": "2026-11-27",
+    "added_at": "2026-11-27",
+    "score": 26
+  },
+  {
+    "id": "auto-20261127-3",
+    "title": "爷爷不泡茶联名葫芦兄弟：妖精，快还我爷爷！",
+    "advertiser": "",
+    "agency": "",
+    "campaignType": "最新案例",
+    "summary": "爷爷不泡茶 × 葫芦兄弟 联名重磅上线。 葫芦七兄弟集结出发! 喝完这杯有嚼头的风味好茶，马上出发救爷爷!",
+    "images": [
+      "https://resource.meihua.info/FosNsTG-27fZSbfdjEskPoZeZU0D"
+    ],
+    "source": "梅花网",
+    "award": "",
+    "priority": false,
+    "url": "https://www.meihua.info/shots/7110854427591680",
+    "date": "2026-11-27",
+    "added_at": "2026-11-27",
+    "score": 26
+  },
+  {
+    "id": "auto-20261127-4",
+    "title": "京东超市：徐志胜闯进时尚圈了？",
+    "advertiser": "京东",
+    "agency": "",
+    "campaignType": "最新案例",
+    "summary": "京东超市「爆改」徐志胜，把「摸鱼」拍成了时尚大片！ 周五在工位「摸鱼」，不如顺便来京东超市「黑色星期五」囤货，实惠又高效~",
+    "images": [
+      "https://resource.meihua.info/FosNsTG-27fZSbfdjEskPoZeZU0D"
+    ],
+    "source": "梅花网",
+    "award": "",
+    "priority": false,
+    "url": "https://www.meihua.info/shots/7110810743915520",
+    "date": "2026-11-27",
+    "added_at": "2026-11-27",
+    "score": 26
+  },
+  {
+    "id": "auto-20261127-5",
+    "title": "中国平安 ：临近年末，还来得及解锁很多“新成就”",
+    "advertiser": "平安",
+    "agency": "",
+    "campaignType": "最新案例",
+    "summary": "一眨眼就到年末，你还有很多未完成。 不过没关系，两个月也还能解锁很多新成就。 跟着平安，一起清空2026的待办事项，让那些「未完成」的事，一件件简单「完成」。",
+    "images": [
+      "https://resource.meihua.info/FosNsTG-27fZSbfdjEskPoZeZU0D"
+    ],
+    "source": "梅花网",
+    "award": "",
+    "priority": false,
+    "url": "https://www.meihua.info/shots/7110792771552256",
+    "date": "2026-11-27",
+    "added_at": "2026-11-27",
+    "score": 26
+  },
+  {
+    "id": "sb-29087",
+    "title": "Oneup ×《姜思达》× r3 来「割韭菜」了！",
+    "advertiser": "Oneup",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "随喜赞叹！",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/210618-BFhI6TaIUZY1gIRZ.jpg?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/29087",
+    "date": "2026-11-27",
+    "added_at": "2026-11-27",
+    "score": 25
+  },
+  {
+    "id": "sb-29115",
+    "title": "安缦正式发布全新品牌 ATMA",
+    "advertiser": "",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "引领酒店业新潮流",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/198246-KIsYKBDMG0fcoL1m.jpg?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/29115",
+    "date": "2026-11-27",
+    "added_at": "2026-11-27",
+    "score": 25
+  },
+  {
+    "id": "sb-29126",
+    "title": "Dr. Martens 携手 Chopova Lowena 上演朋克童话",
+    "advertiser": "Dr. Martens",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "哥特灰姑娘华丽登场！",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/38450-2U1LDxfayimoptgp.jpg?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/29126",
+    "date": "2026-11-27",
+    "added_at": "2026-11-27",
+    "score": 25
+  },
+  {
+    "id": "sb-28992",
+    "title": "RIMOWA 和 Margiela 推出全新的「旧」行李箱",
+    "advertiser": "RIMOWA",
+    "agency": "",
+    "campaignType": "每日快讯",
+    "summary": "将使用痕迹融入设计。",
+    "images": [
+      "https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/38450-bgUjwAAdsqihssa7.png?x-oss-process=image/resize,m_fill,w_675,h_450,limit_0/auto-orient,1/format,jpg"
+    ],
+    "source": "SocialBeta",
+    "award": "",
+    "priority": false,
+    "url": "https://socialbeta.com/campaign/28992",
+    "date": "2026-11-27",
+    "added_at": "2026-11-27",
+    "score": 25
+  },
+  {
     "id": "auto-20261127-1",
     "title": "OPPO x 宋雨琦 x 文淇：陪你一起把“感知力”重新打开",
     "advertiser": "OPPO",
