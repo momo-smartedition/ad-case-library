@@ -31,6 +31,7 @@ RSS_SOURCES = [
 ]
 TOPYS_URL = "https://www.topys.cn"
 SB_URL = "https://socialbeta.com/campaign"   # SocialBeta 每日品牌营销快讯（案例库）
+DG_URL = "https://www.digitaling.com/projects"  # 数英网「最新收录项目」列表页（RSS 已关，改抓 HTML）
 
 # 奖项关键词（用于从 RSS/标题里识别是否获奖）
 AWARD_KW = ["金投赏", "戛纳", "长城奖", "黄河奖", "艾菲", "One Show",
@@ -250,6 +251,10 @@ def collect_rss(target=5, days=7):
                 break
             if "/articles/" in it["url"]:
                 continue  # 只收案例项目，跳过观点文章
+            # 梅花网：/shots/ 是作品案例库，/article/ 是行业资讯（黑产报道、趋势文等），只收前者
+            if "meihua.info" in it["url"] and "/shots/" not in it["url"]:
+                print("  跳过(梅花网资讯):", it["title"][:30])
+                continue
             if is_junk(it["title"]):
                 print("  跳过(非案例):", it["title"][:36])
                 continue  # 招聘/专访/活动预告/观点文，不是广告案例
@@ -257,10 +262,9 @@ def collect_rss(target=5, days=7):
                 continue
             img = it["image"]
             if not img or not img_ok(img, ref=it["url"]):
-                dh = fetch(it["url"], ref=src["url"])
-                om = re.search(r'property=["\']og:image["\'][^>]*content=["\']([^"\']+)',
-                               dh, re.I)
-                img = om.group(1) if om else None
+                # 详情页补图：og:image → data-src → <img>（梅花网等站点没有 og:image，
+                # 只有异步加载的 data-src，旧逻辑只认 og:image 导致全部被判「无图」）
+                img = find_image_for_url(it["url"])
             if not img or not img_ok(img, ref=it["url"]):
                 print("  跳过(无图):", it["title"])
                 continue
@@ -414,6 +418,83 @@ def collect_socialbeta(target=4):
                 "date": date,
             })
     print("[SB] 采集 %d 条" % len(out))
+    return out
+
+
+def collect_digitaling(target=3, days=10):
+    """数英网「最新收录项目」列表页（RSS 已于 2026-11 关闭，返回 {"isSuccess":0}）。
+    卡片结构：<div class="f_l work_item ... con_ID">
+        <img data-original="真图"(懒加载，src 是占位图)>
+        <h3><a href="详情页" title="标题">标题</a></h3>
+        <label ...>2026-11-26</label>  ← 日期
+        <em>9.5</em>                    ← 评分
+        <a href=".../company/ID" title="Ford 福特">  ← 品牌
+    ⚠️ 必须逐卡切段（按 work_item 切），禁止跨卡 findall（会 A 卡图配 B 卡标题）。"""
+    html = fetch(DG_URL)
+    if not html or "work_item" not in html:
+        print("[DG] 列表页抓取失败/结构变更")
+        return []
+    cards = re.split(r'<div class="f_l work_item[^"]*?con_(\d+)"', html)
+    out = []
+    now = datetime.now()
+    cutoff = now - timedelta(days=days)
+    for i in range(1, len(cards) - 1, 2):
+        if len(out) >= target:
+            break
+        cid, body = cards[i], cards[i + 1]
+        tm = re.search(r'<h3[^>]*>\s*<a href="(https://www\.digitaling\.com/projects/\d+\.html)"[^>]*title="([^"]+)"', body)
+        if not tm:
+            continue
+        url, raw_title = tm.group(1), tm.group(2)
+        title = clean_title(raw_title)
+        if not title or len(title) < 4:
+            continue
+        if is_junk(title):
+            print("  [DG] 跳过(非案例):", title[:30])
+            continue
+        # 日期（只收窗口内）
+        dm = re.search(r'<label[^>]*>\s*(\d{4}-\d{2}-\d{2})\s*</label>', body)
+        date = dm.group(1) if dm else now.strftime("%Y-%m-%d")
+        try:
+            if datetime.strptime(date, "%Y-%m-%d") < cutoff:
+                print("  [DG] 跳过(超窗口):", title[:26], date)
+                continue
+        except ValueError:
+            pass
+        # 真图：优先 data-original（列表 src 是占位图）
+        im = re.search(r'data-original="([^"]+)"', body) or re.search(r'<img[^>]+src="(https://file\.digitaling\.com/[^"]+)"', body)
+        img = im.group(1) if im else ""
+        # 品牌：company 链接的 title
+        bm = re.search(r'href="https://www\.digitaling\.com/company/\d+"[^>]*?title="([^"]+)"', body)
+        advertiser = clean_title(bm.group(1)) if bm else ""
+        # 评分（数英 10 分制，映射成 1-5 便于内部一致）
+        sm = re.search(r'gbs_star[^>]*>\s*</i>\s*<em[^>]*>([\d.]+)</em>', body)
+        if not sm:
+            sm = re.search(r'<em[^>]*class="v_m"[^>]*>([\d.]+)</em>', body)
+        try:
+            dg_score = float(sm.group(1)) if sm else 0.0
+        except ValueError:
+            dg_score = 0.0
+        if not img or not img_ok(img, ref=url):
+            img = find_image_for_url(url) or ""
+        if not img:
+            print("  [DG] 跳过(无图):", title[:26])
+            continue
+        out.append({
+            "id": "dg-" + cid,
+            "title": title,
+            "advertiser": advertiser or guess_advertiser(title, ""),
+            "agency": "",
+            "campaignType": "项目案例",
+            "summary": "数英网收录项目，编辑评分 %s 分。（详见原文）" % ("%.1f" % dg_score if dg_score else "—"),
+            "images": [img],
+            "source": "数英网",
+            "award": detect_award(title),
+            "priority": False,
+            "url": url,
+            "date": date,
+        })
+    print("[DG] 采集 %d 条" % len(out))
     return out
 
 
@@ -650,7 +731,12 @@ def main():
     existing, added_sb = merge(existing, new_sb)
     print("[SB] 新增 %d 条" % len(added_sb))
 
-    added = added_award + added_rss + added_topys + added_sb
+    # 5) 数英网「最新收录项目」列表页（RSS 已关，改抓 HTML）
+    new_dg = collect_digitaling(target=3)
+    existing, added_dg = merge(existing, new_dg)
+    print("[DG] 新增 %d 条" % len(added_dg))
+
+    added = added_award + added_rss + added_topys + added_sb + added_dg
     print("[MERGE] 本次新增共 %d 条" % len(added))
 
     # 入库时间 added_at：本期新增标今天，历史条目用发布日期兜底
